@@ -17,7 +17,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
 		<!-- D3.js -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
-
+    <script type="module" src="./js/index2.js"></script> 
+    <script type="module" src="./src/vendor/@cloudflare/ai.js"></script> 
 		<style>
 			html, body {
 				text-align: center;
@@ -80,11 +81,15 @@
     <div class="hero-content text-center">
       <div class="max-w-md">
         
-        <div id="observablehq-svg-3b95f26a"></div>   </div>
+        <div id="observablehq-svg-3b95f26a"></div>  
+      <div>
+        <input id="input" placeholder="Text-to-image prompt"  type="text"></input>
+        <button id="submit">Submit</button>
+      </div> </div>
     </div>
   </div>
       
-     
+     <p id="values"></p>
      
 
 
@@ -196,29 +201,6 @@
     
       </nav>
     </footer>
-    <script type="module">
-    import { Ai } from './vendor/@cloudflare/ai.js';
 
-      export default {
-        async fetch(request, env) {
-          const ai = new Ai(env.AI);
-      
-          const inputs = {
-            prompt: 'cyberpunk cat'
-          };
-      
-          const response = await ai.run(
-            '@cf/stabilityai/stable-diffusion-xl-base-1.0',
-            inputs
-          );
-      
-          return new Response(response, {
-            headers: {
-              'content-type': 'image/png'
-            }
-          });
-        }
-      };
-      </script>
 	</body>
 </html>

@@ -1,0 +1,17 @@
+{
+  "name": "gooey",
+  "version": "1.0.0",
+  "main": "./src/index.js",
+  "devDependencies": {
+    "wrangler": "^3.22.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Craig Ellenwood",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "vite": "^5.0.10"
+  }
+}

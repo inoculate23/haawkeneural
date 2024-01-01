@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Untitled</title>
+<link rel="stylesheet" type="text/css" href="./inspector.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+<style>
+    html, body {
+        background-color:black;
+        color:rgb(184, 182, 180);
+        font-family: 'Josefin Sans', sans-serif;
+        overflow:hidden;
+    }
+    h1 h2, h2 {
+        font-family: 'Josefin Sans', sans-serif;
+    }
+    .observablehq {
+        visibility: hidden;
+    }
+
+</style>
+<body>
+<script type="module">
+
+import define from "./index.js";
+import {Runtime, Library, Inspector} from "./runtime.js";
+
+const runtime = new Runtime();
+const main = runtime.module(define, Inspector.into(document.body));
+
+
+</script>
+<script>
+  var svg = document.querySelector("viewBox");
+  svg.removeAttribute(visibility)
+svg.setAttribute("visibility", 'visible');
+document.body.append(svg);
+</script>
+</body>
+</html>

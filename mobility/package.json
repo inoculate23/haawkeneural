@@ -1,0 +1,14 @@
+{
+  "name": "@inoculate/mobility",
+  "main": "c54880bfe541ca0a@762.js",
+  "version": "762.0.0",
+  "homepage": "https://observablehq.com/@inoculate/mobility",
+  "author": {
+    "name": "inoculate_media",
+    "url": "https://observablehq.com/@inoculate"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}

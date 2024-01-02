@@ -20,7 +20,7 @@ run("@cf/stabilityai/stable-diffusion-xl-base-1.0", {
     {
       role: "user",
       content:
-        "Write a short story about a llama that goes on a journey to find an orange cloud",
+        "a dog dressed up like a cowboy kareoke singer riding a large tardigrade.",
     },
   ],
 }).then((response) => {

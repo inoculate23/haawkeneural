@@ -1,5 +1,5 @@
 let yoff = 0.0; // 2nd dimension of simplex noise
-let song, analyzer;
+
 let mic, fft;
 
 let Logo;
@@ -41,16 +41,7 @@ loop();
    //let xoff = yoff; 
    // Option #2: 1D Noise
 
-  // create a new Amplitude analyzer
-  analyzer = new p5.Amplitude();
-
-  // Patch the input to an volume analyzer
-  analyzer.setInput(song);
-  
  
-  
-    // Get the average (root mean square) amplitude
-  let rms = analyzer.getLevel();
 
   
 

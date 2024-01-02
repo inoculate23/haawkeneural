@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
 		
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/addons/p5.sound.min.js"></script>
-    <script type="module" src="./src/index.js"></script>
+    
 		<style>
 			html, body {
 				text-align: center;
@@ -53,18 +53,10 @@
             h1 {
                 font-family: 'Josefin Sans', sans-serif;
                 font-size: 30px;
-                color:white;
+                color:rgb(15, 15, 15);
                 z-index: 10;
                 
 
-            }
-            #iframe {
-              margin:0px;
-            
-              position:absolute;
-              width:100%;
-              height:100vh;
-              z-index:-9;
             }
             #logo {
               margin-left:30%;
@@ -78,11 +70,29 @@
               position: absolute;
           
             }
-            .footer {
-              position:absolute;
-              z-index:10;
-              margin-bottom:0px;
-              margin-top:80%;
+            #contact {
+                width: 65%;
+                float:right;
+                z-index:10;
+                margin-top: 1%;
+                margin-bottom: 60%;
+                margin-right:10%;
+                margin-left:34%;
+                position:relative;
+                background-image:url("big_swirl.svg");
+                background-color:antiquewhite;
+                opacity:.8;
+                padding:10px;
+                z-index:10;
+                border-radius: 12px;
+            }
+            #submit {
+                float:right;
+                z-index:10;
+                margin-top: 45%;
+                margin-right:30%;
+                margin-left:34%;
+                position:relative;
             }
             .mockup-code {
                 width: 30%;
@@ -92,33 +102,72 @@
                 position: relative;
                 z-index:5;
             }
-            .text-xl {
-              padding:12px;
-              padding-right: 35px;
-              z-index:10;
-            }
-            .mockup-code  {
-              padding:20px;
-              z-index:10;
-            }
-            .p5Canvas {
-              position:absolute;
-              z-index:0;
-            }
+        
+
+.field {
+    padding:5px;
+  margin-bottom: 10px;
+}
+
+.field label {
+    font-family: 'Josefin Sans', sans-serif;
+    margin-left:1%;
+    margin-right:71%;
+    padding:5px;
+  display: inline-block;
+  font-size: 16px;
+  color:rgb(29, 3, 28);
+  z-index:10;
+}
+
+.field input {
+    padding:5px;
+  display: block;
+  min-width: 450px;
+  line-height: 2.5;
+  font-size: 14px;
+  border-radius:5px;
+ box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+#message {
+    padding:5px;
+    display: block;
+  min-width: 450px;
+  line-height: 5.5;
+  font-size: 14px;
+  border-radius:5px;
+box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+input[type="submit"] {
+  display: block;
+  padding: 6px 30px;
+  font-size: 14px;
+  background-color:white;
+  color: #21032f;
+  border-width: 2px;
+  border-color:#21032f;
+  border-radius: 5px;
+}
+.submit_btn {
+    color:rgb(51, 15, 84);
+}
+.text-xl {
+    padding:12px;
+    padding-right: 35px;
+}
 		</style>
 
 	</head>	
 	<body>
         
           <div class="navbar bg-base-300">
-            <button class="subpixel-antialiased btn btn-ghost  text-xl"  href="https://haawkeneuraltech.com/">Haawke Neural Technology</button>
-          
-            <div class="subpixel-antialiased text-xl">
+            <button class="btn btn-ghost  text-xl"  href="https://haawkeneuraltech.com/">Haawke Neural Technology</button>
+            <div class="text-xl">
            
-              Deep Machine Learning for
-              Audio/Visual Applications and Events
-        
+               Deep Machine Learning for Audio/Visual Applications and Events  
+           
             </div>
+       
             <a><button class="btn btn-active btn-neutral" href="https://dev-hxoz48d37guyzgvs.us.auth0.com/u/login?state=hKFo2SBHMkNvRFBMYUZkWGxwejlTNlhFMDBlb2xheUQ0VENISKFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIDNxdnFSc3hMUHRzUGpqSGJqTnRnUEJ4V3RiQWNLb1plo2NpZNkgeVFXUlA5U1pUZHhEYmVVM3hDTk4wVFpkQ3RQUDRPYnA" >Login</button></a>
             <button class="btn btn-active btn-primary">Register</button>
      
@@ -129,9 +178,65 @@
   
      
       <main id="main">
-        <div id="container">
-          <iframe id="iframe" src="https://haawkeneuraltech.com/mesh/mesh.html"></iframe>
-   
+    
+        <div id="container"> 
+    <div id="contact">
+    <h1 class="text-xl">
+        Contact us, we'd love to discuss your project with you!
+        </h1><form id="form">
+          <div class="field">
+            <label for="from_name">Your Name</label>
+            <input type="text" name="from_name" id="from_name">
+          </div>
+          <div class="field">
+            <label for="to_name">To</label>
+            <input type="text" name="to_name" value="info@inoculate.media" id="to_name">
+          </div>
+          <div class="field">
+            <label for="message">Your message</label>
+            <input type="text" name="message" id="message">
+          </div>
+          <div class="field">
+            <label for="reply_to">Email address</label>
+            <input type="text" name="reply_to" id="reply_to">
+          </div>
+           <div class="field">
+            <label for="phone">Phone #</label>
+            <input type="text" name="reply_to" id="reply_to">
+          </div>
+       
+          <input type="submit" class="submit_btn" id="button" value="Send Email" >Send
+        </div>
+        </form>
+        
+        <script type="text/javascript"
+          src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        
+        <script type="text/javascript">
+          emailjs.init('YTs0Dxgmc1hlfjt1-')
+        </script>
+        <script>
+        const btn = document.getElementById('button');
+
+        document.getElementById('form')
+         .addEventListener('submit', function(event) {
+           event.preventDefault();
+        
+           btn.value = 'Sending...';
+        
+           const serviceID = 'default_service';
+           const templateID = 'template_sw5pp25';
+        
+           emailjs.sendForm(serviceID, templateID, this)
+            .then(() => {
+              btn.value = 'Send Email';
+              alert('Sent!');
+            }, (err) => {
+              btn.value = 'Send Email';
+              alert(JSON.stringify(err));
+            });
+        });
+    </script>
               </div>
       </main>
     </div>
@@ -226,13 +331,12 @@
       </aside> 
       <nav>
         <header class="footer-title">Services</header> 
-       
         <a class="link link-hover">AR/VR</a>
         <a class="link link-hover">App development</a>
         <a class="link link-hover">Video projection mapping</a>
         <a class="link link-hover">Print/web - 2d and 3d Design</a>
         <a class="link link-hover">Ai and machine learning models and integrations</a>
-        <a class="link link-hover">Convention and Tradeshow displays and assistance</a>
+      
     
        
         

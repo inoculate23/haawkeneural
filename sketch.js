@@ -17,7 +17,7 @@ function setup() {
   createCanvas(1920, 1080);
 
   frameRate(60);
-  background(0,0,0)
+  background(0,0,0,0);
   smooth();
   
   

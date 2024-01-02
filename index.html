@@ -78,15 +78,29 @@
                 position: relative;
                 z-index:5;
             }
+            .text-xl {
+              padding:12px;
+              padding-right: 35px;
+              z-index:10;
+            }
+            .mockup-code  {
+              padding:20px;
+              z-index:10;
+            }
 		</style>
 
 	</head>	
 	<body>
         
           <div class="navbar bg-base-300">
-            <button class="btn btn-ghost  text-xl"  href="https://haawkeneuraltech.com/">Haawke Neural Technology</button>
+            <button class="subpixel-antialiased btn btn-ghost  text-xl"  href="https://haawkeneuraltech.com/">Haawke Neural Technology</button>
           
-       
+            <div class="subpixel-antialiased text-xl">
+           
+              Deep Machine Learning for
+              Audio/Visual Applications and Events
+        
+            </div>
             <a><button class="btn btn-active btn-neutral" href="https://dev-hxoz48d37guyzgvs.us.auth0.com/u/login?state=hKFo2SBHMkNvRFBMYUZkWGxwejlTNlhFMDBlb2xheUQ0VENISKFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIDNxdnFSc3hMUHRzUGpqSGJqTnRnUEJ4V3RiQWNLb1plo2NpZNkgeVFXUlA5U1pUZHhEYmVVM3hDTk4wVFpkQ3RQUDRPYnA" >Login</button></a>
             <button class="btn btn-active btn-primary">Register</button>
      
@@ -98,16 +112,16 @@
      
       <main id="main">
         <div id="container">
-          <h1 class="text-xl">
-            <strong> 
-            Advanced Ai and Deep Machine Learning for <br>
-            Audio/Visual Applications and Events.
-        </strong>
-    </h1>
-    <div class="mockup-code">
-        <pre data-prefix="$"><code>npm i daisyui</code></pre> 
-        <pre data-prefix=">" class="text-warning"><code>installing...</code></pre> 
-        <pre data-prefix=">" class="text-success"><code>Done!</code></pre>
+        
+    <div class="mockup-code text-sm">
+        <pre data-prefix="$" ><code>npm i haawkeneural</code></pre> 
+        <pre data-prefix=">" class="subpixel-antialiased text-warning text-sm"><code>installing...</code></pre> 
+        <pre data-prefix=">" class="subpixel-antialiased text-success text-sm"><code>Done!</code></pre><br>
+        <pre data-prefix="//"><code>Usage:</code></pre> 
+        <pre data-prefix="$"><code>curl -X POST \
+          https://haawkeneuraltech.com/ai/ \
+          -H "Authorization: Bearer {API_TOKEN}" \
+          -d '{"messages":[{"role":"system",<br>"content":"You are a friendly assistant <br>that helps write stories"},<br>{"role":"user","content":"Write a<br> short story about a llama that goes on a journey<br> to find an orange cloud"}]}'</code></pre> 
       </div>
               </div>
       </main>
@@ -208,7 +222,12 @@
         <a class="link link-hover">Video projection mapping</a>
         <a class="link link-hover">Print/web - 2d and 3d Design</a>
         <a class="link link-hover">Ai and machine learning models and integrations</a>
-      
+        <a class="link link-hover">Convention and Tradeshow displays and assistance</a>
+    
+       
+        
+        
+
       </nav> 
       <nav>
         <header class="footer-title">Company</header> 

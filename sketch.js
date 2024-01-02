@@ -9,7 +9,7 @@ let Logo;
 function preload() {
   Logo = loadImage("logo_300.png");
  
-  font = loadFont('JosefinSans-Regular.ttf');
+
 
 }
 function setup() {

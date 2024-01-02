@@ -23,7 +23,7 @@ function setup() {
 
 function draw() {
     
-loop();
+
  fill('rgba200,200,200, 200.02)');
  
 

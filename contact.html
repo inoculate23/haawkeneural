@@ -27,6 +27,14 @@
         margin:0;
        
 			}
+      #iframe {
+              margin:0px;
+            
+              position:absolute;
+              width:100%;
+              height:100vh;
+              z-index:-9;
+            }
 			text, h3, h2 {
                 font-family: 'Josefin Sans', sans-serif;
 				color:white;
@@ -70,16 +78,24 @@
               position: absolute;
           
             }
+            #iframe {
+              margin:0px;
+            
+              position:absolute;
+              width:100%;
+              height:100vh;
+              z-index:-9;
+            }
             #contact {
                 width: 65%;
                 float:right;
                 z-index:10;
                 margin-top: 1%;
                 margin-bottom: 60%;
-                margin-right:10%;
-                margin-left:34%;
+                margin-right:20%;
+                margin-left:24%;
                 position:relative;
-                background-image:url("big_swirl.svg");
+                background-image:url("./contact.png");
                 background-color:antiquewhite;
                 opacity:.8;
                 padding:10px;
@@ -155,6 +171,12 @@ input[type="submit"] {
     padding:12px;
     padding-right: 35px;
 }
+.footer {
+              position:absolute;
+              z-index:10;
+              margin-bottom:0px;
+              margin-top:80%;
+            }
 		</style>
 
 	</head>	
@@ -180,6 +202,8 @@ input[type="submit"] {
       <main id="main">
     
         <div id="container"> 
+          <iframe id="iframe" src="https://haawkeneuraltech.com/mesh/mesh.html"></iframe>
+
     <div id="contact">
     <h1 class="text-xl">
         Contact us, we'd love to discuss your project with you!
@@ -327,7 +351,16 @@ input[type="submit"] {
        -141 434 -370 382z"/>
        </g>
        </svg>
-               <p>Haawke Neural Technology <br/>Providing reliable tech since 1992</p>
+               <p>Haawke Neural Technology <br/>Providing reliable tech since 1992
+               
+              <hr>
+                    Mail:<br>
+              1201 Madison Avenue<br>
+              Las Vegas, NV 89106<br>
+              Phone:<br>
+              (725) 273-1659
+                 </p></hr>
+
       </aside> 
       <nav>
         <header class="footer-title">Services</header> 
@@ -336,8 +369,9 @@ input[type="submit"] {
         <a class="link link-hover">Video projection mapping</a>
         <a class="link link-hover">Print/web - 2d and 3d Design</a>
         <a class="link link-hover">Ai and machine learning models and integrations</a>
-      
+        <a class="link link-hover">Convention and Tradeshow displays and assistance</a>
     
+       
        
         
         
@@ -357,6 +391,6 @@ input[type="submit"] {
     
       </nav>
     </footer>
-<script src="./sketch.js"></script>
+
 	</body>
 </html>

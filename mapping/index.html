@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Same camera example - three-projected-material</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+  </head>
+  <body>
+    <canvas id="app"></canvas>
+
+    <script type="module">
+      import * as THREE from 'three'
+      import WebGLApp from './lib/WebGLApp.js'
+      import ProjectedMaterial from '..'
+      import { random } from './lib/math-utils.js'
+let background;
+      // grab our canvas
+      const canvas = document.querySelector('#app')
+
+      // WebGLApp is a really basic wrapper around the three.js setup,
+      // it hides all unnecessary stuff not related to this example
+      const webgl = new WebGLApp({
+        canvas,
+        // set the scene background color
+       // background: '#E6E6E6',
+
+
+
+        // show the fps counter from stats.js
+        showFps: true,
+        // enable orbit-controls
+        orbitControls: true,
+      })
+
+      // attach it to the window to inspect in the console
+      window.webgl = webgl
+
+    // create a video element and play it
+    const video = document.createElement('video')
+    video.src = './squares.mp4'
+    video.muted = true
+    video.loop = true
+    video.play()
+
+    // create the VideoTexture and enable gamma correction for it
+    const texture = new THREE.VideoTexture(video)
+
+          // load the example texture
+       //   const texture = new THREE.TextureLoader().load('./baron.jpg')
+// create a bunch of meshes
+const elements = new THREE.Group()
+const NUM_ELEMENTS = 123
+for (let i = 0; i < NUM_ELEMENTS; i++) {
+  const geometry = new THREE.BoxGeometry(random(0.6, 0.5), random(0.51, 0.5), random(0.21, 0.5))
+  // create a different material for different objects
+  // since each one will have a different position
+  const AMOUNT = 10;
+  const ASPECT_RATIO = window.innerWidth / window.innerHeight;
+
+				const WIDTH = ( window.innerWidth / AMOUNT ) * window.devicePixelRatio;
+				const HEIGHT = ( window.innerHeight / AMOUNT ) * window.devicePixelRatio;
+let camera;
+  const cameras = [];
+
+				for ( let y = 0; y < AMOUNT; y ++ ) {
+
+					for ( let x = 0; x < AMOUNT; x ++ ) {
+
+						const subcamera = new THREE.PerspectiveCamera( 60, ASPECT_RATIO, 0.71, 100 );
+						subcamera.viewport = new THREE.Vector4( Math.floor( x * WIDTH ), Math.floor( y * HEIGHT ), Math.ceil( WIDTH ), Math.ceil( HEIGHT ) );
+						subcamera.position.x = 6 - ( x / AMOUNT );
+						subcamera.position.y = -8.5 / ( y / AMOUNT );
+						subcamera.position.z = -0.5 + ( y / AMOUNT );
+						subcamera.position.multiplyScalar( -40 );
+						subcamera.lookAt( 10, 10, 5 );
+						subcamera.updateMatrixWorld();
+						cameras.push( subcamera );
+
+					}
+
+				}
+
+				camera = new THREE.ArrayCamera( cameras );
+				camera.position.z = 6;
+  const material = new ProjectedMaterial({
+    // use the orthographic camera
+    camera: camera,
+    //orthographic: true,
+    texture,
+    color: '#1c1c1c',
+    textureScale: 0.8,
+  })
+  const element = new THREE.Mesh(geometry, material)
+
+  // move the meshes any way you want!
+  element.position.x = random(-1, 2)
+  element.position.y = random(-1, 1)
+  element.position.z = random(-1, 1)
+
+  // and when you're ready project the texture!
+  material.project(element)
+
+  elements.add(element)
+}
+
+webgl.scene.add(elements)
+const TextureLoader = new THREE.TextureLoader();
+webgl.scene.background = TextureLoader.load( './Nebula.jpg' );
+// move the camera so it's not facing the
+// texture straight on at the start
+// webgl.camera.position.set(0, 1, 10)
+// webgl.camera.lookAt(2, 4, 20)
+// webgl.camera.lookAt(2, 4, 20)
+
+// add lights
+const directionalLight = new THREE.DirectionalLight('#ffffff', 0.4)
+directionalLight.position.set(80, 5, 90)
+webgl.scene.add(directionalLight)
+
+const ambientLight = new THREE.AmbientLight('#fff', 0.79)
+webgl.scene.add(ambientLight)
+
+
+      elements.rotation.y = Math.PI / 2
+      webgl.onUpdate(() => {
+        elements.rotation.y -= .0053;
+
+
+      })
+
+
+
+      // start animation loop
+      webgl.start()
+    </script>
+  </body>
+</html>

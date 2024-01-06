@@ -174,7 +174,7 @@
           
              
               function myFunction(event) {
-                let searchUrl = ('https://haawkeneuraltech.com/' + '?' + prompt);
+                let searchUrl = ('https://ai.haawkeneuraltech.com/' + '?' + process.env.API_KEY + 'prompt=' + '*');
                 const queryString = window.location.search;
 console.log(searchUrl);
 

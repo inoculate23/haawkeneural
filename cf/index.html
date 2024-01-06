@@ -173,7 +173,7 @@
               const ai = new Ai(env.AI);
           
              
-              function myScript(event) {
+              function myFunction(event) {
                 let searchUrl = ('https://haawkeneuraltech.com/' + '?' + prompt);
                 const queryString = window.location.search;
 console.log(searchUrl);
@@ -195,7 +195,7 @@ fetch('https://ai.haawkeneuraltech.com', options)
           </script>
       
        
-    
+    <input id="prompt" onchange="myFunction(event)"></input>
 
     </div>
 

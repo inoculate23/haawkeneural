@@ -188,7 +188,7 @@ function fetchData() {
       }
       response.json().then(function (data) {
         console.log(data);
-        document.getElementById('w3review').value = data;
+        document.getElementById('resImage').value = data;
       });
     })
     .catch(function (err) {
@@ -198,7 +198,7 @@ function fetchData() {
         </script>
    
   
-
+<img id="resImage" />
 
     <footer class="footer p-10 bg-base-200 text-base-content">
       <aside>

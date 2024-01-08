@@ -178,7 +178,7 @@
 generateBtn.addEventListener('click', fetchData);
 
 function fetchData() {
-  fetch('https://ai2.sd.haawkeneuraltech.com/?prompt='+userInput.value)
+  fetch('https://ai2.sd.haawkeneuraltech.com/?prompt='+ userInput.value)
     .then(function (response) {
       if (response.status !== 200) {
         console.log(
@@ -198,7 +198,7 @@ function fetchData() {
         </script>
    
   
-<img id="resImage" />
+<img id="resImage"> </img>
 
     <footer class="footer p-10 bg-base-200 text-base-content">
       <aside>

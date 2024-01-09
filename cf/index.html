@@ -181,6 +181,7 @@
                 <p class="py-6">Stable diffusion text-to-image AI is a powerful technology that generates realistic images from textual descriptions. It uses advanced algorithms to bridge the gap between language and visual understanding, enabling creative applications in design, art, and more. </p>
                 <input type="text"  class="primary" placeholder="Type something..." id="userInput"></input>
                 <button id="submit" type="button">Submit</button>
+		      <span class="loading loading-bars loading-lg"></span>
 		      <div id="image_div"></div>
               </div>
             </div>
@@ -212,7 +213,7 @@ var image_Result =  document.createElement("img");
 	 var image_div = document.GetElementById('image_div');
 	 image_div.append(image_Result)
 
-
+ }
 		  
               </script>
        

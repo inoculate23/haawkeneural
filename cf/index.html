@@ -153,7 +153,7 @@
             height:100vh;
             z-index:9;
             }
-            #img_div image_result {
+          .img_result {
 		    padding:15px;
 		    margin:0;
 		    border-width:4px;
@@ -188,7 +188,7 @@
                 <input type="text"  class="primary" placeholder="Type something..." id="userInput"></input>
                 <button id="submit" type="button">Submit</button>
 		  
-		      <div id="image_div"></div>
+		      <div class="img_result" id="image_div"></div>
               </div>
             </div>
           </div>
@@ -214,6 +214,7 @@ var image_Result =  document.createElement("img");
 	 image_Result.setAttribute("height", "700px");
 	 image_Result.setAttribute("margin-left", "75%");
 	 image_Result.setAttribute("margin-right", "5%");
+	  image_Result.setAttribute("class", "img_result");
 
 
 	 var image_div = document.getElementById('image_div');

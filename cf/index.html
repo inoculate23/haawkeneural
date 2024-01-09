@@ -198,8 +198,10 @@
       
  function fetchData() {
 // window.open('https://ai.haawkeneuraltech.com/?prompt='+ userInput.value, "mozillaWindow", "popup");
-	  window.open(('https://ai.haawkeneuraltech.com/?prompt='+ userInput.value), target="theFrame");
-     
+	 //window.open(('https://ai.haawkeneuraltech.com/?prompt='+ userInput.value), target="theFrame");
+var image_Result =  document.createElement("img");
+	 image_Result.setAttribute("src", ('https://ai.haawkeneuraltech.com/?prompt='+ userInput.value));
+	 document.body.append(image_Result)
      }
               </script>
        

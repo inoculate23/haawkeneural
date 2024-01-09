@@ -180,13 +180,13 @@
            
       
             <script>
-         var generateBtn = document.getElementById('submit');
-      generateBtn.addEventListener('click', fetchData);
+     //    var generateBtn = document.getElementById('submit');
+     // generateBtn.addEventListener('click', fetchData);
       
-      function fetchData() {
-        window.open('https://ai2.sd.haawkeneuraltech.com/?prompt='+ userInput.value, "mozillaWindow", "popup");
+    //  function fetchData() {
+      //  window.open('https://ai2.sd.haawkeneuraltech.com/?prompt='+ userInput.value, "mozillaWindow", "popup");
      
-      }
+     // }
               </script>
        
 
@@ -202,10 +202,15 @@
       <script>
           let button = document.getElementById('submit');
       button.onclick = function changeText2() {
+
+	           
+  var userInput = document.getElementById('userInput').value.trim();
+    
+    console.log(userInput);
      
-          const url = ('https://ai2.sd.haawkeneuraltech.com/?prompt=' + userInput );
- // url.href = "https://ai2.sd.haawkeneuraltech.com/?prompt=" + userInput;
-  window.location = "https://ai2.sd.haawkeneuraltech.com/?prompt=" + userInput;
+          const url = ('https://ai2.sd.haawkeneuraltech.com/?prompt=' + userInput.value );
+ url.href = ('https://ai2.sd.haawkeneuraltech.com/?prompt=' + userInput.value);
+  window.location = ('https://ai2.sd.haawkeneuraltech.com/?prompt=' + userInput.value);
 
 
   
@@ -218,12 +223,9 @@
     
   
   
-     
-  var userInput = document.getElementById('userInput').value.trim();
-    
-    console.log(userInput);
-    var span = document.createElement('span');
-    span.setAttribute('class', "loading" + "loading-ring" + "loading-lg");
+
+  //  var span = document.createElement('span');
+    //span.setAttribute('class', "loading" + "loading-ring" + "loading-lg");
   
   
   
@@ -280,10 +282,10 @@
   
   
   
-  //var newImage = document.createElement('img')
-//  newImage.setAttribute('src', response.data);
+  var newImage = document.createElement('img')
+	  newImage.setAttribute('src', response.data);
  // document.body.remove(span)
-  //document.body.append(newImage);
+  document.body.append(newImage);
         </script>
    
   

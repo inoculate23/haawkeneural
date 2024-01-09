@@ -205,9 +205,9 @@
       button.onclick = function changeText2() {
 
 	           
-  var userInput = document.getElementById('userInput').value;
+  var userInput = document.getElementById('userInput');
     
-    console.log(userInput);
+    console.log(userInput).value;
      
           const url = ('https://ai2.sd.haawkeneuraltech.com/?prompt=' + userInput.value );
  url.href = ('https://ai2.sd.haawkeneuraltech.com/?prompt=' + userInput.value);

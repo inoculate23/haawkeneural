@@ -181,13 +181,13 @@
            
       
             <script>
-     //    var generateBtn = document.getElementById('submit');
-     // generateBtn.addEventListener('click', fetchData);
+         var generateBtn = document.getElementById('submit');
+      generateBtn.addEventListener('click', fetchData);
       
-    //  function fetchData() {
-      //  window.open('https://ai2.sd.haawkeneuraltech.com/?prompt='+ userInput.value, "mozillaWindow", "popup");
+ function fetchData() {
+ window.open('https://ai2.sd.haawkeneuraltech.com/?prompt='+ userInput.value, "mozillaWindow", "popup");
      
-     // }
+     }
               </script>
        
 
@@ -201,17 +201,17 @@
     
 
       <script>
-          let button = document.getElementById('submit');
-      button.onclick = function changeText2() {
+   //       let button = document.getElementById('submit');
+   //   button.onclick = function changeText2() {
 
 	           
-  var userInput = document.getElementById('userInput');
+//  var userInput = document.getElementById('userInput');
     
-    console.log(userInput).value;
-     
-          const url = ('https://ai2.sd.haawkeneuraltech.com/?prompt=' + userInput.value );
- url.href = ('https://ai2.sd.haawkeneuraltech.com/?prompt=' + userInput.value);
-  window.location = ('https://ai2.sd.haawkeneuraltech.com/?prompt=' + userInput.value);
+ //   console.log(userInput).value;
+//     
+   //       const url = ('https://ai2.sd.haawkeneuraltech.com/?prompt=' + userInput.value );
+// url.href = ('https://ai2.sd.haawkeneuraltech.com/?prompt=' + userInput.value);
+ // window.location = ('https://ai2.sd.haawkeneuraltech.com/?prompt=' + userInput.value);
 
 
   
@@ -233,11 +233,11 @@
   
   
   
-  const data = JSON.stringify({
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "GET,HEAD,POST,OPTIONS",
-    "Access-Control-Max-Age": "86400"
-  });
+//  const data = JSON.stringify({
+  //  "Access-Control-Allow-Origin": "*",
+  // "Access-Control-Allow-Methods": "GET,HEAD,POST,OPTIONS",
+   // "Access-Control-Max-Age": "86400"
+ // });
   //const inputs = JSON.stringify({
      // "key": "inputs",
      //   "prompt": "ultra realistic close up portrait ((beautiful pale punk female with heavy black eyeliner and a big bossom))",
@@ -262,23 +262,23 @@
   
   //const url = ('https://ai.haawkeneuraltech.com/?authorization=Bearer mhi_Rx_wSEZn5hbxNNFTBgaEhBkKMZCQo&prompt=' + inputVal );
   
-  const xhr = new XMLHttpRequest();
-  xhr.withCredentials = false;
+//  const xhr = new XMLHttpRequest();
+//  xhr.withCredentials = false;
   
-  xhr.addEventListener("readystatechange", function () {
-  if (this.readyState === this.DONE) {
-  console.log(this.responseText);
-  }
+//  xhr.addEventListener("readystatechange", function () {
+///  if (this.readyState === this.DONE) {
+//  console.log(this.responseText);
+//  }
   
-  });
+//  });
   
   // xhr.open("GET", 'https://doodapi.com/api/search/videos?key=process.env.API_KEY&search_term=' + inputVal  );
-  xhr.open("POST", url  );
+//  xhr.open("POST", url  );
   
   
-  xhr.send(data);
+ // xhr.send(data);
   
-    }
+  //  }
   
   
   

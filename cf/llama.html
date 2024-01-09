@@ -172,78 +172,112 @@
                 <h1 class="text-5xl font-bold">ChatGPT</h1>
                 <p class="py-6">Llama 2 is a collection of pretrained and fine-tuned generative text models ranging in scale from 7 billion to 70 billion parameters.</p>
 
- <script id="chat"
-   let chat = {
-      messages: [
-        { role: 'system', content: 'You are a helpful assistant.' },
-        { role: 'user', content: 'Who won the world series in 2020?' }
-      ]
-    };
- var data = JSON.parse(this.chat);
-                console.log(data)
-                for (let i = 1; i < 700; i++) {
-                  
+  <div class="dropdown">
+    <button class="dropbtn">Settings</button>
+    <div class="dropdown-content">
+      <a href="#" onclick='setApiUrl()'>Custom API URL</a>
+      <a href="#" onclick='setIDsession()'>Custom ID Session</a>
+    </div>
+  </div>
+  <div id="response">
+    <div class="ai-message">Hey there, how can i assist you?</div>
+  </div>
+  <form id="chatForm">
+    <textarea id="input" type="text" placeholder="Send a message"></textarea>
+    <button type="submit">➤</button>
+  </form>
+  <a class="fa fa-github github-icon" href="https://github.com/localuser-isback/Cloudflare-AI" style="font-size:36px">
+    <script>
 
+      // --------------- CONFIG --------------- //
+      // modify URL to your API
+      let apiUrl = "YOUR API URL"
 
-                    const bubble_sys = document.createElement('div');
-                    bubble_sys.setAttribute('class', 'chat-bubble');
-                    bubble_sys.innerTEXT(data.messages.role.system.content[i]');
+      // ----------- END OF CONFIG ------------ //
+      let uuid = '';
 
-                    const bubble_user = document.createElement('div');
-                    bubble_user.setAttribute('class', 'chat-bubble');
-                    bubble_user.innerTEXT(data.messages.role.user.content[i]');
+      function setApiUrl() {
+        const customUrl = prompt("Enter custom API URL: ");
+        if (customUrl) {
+          apiUrl = customUrl;
+        }
+      }
 
-                  
-                let chat_div = document.getElementById('chat_div');
-                  chat_div.append('bubble_sys');
-                  chat_div.append('bubble_user');
-                  
-                  
-      
- </script>
-              
- 
-<div id="chat_div" class="chat chat-start">
+      function setIDsession() {
+        const customUUID = prompt("Enter custom session ID: ");
+        if (customUUID) {
+          uuid = customUUID;
+        }
+      }
 
-</div>
-          
-		      <input id="userInput" type="text" placeholder="Type something..." class="input input-bordered warning input-md w-full max-w-xs" />
+      function generateUUID() {
+        let newUUID = '';
+        const chars = 'abcdef0123456789';
+        for (let i = 0; i < 32; i++) {
+          const charIndex = Math.floor(Math.random() * chars.length);
+          newUUID += chars[charIndex];
+          if (i === 7 || i === 11 || i === 15 || i === 19) {
+            newUUID += '-';
+          }
+        }
+        return newUUID;
+      }
+      const chatForm = document.getElementById('chatForm');
+      const inputField = document.getElementById('input');
+      const responseDiv = document.getElementById('response');
 
-                <button id="submit" type="button">Submit</button>
-		 
-		
-              </div>
+      function chat() {
+        var input = inputField.value;
+        input = encodeURIComponent(input)
 
-  
-      
-        
+        const userMessageDiv = document.createElement('div');
+        userMessageDiv.className = 'user-message';
+        userMessageDiv.innerText = decodeURIComponent(input);
+        responseDiv.appendChild(userMessageDiv);
 
-           
-      
-            <script>
-         var generateBtn = document.getElementById('submit');
-      generateBtn.addEventListener('click', fetchData);
-      
- function fetchData() {
-	
-// window.open('https://ai.haawkeneuraltech.com/?prompt='+ userInput.value, "mozillaWindow", "popup");
-	 //window.open(('https://ai.haawkeneuraltech.com/?prompt='+ userInput.value), target="theFrame");
-var chat =  document.getElementById("chat");
-	 chat.setAttribute("src", ('https://hn-llama-chat.inoculatemedia.workers.dev/?prompt='+ userInput.value));
-	 
+        const loadingDiv = document.createElement('div');
+        loadingDiv.className = 'loading';
+        loadingDiv.innerHTML = `<svg width="30" height="30" viewBox="0 0 50 50"><circle cx="25" cy="25" r="20" stroke="black" stroke-width="4" fill="none" /><circle cx="25" cy="25" r="20" stroke="#3498db" stroke-width="4" fill="none" stroke-dasharray="90" stroke-dashoffset="0"><animateTransform attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="1s" repeatCount="indefinite"/></circle></svg><center class="smaller">If you recive an error than wait 1-2 minutes refresh and try again.</center>`;
+        responseDiv.appendChild(loadingDiv);
 
+        axios.get(`${apiUrl}/${uuid}?q=${encodeURIComponent(input)}`)
+          .then((response) => {
+            responseDiv.removeChild(loadingDiv);
 
+            const aiMessages = response.data[0].response.filter(message => message.role === 'system' && message.content.response);
+            if (aiMessages.length > 0) {
+              const lastAiMessage = aiMessages[aiMessages.length - 1];
+              const aiMessageDiv = document.createElement('div');
+              aiMessageDiv.className = 'ai-message';
+              aiMessageDiv.innerHTML = marked.parse(lastAiMessage.content.response);
+              responseDiv.appendChild(aiMessageDiv);
+            }
 
- }
-		  
-              </script>
-       
+            inputField.value = '';
+          })
+          .catch((error) => {
+            console.log("Error receiving response:", error);
+          });
+      }
 
+      chatForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        chat()
+      });
 
-        
+      inputField.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+          if (!event.shiftKey) {
+            event.preventDefault();
+            chat()
+          }
+        }
+      });
 
-  
-
+      if (!uuid) {
+        uuid = generateUUID();
+      }
+    </script>
       
    
     

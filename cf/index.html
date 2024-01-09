@@ -86,7 +86,7 @@
                 
 
             }
-            .iframe_hidden {
+            .iframe:not(:active) {
 		    visibility: hidden;
               margin:0px;
             background-color: default;
@@ -96,7 +96,7 @@
               z-index:-9;
 		    margins:30%;
             }
-			  .iframe_visible {
+			  .iframe:active {
 		    visibility: visible;
               margin:0px;
             background-color: default;
@@ -185,7 +185,7 @@
             </div>
           </div>
 
-         <iframe class="iframe_hidden" name="theFrame" mmargin-left="25%" margin-right="25%"></iframe>
+         <iframe class="iframe" name="theFrame" mmargin-left="25%" margin-right="25%"></iframe>
       
           </div>
       

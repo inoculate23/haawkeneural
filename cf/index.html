@@ -189,7 +189,7 @@
                 <button id="submit" type="button">Submit</button>
 		  
 		      <div id="image_div">
-			      <span class="loading loading-bars loading-md"></span>
+			      <span id="loading" class="loading loading-bars loading-md"></span>
 			      <h2>Right click to save image</h2>
 		      </div>
               </div>
@@ -221,6 +221,9 @@ var image_Result =  document.createElement("img");
 
 
 	 var image_div = document.getElementById('image_div');
+	 var loading = document.getElementById('loading');
+	loading.remove();
+	 
 	 image_div.append(image_Result)
 
  }

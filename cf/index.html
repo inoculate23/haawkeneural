@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=devide-width, initial-scale=1.0" />
     <!-- Primary Meta Tags -->
 <title>Haawke Neural Technology - GLSL Resources</title>
 <meta name="title" content="Haawke Neural Technology - Las Vegas Audio/Visual Production" />
@@ -37,7 +37,6 @@
       rel="stylesheet"
       type="text/css"
     />
-	  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.24/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -86,25 +85,13 @@
                 
 
             }
-            .iframe:not(:active) {
-		    visibility: hidden;
+            #iframe {
               margin:0px;
-            background-color: default;
+            
               position:absolute;
-              width:1024px;
-              height:1024px;
+              width:100%;
+              height:100vh;
               z-index:-9;
-		    margins:30%;
-            }
-			  .iframe:active {
-		    visibility: visible;
-              margin:0px;
-            background-color: default;
-              position:absolute;
-              width:1024px;
-              height:1024px;
-              z-index:-9;
-		    margins:30%;
             }
             #logo {
               margin-left:30%;
@@ -153,18 +140,7 @@
             height:100vh;
             z-index:9;
             }
-			#img_div {
-					    margin-left:40%;
-				margin-right: 20%;
-			}
-				
-          .img_result {
-		    padding:15px;
-		    margin-left:10%;
-		    border-width:4px;
-		    border-radius:12px;
-		    border-color: warning;
-	    }
+            
 		</style>
 
 	</head>	
@@ -186,82 +162,31 @@
 
           <div class="hero min-h-screen bg-base-200">
             <div class="hero-content flex-col lg:flex-row">
-              <img id="sd_image" src="./images/ufo.png" class="max-w-sm rounded-lg shadow-2xl" />
+              <img src="./images/ufo.png" class="max-w-sm rounded-lg shadow-2xl" />
               <div>
                 <h1 class="text-5xl font-bold">Stable Diffusion</h1>
                 <p class="py-6">Stable diffusion text-to-image AI is a powerful technology that generates realistic images from textual descriptions. It uses advanced algorithms to bridge the gap between language and visual understanding, enabling creative applications in design, art, and more. </p>
-
-		      <input id="userInput" type="text" placeholder="Type something..." class="input input-bordered warning input-md w-full max-w-xs" />
-
-                <button id="submit" type="button">Submit</button>
-		 
-		      <div id="image_div">
-			      
-					<img id="img_res" display="none">Right Click to save </img>
-				
-			     
-		      </div>
+                <input type="text"  class="btn btn-primary" placeholder="Type something..." id="userInput"></input>
+                <button id="submit" type="button" onclick="fetch">Submit</button>
               </div>
             </div>
           </div>
 
-   
+        
       
           </div>
       
-            <div class="carousel rounded-box">
-
-  <div class="carousel-item">
-    <img src="./images/1.png" width="300px" alt="Burger" />
-  </div> 
-  <div class="carousel-item">
-    <img src="./images/2.png" width="300px" alt="Burger" />
-  </div> 
-  <div class="carousel-item">
-    <img src="./images/3.png" width="300px" alt="Burger" />
-  </div> 
-  <div class="carousel-item">
-    <img src="./images/4.png"width="300px" alt="Burger" />
-  </div> 
-  <div class="carousel-item">
-    <img src="./images/5.jpg" width="300px" alt="Burger" />
-	    <div class="carousel-item">
-    <img src="./images/6.jpeg" width="300px" alt="Burger" />
-  </div>
-  </div>
-</div>
-
+            
            
       
             <script>
          var generateBtn = document.getElementById('submit');
       generateBtn.addEventListener('click', fetchData);
       
- function fetchData() {
-	
-// window.open('https://ai.haawkeneuraltech.com/?prompt='+ userInput.value, "mozillaWindow", "popup");
-	 //window.open(('https://ai.haawkeneuraltech.com/?prompt='+ userInput.value), target="theFrame");
-var image_Result =  document.getElementById("img_res");
-	 image_Result.setAttribute("src", ('https://ai.haawkeneuraltech.com/?prompt='+ userInput.value));
-	  image_Result.setAttribute("display", "block");
-	 image_Result.setAttribute("width", "700px");
-	 image_Result.setAttribute("height", "700px");
-	 image_Result.setAttribute("margin-left", "75%");
-	 image_Result.setAttribute("margin-right", "5%");
-	  image_Result.setAttribute("class", "img_result");
-	  image_Result.setAttribute("class", "img_result");
-
-
-
-	 var image_div = document.getElementById('image_div');
-	 var loading = document.getElementById('loading');
-	loading.remove();
-	
-	 h2.innerHTML = "Right click to save";
-	 image_div.append(image_Result)
-
- }
-		  
+      function fetchData() {
+        window.open('https://ai2.sd.haawkeneuraltech.com/?prompt='+ userInput.value, "mozillaWindow", "popup");
+     
+      }
               </script>
        
 
@@ -275,17 +200,12 @@ var image_Result =  document.getElementById("img_res");
     
 
       <script>
-   //       let button = document.getElementById('submit');
-   //   button.onclick = function changeText2() {
-
-	           
-//  var userInput = document.getElementById('userInput');
-    
- //   console.log(userInput).value;
-//     
-   //       const url = ('https://ai2.sd.haawkeneuraltech.com/?prompt=' + userInput.value );
-// url.href = ('https://ai2.sd.haawkeneuraltech.com/?prompt=' + userInput.value);
- // window.location = ('https://ai2.sd.haawkeneuraltech.com/?prompt=' + userInput.value);
+          let button = document.getElementById('submit');
+      button.onclick = function changeText2() {
+     
+          const url = ('https://ai2.sd.haawkeneuraltech.com/?prompt=' + userInput );
+ // url.href = "https://ai2.sd.haawkeneuraltech.com/?prompt=" + userInput;
+  window.location = "https://ai2.sd.haawkeneuraltech.com/?prompt=" + userInput;
 
 
   
@@ -298,20 +218,23 @@ var image_Result =  document.getElementById("img_res");
     
   
   
-
-  //  var span = document.createElement('span');
-    //span.setAttribute('class', "loading" + "loading-ring" + "loading-lg");
+     
+  var userInput = document.getElementById('userInput').value.trim();
+    
+    console.log(userInput);
+    var span = document.createElement('span');
+    span.setAttribute('class', "loading" + "loading-ring" + "loading-lg");
   
   
   
   
   
   
-//  const data = JSON.stringify({
-  //  "Access-Control-Allow-Origin": "*",
-  // "Access-Control-Allow-Methods": "GET,HEAD,POST,OPTIONS",
-   // "Access-Control-Max-Age": "86400"
- // });
+  const data = JSON.stringify({
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET,HEAD,POST,OPTIONS",
+    "Access-Control-Max-Age": "86400"
+  });
   //const inputs = JSON.stringify({
      // "key": "inputs",
      //   "prompt": "ultra realistic close up portrait ((beautiful pale punk female with heavy black eyeliner and a big bossom))",
@@ -336,31 +259,31 @@ var image_Result =  document.getElementById("img_res");
   
   //const url = ('https://ai.haawkeneuraltech.com/?authorization=Bearer mhi_Rx_wSEZn5hbxNNFTBgaEhBkKMZCQo&prompt=' + inputVal );
   
-//  const xhr = new XMLHttpRequest();
-//  xhr.withCredentials = false;
+  const xhr = new XMLHttpRequest();
+  xhr.withCredentials = false;
   
-//  xhr.addEventListener("readystatechange", function () {
-///  if (this.readyState === this.DONE) {
-//  console.log(this.responseText);
-//  }
+  xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === this.DONE) {
+  console.log(this.responseText);
+  }
   
-//  });
+  });
   
   // xhr.open("GET", 'https://doodapi.com/api/search/videos?key=process.env.API_KEY&search_term=' + inputVal  );
-//  xhr.open("POST", url  );
+  xhr.open("POST", url  );
   
   
- // xhr.send(data);
+  xhr.send(data);
   
-  //  }
-  
-  
+    }
   
   
- // var newImage = document.createElement('img')
-	//  newImage.setAttribute('src', response.data);
+  
+  
+  //var newImage = document.createElement('img')
+//  newImage.setAttribute('src', response.data);
  // document.body.remove(span)
- //document.body.append(newImage);
+  //document.body.append(newImage);
         </script>
    
   
@@ -485,7 +408,27 @@ var image_Result =  document.getElementById("img_res");
       </nav>
     </footer>
 
-
+    <body>
+      <!-- ... -->
+    
+      <div class="hidden" id="gated-content">
+        <p>
+          You're seeing this content because you're currently
+          <strong>logged in</strong>.
+        </p>
+        <label>
+          Access token:
+          <pre id="ipt-access-token"></pre>
+        </label>
+        <label>
+          User profile:
+          <pre id="ipt-user-profile"></pre>
+        </label>
+      </div>
+      
+      <!-- .. existing script tags .. -->
+    </body>
+    
 
 	</body>
 </html>

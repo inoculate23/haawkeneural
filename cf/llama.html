@@ -194,7 +194,7 @@
                     bubble_user.innerTEXT(data.messages.role.user.content[i]');
 
                   
-                let chat_div = document.getElementsByClassName('chat-start');
+                let chat_div = document.getElementById('chat_div');
                   chat_div.append('bubble_sys');
                   chat_div.append('bubble_user');
                   
@@ -203,10 +203,10 @@
  </script>
               
  
-<div class="chat chat-start">
+<div id="chat_div" class="chat chat-start">
 
 </div>
-             <div>
+          
 		      <input id="userInput" type="text" placeholder="Type something..." class="input input-bordered warning input-md w-full max-w-xs" />
 
                 <button id="submit" type="button">Submit</button>

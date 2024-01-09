@@ -116,11 +116,18 @@
                 width: 30%;
                 float:right;
             }
-            .card {
-		    margin-left:65%;
-				margin-right:5%;
-					z-index:10;
-                position: relative;
+            #card_sd {
+		    margin-left:25%;
+				margin-right:75%;
+				
+                position: absolute;
+                z-index:10;
+            }
+			  #card_llama {
+		    margin-left:45%;
+				margin-right:65%;
+					
+                position: absolute;
                 z-index:10;
             }
             .text-xl {
@@ -161,7 +168,7 @@
      
       <main id="main">
         <div id="container">
-   <div class="card card-compact w-96 bg-base-100 shadow-xl">
+   <div id="card_sd" class="card card-compact w-96 bg-base-100 shadow-xl">
   <figure><img src="https://haawkeneuraltech.com/cf/images/ufo.png" width="320px" alt="stable diffusion" /></figure>
   <div class="card-body">
     <h2 class="card-title">Stable-Diffusion-XL-Base-1.0</h2>

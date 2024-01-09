@@ -116,16 +116,7 @@
                 width: 30%;
                 float:right;
             }
-           .join {
-		   
-		margin-right:5%;
-		   position: relative;
-                z-index:20;
-            }
-		   .card {
-		
-                z-index:20;
-            }
+          
 			
             .text-xl {
               padding:12px;
@@ -164,8 +155,9 @@
   
      
       <main id="main">
-        <div id="container">
-	<div id="card_sd" class="card join join-vertical lg:join-horizontal card-compact w-96 bg-base-100 shadow-xl">
+	      <div class="grid grid-cols-4 gap-4">
+  <div>
+	  <div id="card_sd" class="card join join-vertical lg:join-horizontal card-compact w-96 bg-base-100 shadow-xl">
   <figure><img src="https://haawkeneuraltech.com/cf/images/ufo.png" width="200px" alt="stable diffusion" /></figure>
   <div class="card-body">
     <h2 class="card-title">Stable-Diffusion-XL-Base-1.0</h2>
@@ -174,7 +166,10 @@
       <button class="btn btn-primary" href="https://haawkeneuraltech.com/cf/index.html">Try Now</button>
     </div>
   </div>
-	    	<div id="card_llama" class="card join join-vertical lg:join-horizontal card-compact w-96 bg-base-100 shadow-xl">
+	  </div>
+  <!-- ... -->
+  <div>
+	  <div id="card_llama" class="card join join-vertical lg:join-horizontal card-compact w-96 bg-base-100 shadow-xl">
   <figure><img src="https://haawkeneuraltech.com/cf/images/llama.png" width="200px" alt="chatgpt" /></figure>
   <div class="card-body">
     <h2 class="card-title">LLM ChatGPT</h2>
@@ -184,6 +179,11 @@
     </div>
   </div>
 </div>
+  </div>
+</div>
+    
+	
+	    	
             </div>  
 		</div>
       </main>

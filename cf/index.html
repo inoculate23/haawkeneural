@@ -86,7 +86,18 @@
                 
 
             }
-            .iframe {
+            .iframe_hidden {
+		    visibility: hidden;
+              margin:0px;
+            background-color: default;
+              position:absolute;
+              width:1024px;
+              height:1024px;
+              z-index:-9;
+		    margins:30%;
+            }
+			  .iframe_visible {
+		    visibility: visible;
               margin:0px;
             background-color: default;
               position:absolute;
@@ -174,7 +185,7 @@
             </div>
           </div>
 
-         <iframe class="iframe" name="theFrame" mmargin-left="25%" margin-right="25%"></iframe>
+         <iframe class="iframe_hidden" name="theFrame" mmargin-left="25%" margin-right="25%"></iframe>
       
           </div>
       
@@ -187,7 +198,7 @@
       
  function fetchData() {
 // window.open('https://ai.haawkeneuraltech.com/?prompt='+ userInput.value, "mozillaWindow", "popup");
-	  window.open('https://ai.haawkeneuraltech.com/?prompt='+ userInput.value, target="theFrame");
+	  window.open('https://ai.haawkeneuraltech.com/?prompt='+ userInput.value, target="theFrame" class="iframe_visible");
      
      }
               </script>

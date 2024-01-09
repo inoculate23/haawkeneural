@@ -221,7 +221,7 @@
       
  </script>
               
-  <div class="chat chat-start">
+  <div id="chat" class="chat chat-start">
 
 </div>
 <div class="chat chat-end">
@@ -233,7 +233,7 @@
 		 
 		      <div id="image_div">
 			      
-					<img id="img_res" display="none">Right Click to save </img>
+				
 				
 			     
 		      </div>
@@ -245,27 +245,7 @@
       
           </div>
       
-            <div class="carousel rounded-box">
-
-  <div class="carousel-item">
-    <img src="./images/1.png" width="300px" alt="Burger" />
-  </div> 
-  <div class="carousel-item">
-    <img src="./images/2.png" width="300px" alt="Burger" />
-  </div> 
-  <div class="carousel-item">
-    <img src="./images/3.png" width="300px" alt="Burger" />
-  </div> 
-  <div class="carousel-item">
-    <img src="./images/4.png"width="300px" alt="Burger" />
-  </div> 
-  <div class="carousel-item">
-    <img src="./images/5.jpg" width="300px" alt="Burger" />
-	    <div class="carousel-item">
-    <img src="./images/6.jpeg" width="300px" alt="Burger" />
-  </div>
-  </div>
-</div>
+        
 
            
       
@@ -278,23 +258,10 @@
 // window.open('https://ai.haawkeneuraltech.com/?prompt='+ userInput.value, "mozillaWindow", "popup");
 	 //window.open(('https://ai.haawkeneuraltech.com/?prompt='+ userInput.value), target="theFrame");
 var chat =  document.getElementById("chat");
-	 image_Result.setAttribute("src", ('https://ai.haawkeneuraltech.com/?prompt='+ userInput.value));
-	  image_Result.setAttribute("display", "block");
-	 image_Result.setAttribute("width", "700px");
-	 image_Result.setAttribute("height", "700px");
-	 image_Result.setAttribute("margin-left", "75%");
-	 image_Result.setAttribute("margin-right", "5%");
-	  image_Result.setAttribute("class", "img_result");
-	  image_Result.setAttribute("class", "img_result");
+	 chat.setAttribute("src", ('https://hn-llama-chat.inoculatemedia.workers.dev/?prompt='+ userInput.value));
+	 
 
 
-
-	 var image_div = document.getElementById('image_div');
-	 var loading = document.getElementById('loading');
-	loading.remove();
-	
-	 h2.innerHTML = "Right click to save";
-	 image_div.append(image_Result)
 
  }
 		  

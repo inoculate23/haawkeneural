@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>User Input Example</title>
+</head>
+<body>
+<h1>User Input Example</h1>
+
+<label for="prompt">Enter a prompt:</label>
+<input type="text" id="prompt" />
+
+<button onclick="sendPrompt()">Submit</button>
+
+<script>
+function sendPrompt() {
+const prompt = document.getElementById("prompt").value;
+
+fetch("https://worker-mute-pond-349b.inoculatemedia.workers.dev", {
+method: "POST",
+headers: {
+    'Content-Type': 'application/json',
+    Authorization: 'Bearer U0lF6H8NNf0PnMDTTZbNrraOfEnDH4UckT3I3j5p'
+  },
+body: JSON.stringify({ prompt }),
+})
+.then((response) => response.json())
+.then((data) => {
+// Handle the response from the worker
+console.log(data);
+})
+.catch((error) => {
+console.error("Error:", error);
+});
+}
+</script>
+</body>
+</html>
+

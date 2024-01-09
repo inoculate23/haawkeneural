@@ -225,7 +225,7 @@ var require_validators = __commonJS({
                 params: { missingProperty: missing0 },
                 message: "must have required property '" + missing0 + "'"
               }
-            ];
+            ];n
             return false;
           } else {
             if (data.text !== void 0) {

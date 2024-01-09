@@ -289,7 +289,7 @@
     <textarea id="input" type="text" placeholder="Send a message"></textarea>
     <button type="submit">➤</button>
   </form>
-  <a class="fa fa-github github-icon" href="https://github.com/localuser-isback/Cloudflare-AI" style="font-size:36px">
+
     <script>
 
       // --------------- CONFIG --------------- //
@@ -340,7 +340,7 @@
 
         const loadingDiv = document.createElement('div');
         loadingDiv.className = 'loading';
-        loadingDiv.innerHTML = `<svg width="30" height="30" viewBox="0 0 50 50"><circle cx="25" cy="25" r="20" stroke="black" stroke-width="4" fill="none" /><circle cx="25" cy="25" r="20" stroke="#3498db" stroke-width="4" fill="none" stroke-dasharray="90" stroke-dashoffset="0"><animateTransform attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="1s" repeatCount="indefinite"/></circle></svg><center class="smaller">If you recive an error than wait 1-2 minutes refresh and try again.</center>`;
+        loadingDiv.innerHTML = `<svg width="30" height="30" viewBox="0 0 50 50"><circle cx="25" cy="25" r="20" stroke="black" stroke-width="4" fill="none" /><circle cx="25" cy="25" r="20" stroke="#3498db" stroke-width="4" fill="none" stroke-dasharray="90" stroke-dashoffset="0"><animateTransform attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="1s" repeatCount="indefinite"/></circle></svg><center class="smaller">If you recive an error, wait 1-2 minutes refresh and try again.</center>`;
         responseDiv.appendChild(loadingDiv);
 
         axios.get(`${apiUrl}/${uuid}?q=${encodeURIComponent(input)}`)

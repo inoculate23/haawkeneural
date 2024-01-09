@@ -249,7 +249,7 @@
               const lastAiMessage = aiMessages[aiMessages.length - 1];
               const aiMessageDiv = document.createElement('div');
               aiMessageDiv.className = 'ai-message';
-              aiMessageDiv.innerHTML = marked.parse(lastAiMessage.content.response);
+              aiMessageDiv.innerHTML = parse(lastAiMessage.content.response);
               responseDiv.appendChild(aiMessageDiv);
             }
 

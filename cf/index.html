@@ -163,7 +163,11 @@
  
   
    
-       
+          <div class="subpixel-antialiased text-xl">
+           
+     Stable Diffusion - enter your prompt
+      
+          </div>
 
     <input type="text" placeholder="Type something..." id="userInput"></input>
     <button id="submit" type="button" onclick="fetch">Submit</button>
@@ -178,27 +182,28 @@
 generateBtn.addEventListener('click', fetchData);
 
 function fetchData() {
-  fetch('https://ai2.sd.haawkeneuraltech.com/?prompt='+ userInput.value)
-    .then(function (response) {
-      if (response.status !== 200) {
-        console.log(
-          'Looks like there was a problem. Status Code: ' + response.status
-        );
-        return;
-      }
-      response.json().then(function (data) {
-        console.log(data);
-        document.getElementById('resImage').value = data;
-      });
-    })
-    .catch(function (err) {
-      console.log('Fetch Error :-S', err);
-    });
+  window.open('https://ai2.sd.haawkeneuraltech.com/?prompt='+ userInput.value, "mozillaWindow", "popup");
+ // fetch('https://ai2.sd.haawkeneuraltech.com/?prompt='+userInput.value)
+  ///  .then(function (response) {
+   //   if (response.status !== 200) {
+    //    console.log(
+     //     'Looks like there was a problem. Status Code: ' + response.status
+     //   );
+     //   return;
+    //  }
+    //  response.json().then(function (data) {
+     //   console.log(data);
+      //  document.getElementById('responseImage').value = data;
+     // });
+  //  })
+   // .catch(function (err) {
+   //   console.log('Fetch Error :-S', err);
+  //  });
 }
         </script>
    
   
-<img id="resImage"> </img>
+
 
     <footer class="footer p-10 bg-base-200 text-base-content">
       <aside>

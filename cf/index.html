@@ -175,17 +175,18 @@
 
           <div class="hero min-h-screen bg-base-200">
             <div class="hero-content flex-col lg:flex-row">
-              <img src="./images/ufo.png" class="max-w-sm rounded-lg shadow-2xl" />
+              <img id="sd_image" src="./images/ufo.png" class="max-w-sm rounded-lg shadow-2xl" />
               <div>
                 <h1 class="text-5xl font-bold">Stable Diffusion</h1>
                 <p class="py-6">Stable diffusion text-to-image AI is a powerful technology that generates realistic images from textual descriptions. It uses advanced algorithms to bridge the gap between language and visual understanding, enabling creative applications in design, art, and more. </p>
                 <input type="text"  class="primary" placeholder="Type something..." id="userInput"></input>
                 <button id="submit" type="button">Submit</button>
+		      <div id="image_div"></div>
               </div>
             </div>
           </div>
 
-         <iframe class="iframe" name="theFrame" mmargin-left="25%" margin-right="25%"></iframe>
+   
       
           </div>
       
@@ -197,12 +198,22 @@
       generateBtn.addEventListener('click', fetchData);
       
  function fetchData() {
+	
 // window.open('https://ai.haawkeneuraltech.com/?prompt='+ userInput.value, "mozillaWindow", "popup");
 	 //window.open(('https://ai.haawkeneuraltech.com/?prompt='+ userInput.value), target="theFrame");
 var image_Result =  document.createElement("img");
 	 image_Result.setAttribute("src", ('https://ai.haawkeneuraltech.com/?prompt='+ userInput.value));
-	 document.body.append(image_Result)
-     }
+	 image_Result.setAttribute("width", "700px");
+	 image_Result.setAttribute("height", "700px");
+	 image_Result.setAttribute("margin-left", "75%");
+	 image_Result.setAttribute("margin-right", "5%");
+
+
+	 var image_div = document.GetElementById('image_div');
+	 image_div.append(image_Result)
+
+
+		  
               </script>
        
 

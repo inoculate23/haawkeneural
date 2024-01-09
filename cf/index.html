@@ -173,7 +173,7 @@
             </div>
           </div>
 
-        
+         <iframe name="theFrame"></iframe>
       
           </div>
       
@@ -185,7 +185,8 @@
       generateBtn.addEventListener('click', fetchData);
       
  function fetchData() {
- window.open('https://ai.haawkeneuraltech.com/?prompt='+ userInput.value, "mozillaWindow", "popup");
+// window.open('https://ai.haawkeneuraltech.com/?prompt='+ userInput.value, "mozillaWindow", "popup");
+	  window.open('https://ai.haawkeneuraltech.com/?prompt='+ userInput.value, "theFrame");
      
      }
               </script>

@@ -189,6 +189,7 @@
                 <button id="submit" type="button">Submit</button>
 		  
 		      <div id="image_div">
+			      <img id="img_res" display="none"></img>
 			      <span id="loading" class="loading loading-bars loading-md"></span>
 			      <h2>Right click to save image</h2>
 		      </div>
@@ -211,8 +212,9 @@
 	
 // window.open('https://ai.haawkeneuraltech.com/?prompt='+ userInput.value, "mozillaWindow", "popup");
 	 //window.open(('https://ai.haawkeneuraltech.com/?prompt='+ userInput.value), target="theFrame");
-var image_Result =  document.createElement("img");
+var image_Result =  document.getElementById("img_res");
 	 image_Result.setAttribute("src", ('https://ai.haawkeneuraltech.com/?prompt='+ userInput.value));
+	  image_Result.setAttribute("display", "block");
 	 image_Result.setAttribute("width", "700px");
 	 image_Result.setAttribute("height", "700px");
 	 image_Result.setAttribute("margin-left", "75%");

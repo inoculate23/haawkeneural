@@ -86,36 +86,21 @@
                 
 
             }
-            .iframe:not(:active) {
-		    visibility: hidden;
-              margin:0px;
-            background-color: default;
-              position:absolute;
-              width:1024px;
-              height:1024px;
-              z-index:-9;
-		    margins:30%;
-            }
+           
 				  #iframe {
 		    visibility: visible;
-              margin:0px;
+              margin:5%;
             background-color: default;
-              position:absolute;
-              width:60%;
+              position:relative;
+              width:90%;
               height:100vh;
               z-index: 9;
-		    margins:15;
+              border-radius: 17px;
+              overflow-y:hidden;
+              scrollbar-width: 0px;
+		  
             }
-			  .iframe:active {
-		    visibility: visible;
-              margin:0px;
-            background-color: default;
-              position:absolute;
-              width:1024px;
-              height:1024px;
-              z-index:-9;
-		    margins:30%;
-            }
+			 
             #logo {
               margin-left:30%;
             }
@@ -194,12 +179,12 @@
      
           </div>
 
-          <div class="hero min-h-screen bg-base-200">
-            <div class="hero-content flex-col lg:flex-row">
-              <img id="sd_image" src="./images/signs.png" width="300px" class="max-w-sm rounded-lg shadow-2xl" />
-              <div>
-               
-<iframe id="iframe" src="https://whisper-web-two.vercel.app/" width="50%" height="100vh"></iframe>
+          <h1 class="text-5xl font-bold">Whisper Translator</h1>
+                <p class="py-6">Whisper is a pre-trained model for automatic speech recognition (ASR) and speech translation. </p>
+             
+                <iframe id="iframe" src="https://whisper-web-two.vercel.app/" width="90%" height="100vh" scroll="no"></iframe>
+                <div>
+              
 
     <footer class="footer p-10 bg-base-200 text-base-content">
       <aside>
@@ -324,5 +309,3 @@
 
 	</body>
 </html>
-
-

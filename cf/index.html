@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=devide-width, initial-scale=1.0" />
     <!-- Primary Meta Tags -->
 <title>Haawke Neural Technology - GLSL Resources</title>
 <meta name="title" content="Haawke Neural Technology - Las Vegas Audio/Visual Production" />
@@ -42,6 +42,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/3.48.0/gradio.js"></script>
  
     
 		<style>
@@ -144,7 +145,7 @@
 
 	</head>	
 	<body>
-     
+        
           <div class="navbar bg-base-300">
             <button class="subpixel-antialiased btn btn-ghost  text-xl"  href="https://haawkeneuraltech.com/">Haawke Neural Technology</button>
           
@@ -159,47 +160,130 @@
      
           </div>
 
-
- 
-  
-   
-          <div class="subpixel-antialiased text-xl">
-           <img src="https://haawkeneuraltech.com/cf/images/sd.png" width="900px" alt="stable diffusion"></img>
-     Stable Diffusion - enter your prompt
-      
+          <div class="hero min-h-screen bg-base-200">
+            <div class="hero-content flex-col lg:flex-row">
+              <img src="./images/ufo.png" class="max-w-sm rounded-lg shadow-2xl" />
+              <div>
+                <h1 class="text-5xl font-bold">Stable Diffusion</h1>
+                <p class="py-6">Stable diffusion text-to-image AI is a powerful technology that generates realistic images from textual descriptions. It uses advanced algorithms to bridge the gap between language and visual understanding, enabling creative applications in design, art, and more. </p>
+                <input type="text"  class="btn btn-primary" placeholder="Type something..." id="userInput"></input>
+                <button id="submit" type="button" onclick="fetch">Submit</button>
+              </div>
+            </div>
           </div>
 
-    <input type="text" placeholder="Type something..." id="userInput"></input>
-    <button id="submit" type="button" onclick="fetch">Submit</button>
+        
+      
+          </div>
+      
+            
+           
+      
+            <script>
+         var generateBtn = document.getElementById('submit');
+      generateBtn.addEventListener('click', fetchData);
+      
+      function fetchData() {
+        window.open('https://ai2.sd.haawkeneuraltech.com/?prompt='+ userInput.value, "mozillaWindow", "popup");
+     
+      }
+              </script>
+       
 
-    </div>
+
+        
+
+  
 
       
-     
+   
+    
 
       <script>
-   var generateBtn = document.getElementById('submit');
-generateBtn.addEventListener('click', fetchData);
+          let button = document.getElementById('submit');
+      button.onclick = function changeText2() {
+     
+          const url = ('https://ai2.sd.haawkeneuraltech.com/?prompt=' + userInput );
+ // url.href = "https://ai2.sd.haawkeneuraltech.com/?prompt=" + userInput;
+  window.location = "https://ai2.sd.haawkeneuraltech.com/?prompt=" + userInput;
 
-function fetchData() {
-  window.open('https://ai2.sd.haawkeneuraltech.com/?prompt='+ userInput.value, "mozillaWindow", "popup");
- // fetch('https://ai2.sd.haawkeneuraltech.com/?prompt='+userInput.value)
-  ///  .then(function (response) {
-   //   if (response.status !== 200) {
-    //    console.log(
-     //     'Looks like there was a problem. Status Code: ' + response.status
-     //   );
-     //   return;
+
+  
+
+
+
+ 
+
+        
+    
+  
+  
+     
+  var userInput = document.getElementById('userInput').value.trim();
+    
+    console.log(userInput);
+    var span = document.createElement('span');
+    span.setAttribute('class', "loading" + "loading-ring" + "loading-lg");
+  
+  
+  
+  
+  
+  
+  const data = JSON.stringify({
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET,HEAD,POST,OPTIONS",
+    "Access-Control-Max-Age": "86400"
+  });
+  //const inputs = JSON.stringify({
+     // "key": "inputs",
+     //   "prompt": "ultra realistic close up portrait ((beautiful pale punk female with heavy black eyeliner and a big bossom))",
+      //  "negative_prompt": null,
+      //  "width": "1024",
+      //  "height": "1024",
+     //   "samples": "1",
+      //  "num_inference_steps": "50",
+     //  "safety_checker": "no",
+     //   "enhance_prompt": "yes",
+     //   "seed": null,
+      //  "guidance_scale": 7.5,
+      //  "multi_lingual": "no",
+      //  "panorama": "no",
+      //  "self_attention": "no",
+     //   "upscale": "",
+      //  "embeddings_model": null,
+      //  "webhook": null,
+      //  "track_id": null
     //  }
-    //  response.json().then(function (data) {
-     //   console.log(data);
-      //  document.getElementById('responseImage').value = data;
-     // });
-  //  })
-   // .catch(function (err) {
-   //   console.log('Fetch Error :-S', err);
-  //  });
-}
+  //)
+  
+  //const url = ('https://ai.haawkeneuraltech.com/?authorization=Bearer mhi_Rx_wSEZn5hbxNNFTBgaEhBkKMZCQo&prompt=' + inputVal );
+  
+  const xhr = new XMLHttpRequest();
+  xhr.withCredentials = false;
+  
+  xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === this.DONE) {
+  console.log(this.responseText);
+  }
+  
+  });
+  
+  // xhr.open("GET", 'https://doodapi.com/api/search/videos?key=process.env.API_KEY&search_term=' + inputVal  );
+  xhr.open("POST", url  );
+  
+  
+  xhr.send(data);
+  
+    }
+  
+  
+  
+  
+  //var newImage = document.createElement('img')
+//  newImage.setAttribute('src', response.data);
+ // document.body.remove(span)
+  //document.body.append(newImage);
         </script>
    
   
@@ -301,7 +385,7 @@ function fetchData() {
         <a class="link link-hover">App development</a>
         <a class="link link-hover" href="https://haawkeneuraltech.com/mapping/index.html">Video projection mapping</a>
         <a class="link link-hover">Print/web - 2d and 3d Design</a>
-        <a class="link link-hover" href="https://haawkeneuraltech.com/cf/index.html" target="_blank">Ai and machine learning models and integrations</a>
+        <a class="link link-hover">Ai and machine learning models and integrations</a>
         <a class="link link-hover">Convention and Tradeshow displays and assistance</a>
     
        

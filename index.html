@@ -155,9 +155,9 @@
               Audio/Visual Applications and Events
         
             </div>
-            <a><button class="btn btn-active btn-neutral" href="https://dev-hxoz48d37guyzgvs.us.auth0.com/u/login?state=hKFo2SBHMkNvRFBMYUZkWGxwejlTNlhFMDBlb2xheUQ0VENISKFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIDNxdnFSc3hMUHRzUGpqSGJqTnRnUEJ4V3RiQWNLb1plo2NpZNkgeVFXUlA5U1pUZHhEYmVVM3hDTk4wVFpkQ3RQUDRPYnA" >Login</button></a>
-            <button class="btn btn-active btn-primary">Register</button>
-     
+		   <button id="btn-login" class="btn btn-active btn-neutral" disabled="true" onclick="login()">Log in</button>
+    <button id="btn-logout" disabled="true" class="btn btn-active btn-primary" onclick="logout()">Log out</button>
+         
           </div>
 
 
@@ -326,5 +326,7 @@
       </nav>
     </footer>
 <script src="./sketch.js"></script>
-	</body>
+  <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
+  <script src="js/app.js"></script>
+</body>
 </html>

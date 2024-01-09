@@ -1,0 +1,283 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Primary Meta Tags -->
+<title>Haawke Neural Technology - GLSL Resources</title>
+<meta name="title" content="Haawke Neural Technology - Las Vegas Audio/Visual Production" />
+<meta name="description" content="Providing Las Vegas locals and visitors outstanding visual presentations for tradeshows, conventions, concerts, and events. Ai and machine learning applied to the arts. Let us make you look great." />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://haawkeneuraltech.com/" />
+<meta property="og:title" content="Haawke Neural Technology - Las Vegas Audio/Visual Production" />
+<meta property="og:description" content="Providing Las Vegas locals and visitors outstanding visual presentations for tradeshows, conventions, concerts, and events. Ai and machine learning applied to the arts. Let us make you look great." />
+<meta property="og:image" content="https://haawkeneuraltech.com/logo_tag.png" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="https://haawkeneuraltech.com/" />
+<meta property="twitter:title" content="Haawke Neural Technology - Las Vegas Audio/Visual Production" />
+<meta property="twitter:description" content="Providing Las Vegas locals and visitors outstanding visual presentations for tradeshows, conventions, concerts, and events. Ai and machine learning applied to the arts. Let us make you look great." />
+<meta property="twitter:image" content="https://haawkeneuraltech.com/logo_tag.png" />
+
+<!-- Meta Tags Generated with https://metatags.io -->
+
+ <!-- Favicon -->
+ <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+ <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+ <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+
+ 
+
+ 
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.6.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+	  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.24/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/3.48.0/gradio.js"></script>
+ 
+    
+		<style>
+			html, body {
+				text-align: center;
+                font-family: 'Josefin Sans', sans-serif;
+              
+				color:white;
+        margin:0;
+       
+			}
+			text, h3, h2 {
+                font-family: 'Josefin Sans', sans-serif;
+				color:white;
+			}
+            .btn { 
+               margin: 5;
+            }
+            #observablehq-svg-a1463b06 {
+                box-shadow: rgba(64, 12, 119, 0.16) 0px 1px 4px;
+            }
+            .controls {
+             
+              margin-left: 2%;
+              margin-right: 2%;
+              position: relative;
+            }
+            .svg {
+            
+               
+                height:40%;
+                width:100%;
+
+            }
+            h1 {
+                font-family: 'Josefin Sans', sans-serif;
+                font-size: 30px;
+                color:white;
+                z-index: 10;
+                
+
+            }
+            #iframe {
+              margin:0px;
+            
+              position:absolute;
+              width:100%;
+              height:100vh;
+              z-index:-9;
+            }
+            #logo {
+              margin-left:30%;
+            }
+    
+            #container {
+              width: 100%;
+              height: 100%;
+              margin:0;
+              z-index:0;
+              position: absolute;
+          
+            }
+            .footer {
+              position:absolute;
+              z-index:10;
+              margin-bottom:0px;
+              margin-top:80%;
+            }
+            .mockup-code {
+                width: 30%;
+                float:right;
+            }
+            .card {
+                position: relative;
+                z-index:5;
+            }
+            .text-xl {
+              padding:12px;
+              padding-right: 35px;
+              z-index:10;
+            }
+            .mockup-code  {
+              padding:20px;
+              z-index:10;
+            }
+            .p5Canvas {
+              position:absolute;
+              z-index:0;
+            }
+            #gradio-app {
+                margin:0px;
+            
+            position:absolute;
+            width:100%;
+            height:100vh;
+            z-index:9;
+            }
+            
+		</style>
+
+	</head>	
+	<body>
+<button id="download" onclick"save()"></button>
+            
+           
+      
+            <script>
+         var generateBtn = document.getElementById('submit');
+      generateBtn.addEventListener('click', fetchData);
+      
+ function fetchData() {
+// window.open('https://ai.haawkeneuraltech.com/?prompt='+ userInput.value, "mozillaWindow", "popup");
+	  window.open('https://ai.haawkeneuraltech.com/?prompt='+ userInput.value, "theFrame");
+     
+     }
+              </script>
+       
+<script> function save() {
+  const saveImage = (downloadUrl: string) => {
+    const downloadImage = document.createElement("a");
+    document.body.appendChild(downloadImage);
+    downloadImage.setAttribute("download", "image");
+    downloadImage.href = downloadUrl;
+    downloadImage.click();
+    downloadImage.remove();
+};
+
+saveImage(imageElement)
+}
+
+        
+
+  
+
+      
+   
+    
+
+      <script>
+   //       let button = document.getElementById('submit');
+   //   button.onclick = function changeText2() {
+
+	           
+//  var userInput = document.getElementById('userInput');
+    
+ //   console.log(userInput).value;
+//     
+   //       const url = ('https://ai2.sd.haawkeneuraltech.com/?prompt=' + userInput.value );
+// url.href = ('https://ai2.sd.haawkeneuraltech.com/?prompt=' + userInput.value);
+ // window.location = ('https://ai2.sd.haawkeneuraltech.com/?prompt=' + userInput.value);
+
+
+  
+
+
+
+ 
+
+        
+    
+  
+  
+
+  //  var span = document.createElement('span');
+    //span.setAttribute('class', "loading" + "loading-ring" + "loading-lg");
+  
+  
+  
+  
+  
+  
+//  const data = JSON.stringify({
+  //  "Access-Control-Allow-Origin": "*",
+  // "Access-Control-Allow-Methods": "GET,HEAD,POST,OPTIONS",
+   // "Access-Control-Max-Age": "86400"
+ // });
+  //const inputs = JSON.stringify({
+     // "key": "inputs",
+     //   "prompt": "ultra realistic close up portrait ((beautiful pale punk female with heavy black eyeliner and a big bossom))",
+      //  "negative_prompt": null,
+      //  "width": "1024",
+      //  "height": "1024",
+     //   "samples": "1",
+      //  "num_inference_steps": "50",
+     //  "safety_checker": "no",
+     //   "enhance_prompt": "yes",
+     //   "seed": null,
+      //  "guidance_scale": 7.5,
+      //  "multi_lingual": "no",
+      //  "panorama": "no",
+      //  "self_attention": "no",
+     //   "upscale": "",
+      //  "embeddings_model": null,
+      //  "webhook": null,
+      //  "track_id": null
+    //  }
+  //)
+  
+  //const url = ('https://ai.haawkeneuraltech.com/?authorization=Bearer mhi_Rx_wSEZn5hbxNNFTBgaEhBkKMZCQo&prompt=' + inputVal );
+  
+//  const xhr = new XMLHttpRequest();
+//  xhr.withCredentials = false;
+  
+//  xhr.addEventListener("readystatechange", function () {
+///  if (this.readyState === this.DONE) {
+//  console.log(this.responseText);
+//  }
+  
+//  });
+  
+  // xhr.open("GET", 'https://doodapi.com/api/search/videos?key=process.env.API_KEY&search_term=' + inputVal  );
+//  xhr.open("POST", url  );
+  
+  
+ // xhr.send(data);
+  
+  //  }
+  
+  
+  
+  
+ // var newImage = document.createElement('img')
+	//  newImage.setAttribute('src', response.data);
+ // document.body.remove(span)
+ //document.body.append(newImage);
+        </script>
+   
+  
+
+
+
+
+	</body>
+</html>
+
+
+

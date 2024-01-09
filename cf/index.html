@@ -185,7 +185,14 @@
       generateBtn.addEventListener('click', fetchData);
       
  function fetchData() {
- window.open('https://ai.haawkeneuraltech.com/?prompt='+ userInput.value, "mozillaWindow", "popup");
+
+	 const options = {method: 'POST'};
+
+fetch('https://ai.haawkeneuraltech.com/?prompt='+ userInput.value, options)
+  .then(response => response.json())
+  .then(response => console.log(response))
+  .catch(err => console.error(err));
+// window.open('https://ai.haawkeneuraltech.com/?prompt='+ userInput.value, "mozillaWindow", "popup");
      
      }
               </script>

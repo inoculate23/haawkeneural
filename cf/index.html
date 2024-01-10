@@ -197,7 +197,7 @@
 		 
 		      <div id="image_div">
 			      
-					<img id="img_res" display="none">Right Click to save </img>
+					
 				
 			     
 		      </div>
@@ -241,8 +241,8 @@
 	
 // window.open('https://ai.haawkeneuraltech.com/?prompt='+ userInput.value, "mozillaWindow", "popup");
 	 //window.open(('https://ai.haawkeneuraltech.com/?prompt='+ userInput.value), target="theFrame");
-var image_Result =  document.getElementById("img_res");
-	 image_Result.setAttribute("src", ('https://ai.haawkeneuraltech.com/?prompt='+ userInput.value));
+var image_Result =  document.createElement("img");
+	 image_Result.setAttribute("src", ("https://ai2.haawkeneuraltech.com/?prompt='+ userInput.value));
 	  image_Result.setAttribute("display", "block");
 	 image_Result.setAttribute("width", "700px");
 	 image_Result.setAttribute("height", "700px");
@@ -253,11 +253,8 @@ var image_Result =  document.getElementById("img_res");
 
 
 
-	// var image_div = document.getElementById('image_div');
-	
-	
-;
-	 //image_div.append(image_Result)
+	 var image_div = document.getElementById('image_div');
+	 image_div.append(image_Result);
 
  }
 		  

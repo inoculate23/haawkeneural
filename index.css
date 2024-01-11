@@ -52,7 +52,7 @@
               position:relative;
               width:80%;
               height:100vh;
-              z-index:1;
+              z-index: 3;
             }
             #logo {
               margin-left:30%;

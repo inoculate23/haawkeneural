@@ -39,34 +39,23 @@
 
             }
 		#card_whisper {
-			margin-right: 0%;
-			margin-left: 72%;
-      margin-top: 5%;
+			margin-right: 2%;
+			margin-left: 70%;
+      margin-top: 10%;
       margin-bottom: 55%;
 			z-index:90;
 			position:absolute;
     }
             #iframe {
-              margin-top:160px;
+              margin-top:40px;
             
               position:relative;
-              width:80%;
-              height:100vh;
-              z-index: 3;
+              width:70%;
+              height:70vh;
+              z-index:-39;
             }
             #logo {
               margin-left:30%;
-            }
-    
-            .container {
-              width: 67%;
-              height: 40%;
-              margin-top:-12%;
-              margin-bottom: 75%;
-              margin-left: 2%;
-              z-index:3;
-              position: absolute;
-          
             }
             .footer {
               position:absolute;
@@ -74,6 +63,24 @@
               margin-bottom:0px;
               margin-top:80%;
             }
+            .container {
+              width: 50%;
+              height: 50%;
+              margin-top:2%;
+              margin-bottom: 75%;
+              margin-left: 10%;
+              margin-right: 2%;
+              z-index:-30;
+              position: absolute;
+          
+            }
+            .navbar {
+              z-index:100;
+            }
+            .dropdown {
+              z-index:100;
+            }
+        
             .mockup-code {
                 width: 30%;
                 float:right;
@@ -96,10 +103,10 @@
             }
             .p5Canvas {
               position:absolute;
-		    margin-top:0px;
+		    margin-top:150px;
 		    width:100%;
-		    height:100vh;
-              z-index:0;
+		    height:50vh;
+              z-index:-50;
             }
           
 		.row {

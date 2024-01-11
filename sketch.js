@@ -117,7 +117,7 @@ function draw() {
   
     Logo.updatePixels();
     // display manpulated image
-  image(Logo, 0, 0,100,100);
+  image(Logo, 0, 0,150,150);
 
 
   }

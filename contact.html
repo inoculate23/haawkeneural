@@ -34,8 +34,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
 		
-<head>
-  <script src="https://www.google.com/recaptcha/enterprise.js?render=6Ldqqk0pAAAAACLpZgYxODQA59ZZs_YsTkMKXuMW"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 		<style>
 			html, body {
 				text-align: center;
@@ -90,7 +89,7 @@
     
             #container {
               width: 70%;
-              height: 90%;
+              height: 124%;
               margin-left:20%;
               z-index:0;
               margin-right:20%;
@@ -99,15 +98,15 @@
             }
          
             #contact {
-                width: 95%;
-               height:100%;
+                width: 100%;
+               height:105%;
                 z-index:10;
               margin:0;
                 position:relative;
                 background-image:url("./contact.png");
                 background-color:antiquewhite;
                
-                padding:10px;
+                padding:0px;
                 z-index:10;
                 border-radius: 12px;
             }
@@ -185,6 +184,9 @@ input[type="submit"] {
 }
 #to_email {
 display: none;
+}
+#spacer {
+  height:48px;
 }
 		</style>
 
@@ -268,7 +270,7 @@ display: none;
           <form action="?" method="POST">
             <div class="g-recaptcha" data-sitekey="AIzaSyD1_8rP8g9nBYCvQaI3UAJnNqR1Srhzllo"></div>
             <br/>
-        
+
           </form>
         </div>
         </form>
@@ -304,8 +306,8 @@ display: none;
      
               </div>
 
- </div>
-      
+
+      <div id="spacer"></div>
      
 
       

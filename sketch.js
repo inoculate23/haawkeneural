@@ -14,7 +14,7 @@ function preload() {
 }
 function setup() {
  
-  createCanvas(1920, 1080);
+  createCanvas(1920, 800);
 
   frameRate(60);
   background(0,0,0,0);
@@ -86,7 +86,7 @@ function draw() {
 
  
     // Option #1: 2D Noise
-    let y = map(noise(xoff, yoff), 0.0020,0.175, 900, 790);
+    let y = map(noise(xoff, yoff), 0.0020,0.175, 870, 780);
 
 
     // Set the vertex
@@ -117,7 +117,7 @@ function draw() {
   
     Logo.updatePixels();
     // display manpulated image
-  image(Logo, 0, 0);
+  image(Logo, 0, 0,200,200);
 
 
   }

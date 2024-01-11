@@ -1,29 +1,20 @@
 module.exports = {
-    daisyui: {
-      themes: [
-        {
-          mytheme: {
-          
- "primary": "#4e00ff",
-          
- "secondary": "#00ab8a",
-          
- "accent": "#00c9c0",
-          
- "neutral": "#9ca3af",
-          
- "base-100": "#1f2937",
-          
- "info": "#00afed",
-          
- "success": "#00b186",
-          
- "warning": "#ffa916",
-          
- "error": "#ff427d",
-          },
-        },
-      ],
-    },
-    plugins: [require("@tailwindcss/typography"), require("daisyui")],
-  }
+
+  content: [
+    './your-files/**/*.{html,js}',
+  ],
+
+  plugins: [require('daisyui')],
+
+  // config docs: https://daisyui.com/docs/config/
+  daisyui: {
+    themes: ["light", "dark", "dracula", "night", "dim", "cupcake","pastel", "wireframe", "nord", "retro" , "synthwave", "cyberpunk", "lofi", "business", "aqua", "forest"],
+  },
+  darkTheme: "dark",
+  base: true, // applies background color and foreground color for root element by default
+  styled: true, // include daisyUI colors and design decisions for all components
+  utils: true, // adds responsive and modifier utility classes
+  prefix: "", // prefix for daisyUI classnames (components, modifiers and responsive class names. Not colors)
+  logs: true, // Shows info about daisyUI version and used config in the console when building your CSS
+  themeRoot: ":root"
+}

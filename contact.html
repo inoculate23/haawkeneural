@@ -34,24 +34,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
 		
-    
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 		<style>
 			html, body {
 				text-align: center;
                 font-family: 'Josefin Sans', sans-serif;
-              
+              background-image:url("tiles2.svg");
+             background-repeat: repeat;
+             background-size:500px;
+             background-position:20,100;
+             background-color: rgb(130, 159, 174);
+        
+ 
 				color:white;
-        margin:0;
+      
+      
        
 			}
-      #iframe {
-              margin:0px;
-            
-              position:absolute;
-              width:100%;
-              height:100vh;
-              z-index:-9;
-            }
+    
 			text, h3, h2 {
                 font-family: 'Josefin Sans', sans-serif;
 				color:white;
@@ -88,33 +88,24 @@
             }
     
             #container {
-              width: 100%;
-              height: 100%;
-              margin:0;
+              width: 60%;
+              height: 130%;
+              margin-left:20%;
               z-index:0;
-              position: absolute;
+              margin-right:20%;
+              position: relative;
           
             }
-            #iframe {
-              margin:0px;
-            
-              position:absolute;
-              width:100%;
-              height:100vh;
-              z-index:-9;
-            }
+         
             #contact {
-                width: 65%;
-                float:right;
+                width: 100%;
+               height:93%;
                 z-index:10;
-                margin-top: 1%;
-                margin-bottom: 60%;
-                margin-right:20%;
-                margin-left:24%;
+              margin:0;
                 position:relative;
                 background-image:url("./contact.png");
                 background-color:antiquewhite;
-                opacity:.8;
+               
                 padding:10px;
                 z-index:10;
                 border-radius: 12px;
@@ -188,65 +179,96 @@ input[type="submit"] {
     padding:12px;
     padding-right: 35px;
 }
-.footer {
-              position:absolute;
-              z-index:10;
-              margin-bottom:0px;
-              margin-top:80%;
-            }
+.label-text {
+  color:antiquewhite;
+}
+#to_email {
+display: none;
+}
 		</style>
 
 	</head>	
 	<body>
         
-          <div class="navbar bg-base-300">
-            <button class="btn btn-ghost  text-xl"  href="https://haawkeneuraltech.com/">Haawke Neural Technology</button>
-            <div class="text-xl">
-           
-               Deep Machine Learning for Audio/Visual Applications and Events  
-           
-            </div>
-       
-            <a><button class="btn btn-active btn-neutral" href="https://dev-hxoz48d37guyzgvs.us.auth0.com/u/login?state=hKFo2SBHMkNvRFBMYUZkWGxwejlTNlhFMDBlb2xheUQ0VENISKFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIDNxdnFSc3hMUHRzUGpqSGJqTnRnUEJ4V3RiQWNLb1plo2NpZNkgeVFXUlA5U1pUZHhEYmVVM3hDTk4wVFpkQ3RQUDRPYnA" >Login</button></a>
-            <button class="btn btn-active btn-primary">Register</button>
+    <div class="navbar bg-base-300" data-theme="dark">
+      <button class="subpixel-antialiased btn btn-ghost  text-2xl"  href="https://haawkeneuraltech.com/"> Haawke Neural Technology</button>
+      <details class="dropdown">
+        <summary class="btn btn-xs sm:btn-sm md:btn-md btn-neutral">Ai / Machine Learning</summary>
+        <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+          <li><a href="https://haawkeneuraltech.com/cf/">Stable Diffusion</a></li>
+          <li><a href="https://haawkeneuraltech.com/cf/llama.html">ChatGPT</a></li>
+          <li><a href="https://haawkeneuraltech.com/cf/whisper.html">Whisper Transcription / Translation</a></li>
+          <li><a href="https://haawkeneuraltech.com/cf/audio.html">Open Voice</a></li>
+        </ul>
+      </details>
+      <details class="dropdown">
+        <summary class="btn btn-xs sm:btn-sm md:btn-md btn-neutral">Audio</summary>
+        <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+          <li><a>Item 1</a></li>
+          <li><a>Item 2</a></li>
+        </ul>
+      </details>
+      <details class="dropdown">
+        <summary class="btn btn-xs sm:btn-sm md:btn-md  btn-neutral">Video</summary>
+        <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+          <li><a>Item 1</a></li>
+          <li><a>Item 2</a></li>
+        </ul>
+      </details>
+      <button class="btn btn-xs sm:btn-sm md:btn-md btn-neutral">Software Dev</button>
+      <button class="btn btn-xs sm:btn-sm md:btn-md btn-neutral">Pricing</button>
+      <button class="btn btn-xs sm:btn-sm md:btn-md btn-neutral">About Us</button>
+     <a href="https://haawkeneuraltech.com/contact.html"><button class="btn btn-xs sm:btn-sm md:btn-md btn-neutral">Contact</button></a> 
+   
+    <div class="navbar-end">
      
-          </div>
+ <button id="btn-login" class="btn btn-xs sm:btn-sm md:btn-md  btn-primary"  onclick="login()">Log in</button>
+<button id="btn-logout" disabled="true" class="btn btn-xs sm:btn-sm md:btn-md btn-active btn-neutral" onclick="logout()">Log out</button>
+ 
+
+
+    </div>
+  </div>
+
 
 
  
-  
-     
-      <main id="main">
+      
     
         <div id="container"> 
-          <iframe id="iframe" src="https://haawkeneuraltech.com/mesh/mesh.html"></iframe>
+        
 
     <div id="contact">
-    <h1 class="text-xl">
-        Contact us, we'd love to discuss your project with you!
-        </h1><form id="form">
+    <h1 class="text-3xl">
+     <label class="subpixel-antialiased" data-theme="cupcake">Contact us, we'd love to discuss your project with you!
+     </label>
+        <form id="form">
           <div class="field">
-            <label for="from_name">Your Name</label>
-            <input type="text" name="from_name" id="from_name">
+            <label class="text-l bg-secondary  subpixel-antialiased" data-theme="forest"  for="Name">Your Name</label>
+            <input type="text" class="bg-neutral" data-theme="dark" name="from_name" id="from_name" placeholder="Name - Required">
           </div>
           <div class="field">
-            <label for="to_name">To</label>
-            <input type="text" name="to_name" value="info@inoculate.media" id="to_name">
+          
+            <input id="to_email" type="text" class="bg-neutral" display="none" name="to_name" data-theme="dark"  value="info@haawkeneuraltech.com" id="to_name">
           </div>
           <div class="field">
-            <label for="message">Your message</label>
-            <input type="text" name="message" id="message">
+            <label class="text-l bg-secondary  subpixel-antialiased" data-theme="forest"  for="message">Your message</label>
+            <input type="text"  class="bg-neutral" name="message" data-theme="dark" id="message" placeholder="What's on your mind?">
           </div>
           <div class="field">
-            <label for="reply_to">Email address</label>
-            <input type="text" name="reply_to" id="reply_to">
+            <label class="text-l bg-secondary  subpixel-antialiased" data-theme="forest"  for="reply_to">Your Email address</label>
+            <input type="text"  class="bg-neutral" data-theme="dark"  name="reply_to" id="reply_to" placeholder="Your email address - Required">
           </div>
            <div class="field">
-            <label for="phone">Phone #</label>
-            <input type="text" name="reply_to" id="reply_to">
+            <label class="text-l bg-secondary subpixel-antialiased" data-theme="forest"  for="phone">Your Phone #</label>
+            <input type="text"class="bg-neutral" data-theme="dark"  name="phone" id="phone" placeholder="Optional">
           </div>
-       
-          <input type="submit" class="submit_btn" id="button" value="Send Email" >Send
+          <input type="submit" class="submit_btn text-xl btn-secondary subpixel-antialiased" data-theme="retro" id="button" value="Send Email" >
+          <form action="?" method="POST">
+            <div class="g-recaptcha" data-sitekey="your_site_key"></div>
+            <br/>
+            <input type="submit" value="Submit">
+          </form>
         </div>
         </form>
         
@@ -278,9 +300,9 @@ input[type="submit"] {
             });
         });
     </script>
+     
               </div>
-      </main>
-    </div>
+
 
       
      
@@ -407,7 +429,50 @@ input[type="submit"] {
         <a class="link link-hover" href="https:inoculate.media/privacy.html">Privacy policy</a>
     
       </nav>
+      <form id="subscription">
+<style>
+  .field label {
+  display: block;
+  width:250px;
+  font-size: 18px;
+  color: #ffffff;
+}
+</style>
+        <div class="field">
+          <label class="label-text" for="message">Subscribe to our newsletter</label>
+            <input  name="message" id="message" type="text" placeholder="Enter your email address" us class="input input-bordered join-item" /> 
+         
+        </div>
+        
+      
+        <input type="submit" id="subscribe_btn" value="Subscribe" >
+      </form>
     </footer>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+      
+      <script type="text/javascript">emailjs.init('YTs0Dxgmc1hlfjt1-')</script>
 
+<script>
+  const subscribe_btn = document.getElementById('subscribe_btn');
+
+document.getElementById('subscription')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   subscribe_btn.value = 'Sending...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_h3pygoq';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      subscribe_btn.value = 'Send Email';
+      alert('Subscribed!');
+    }, (err) => {
+     subscribe_btn.value = 'Send Email';
+      alert(JSON.stringify(err));
+    });
+});
+</script>
 	</body>
 </html>

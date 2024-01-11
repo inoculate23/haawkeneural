@@ -110,14 +110,14 @@ function draw() {
       // go through all pixels of image, H, S, L, and A
       let index = (x + y * width) * 4;
       // play with rgb values
-        Logo.pixels[index + 200,100,250] = mouseY; // red
+        Logo.pixels[index + 100,250] = mouseY; // red
         Logo.pixels[index + 100] = mouseX; // blue
       }
     }
   
     Logo.updatePixels();
     // display manpulated image
-  image(Logo, 0, 0,200,200);
+  image(Logo, 0, 0,150,150);
 
 
   }

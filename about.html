@@ -23,7 +23,8 @@
 <meta property="twitter:image" content="https://haawkeneuraltech.com/logo_tag.png" />
 
 <!-- Meta Tags Generated with https://metatags.io -->
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
 <link
       href="./fonts.css"
       rel="stylesheet"
@@ -42,7 +43,16 @@
 		<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
        
    
-  
+  <style>
+	  html, body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+}
+
+  </style>
 
 	</head>	
 	<body>
@@ -334,5 +344,125 @@ Las Vegas, NV 89106<br>
   
     </nav>
   </footer>
+		<script>
+			// The Prime Spiral (aka Ulam Spiral)
+// The Coding Train / Daniel Shiffman
+// https://thecodingtrain.com/CodingChallenges/167-prime-spiral.html
+// https://youtu.be/a35KWEjRvc0
+
+// Modified by Craig Ellenwood / https://Inoculate.Media
+// https://inoculate.media
+// Prime Spiral: https://editor.p5js.org/codingtrain/sketches/0Ud-XsaYb
+// Number Spiral: https://editor.p5js.org/codingtrain/sketches/Zs65bV-Al
+// Prime vs Random Spiral: https://editor.p5js.org/codingtrain/sketches/3np1hBlXD
+// Shapes and Color: https://editor.p5js.org/codingtrain/sketches/mCvvSKpZ5
+// Prime Spiral 3D: https://editor.p5js.org/codingtrain/sketches/-eX078HZ5
+
+// State of spiral
+let x, y;
+let px, py;
+let step = 1;
+let state = 0;
+let numSteps = 1;
+let turnCounter = 3;
+let t = 0;
+
+
+
+// Scale / resolution
+let stepSize = 5;
+let totalSteps;
+
+// Function to test if number is prime
+function isPrime(value) {
+  if (value == 1) return false;
+  for (let i = 2; i <= sqrt(value); i++) {
+    if (value % i == 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function setup() {
+  createCanvas(windowWidth, windowHeight, WEBGL);
+  frameRate(60);
+  // set up spiral
+  const cols = width / stepSize;
+  const rows = height / stepSize;
+  totalSteps = cols * rows;
+  x = width / 2;
+  y = height / 2;
+  z = x * y / 2;
+  px = x;
+  py = y;
+  pz = z;
+
+ 
+  background(0);
+  
+  colorMode = HSL;
+    fill(random(255),random(255), random(255) , .3);
+    stroke(random(255),random(255),random(255), .3);
+  smooth(8)
+  
+}
+
+function draw() {
+  
+  // If prime draw circle
+  if (isPrime(step)) {
+   
+    circle(x, y, stepSize * 0.5);
+  }
+  
+  // Connect current to previous with a line
+  line(x, y, px, py);
+  px = x;
+  py = y;
+  pz = x + sin(y-2);
+
+  // Move according to state
+  switch (state) {
+    case 0:
+      x += stepSize;
+      break;
+    case 1:
+      y -= stepSize;
+      break;
+    case 2:
+      x -= stepSize;
+      break;
+    case 3:
+      y += stepSize;
+      break;
+      case 4:
+      z += stepSize;
+      break;
+  }
+  
+  // Change state
+  if (step % numSteps == 0) {
+    state = (state + 1) % 4;
+    turnCounter++;
+    if (turnCounter % 2 == 0) {
+      numSteps++;
+       fill(random(255) -23 ,random(255) -44 / 5, random(255) -6 / 7 , 2.6);
+        stroke(random(255),random(255),random(255), 5.9);
+    t = .002;
+    }
+  }
+  step++;
+  rotateX(0.003);
+  // Are we done?
+  if (step > totalSteps) {
+    noLoop();
+    fill(255 ,random(255) / 5, random(255) / 7 , 44.6);
+    t = .12;
+  }
+
+}
+
+		</script>
 </body>
 </html>

@@ -45,7 +45,7 @@
   
 
 	</head>	
-	<body>
+	<body class-"ghost">
          <div class="navbar bg-base-300" data-theme="dark">
      <a href="https://haawkeneuraltech.com"> <button class="subpixel-antialiased btn btn-ghost  text-l"> Haawke Neural Technology</button></a>
       <details class="dropdown">
@@ -85,23 +85,11 @@
 
     </div>
             <section id="mysection">
-		 <style>
 
-a {
-	 color: hotpink;
-
-	  }
-
-
-
-/* mouse over link */
-a:hover {
-  color: red;
-}
 	    </style>
 		    
 
-
+<main id="main>
   <div id="content">
     <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
         <li>
@@ -111,7 +99,7 @@ a:hover {
           <div class="timeline-start md:text-end mb-10">
             <time class="font-mono italic">1991</time>
             <div class="text-lg font-black">3d Audio blows minds</div>
-		  We introduced our spatial audio system in San Francisco, California on <a href="https://haawkeneuraltech.com/images/toontown.png" target="_blank">New Years Eve at The Design Center, at Toontown.</a> We blew some minds.</div>
+		  We introduced our spatial audio system in San Francisco, California on <a class="secondary" href="https://haawkeneuraltech.com/images/toontown.png" target="_blank">New Years Eve at The Design Center, at Toontown.</a> We blew some minds.</div>
            
           </div>
 		     </div>
@@ -138,7 +126,7 @@ a:hover {
           <div class="timeline-middle mb-10">
             <time class="font-mono italic">August 1992 </time>
             <div class="text-lg font-black">Burning Man</div>
-		 We founded the music element of Burning Man. <a href="https://journal.burningman.org/2021/11/black-rock-city/tales-from-the-playa/burning-mans-first-sound-camp/" target="_blank">We were the first sound camp and DJ's. We still burn.</a>
+		 We founded the music element of Burning Man. <a class="secondary" href="https://journal.burningman.org/2021/11/black-rock-city/tales-from-the-playa/burning-mans-first-sound-camp/" target="_blank">We were the first sound camp and DJ's. We still burn.</a>
 	
        
          </div>
@@ -155,7 +143,7 @@ a:hover {
           <div class="timeline-end mb-10">
             <time class="font-mono italic">1993</time>
             <div class="text-lg font-black">India</div>
-		    Lived in India for 6 months making music with <a ahref="https://www.youtube.com/watch?v=_gNK7PHNQhU" target="_blank">trancemasters from around the world.</a></div>
+		    Lived in India for 6 months making music with <a class="secondary" href="https://www.youtube.com/watch?v=_gNK7PHNQhU" target="_blank">trancemasters from around the world.</a></div>
       </div>
 		     </div>
         
@@ -171,7 +159,7 @@ a:hover {
           <div class="timeline-end mb-10">
             <time class="font-mono italic">1993</time>
             <div class="text-lg font-black">12 years in paradise</div>
-		    Owned and operated <a href="https://www.alamy.com/portfolio/craigellenwoodimages" target="_blank">Craig Ellenwood Photography</a> in Honolulu, Hawaii from 2003-2015
+		    Owned and operated <a class="secondary" href="https://www.alamy.com/portfolio/craigellenwoodimages" target="_blank">Craig Ellenwood Photography</a> in Honolulu, Hawaii from 2003-2015
           </div>
 		   </div>
         </li>
@@ -183,7 +171,7 @@ a:hover {
           <div class="timeline-end mb-10">
             <time class="font-mono italic">2015</time>
             <div class="text-lg font-black">Inoculate Media</div>
-		Awarded a provincial grant and launched <a href="https://inoculte.media" target="_blank">Inoculate.Media</a> in Vancouver, British Columbia, Canada. <br>
+		Awarded a provincial grant and launched <a class="secondary"  href="https://inoculte.media" target="_blank">Inoculate.Media</a> in Vancouver, British Columbia, Canada. <br>
 		 Built video processing pipeline, transcoders, and started learning about ai and machine learning.
           </div>
         </div>
@@ -216,9 +204,9 @@ a:hover {
           <div class="timeline-middle mb-10">
             <time class="font-mono italic">2023</time>
             <div class="text-lg font-black">Haawke Neural Technology</div>
-          Launched <a href="https://haawkeneuraltech.com/" target="_blank">Haawke Neural Technology</a> to bring ai and machine learning applications for events and performance to the world on a grand scale.<br>
-		  <a href="https://inoculte.media">Released a music cd that in part was reated with ai.</a><br>
-			    Haawke Neural Technology and Inoculate.Media are supported with Cloud TPUs from Google's TPU Research Cloud (TRC) and Google's generous donation of these resources.
+          Launched <a class="secondary" href="https://haawkeneuraltech.com/" target="_blank">Haawke Neural Technology</a> to bring ai and machine learning applications for events and performance to the world on a grand scale.<br>
+		  <a class="secondary" href="https://inoculte.media">Released a music cd that in part was reated with ai.</a><br>
+			    Haawke Neural Technology and Inoculate.Media are supported with Cloud TPUs from <a class="secondary" href="https://sites.research.google/trc/">Google's TPU Research Cloud (TRC)</a> and Google's generous donation of these resources.
           <hr>
 			    </div>
 		     </div>
@@ -347,5 +335,89 @@ Las Vegas, NV 89106<br>
   
     </nav>
   </footer>
+		<script>
+			let shiny;
+let fontBold;
+
+
+function setup() {
+  createCanvas(windowWidth, windowHeight, WEBGL);
+  frameRate(60);
+
+
+  smooth();
+   img = loadImage('4.jpg');
+   img2 = loadImage('logo.webp');
+  img3=loadImage('hawkl.png');
+
+
+}
+function draw() {
+  background(0);
+
+
+
+  
+
+  specularMaterial(150, 230, 250);
+   
+
+     texture(img3);    
+
+  
+  let locX = mouseX - height / 2;
+  let locY = mouseY - width / 2;
+
+
+  pointLight(255, 33, 10, locX, locY, 200);
+  rotateX(frameCount * 0.008);
+  rotateY(frameCount * 0.002);
+    push();
+  rotateZ(frameCount * 0.005);
+  rotateX(frameCount * 0.01);
+  rotateY(frameCount * 0.003);
+
+  push()
+  // Set the material
+  
+ specularMaterial(250, 200, 200, 200);
+
+ ambientLight(10, 0,9)
+   texture(img3);
+   pointLight(25, 233, 210);
+    box(204, 200);
+ 
+  smooth()
+   pop()
+
+  pop();
+
+   ambientMaterial(150, 0, 57);
+  texture(img2);
+  textureMode(NORMAL);
+  beginShape();
+  vertex(-75, -75, 0, 0);
+  vertex(75, 75, 4, 0);
+  vertex(75, 75, 4, 4);
+  vertex(-75, 75, 0, 4);
+  endShape();
+
+        ambientLight(25,15,00)
+
+  directionalLight(255, 0, 200, 40.25, 70.25, 0);
+      box(500, 500, 500);  
+ push();
+  strokeWeight(9);
+  normalMaterial();
+
+
+}
+
+
+
+
+
+
+		</script>
 </body>
 </html>

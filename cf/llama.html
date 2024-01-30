@@ -51,7 +51,264 @@
 		
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/addons/p5.sound.min.js"></script>
     <script type="module" src="./src/index.js"></script>
-	
+	  <style>
+    body {
+      font-family: 'Raleway', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #222;
+      color: #fff;
+      backdrop-filter: blur(10px);
+      overflow: hidden;
+      height: 100vh;
+    }
+
+
+    h1 {
+      text-align: center;
+      font-weight: 900;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      font-size: 64px;
+    }
+
+    h2 {
+      text-align: center;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      font-size: 20px;
+    }
+
+    form {
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      /* Center items horizontally */
+      align-items: center;
+      /* Center items vertically */
+      position: fixed;
+      bottom: 12px;
+      width: 100vw;
+      border-radius: 10px;
+      padding: 10px;
+      /* Add some padding to give space around the items */
+    }
+
+    label {
+      font-weight: bold;
+      color: #ccc;
+    }
+
+    input[type="text"] {
+      width: 50%;
+      padding: 10px;
+      background-color: rgba(0, 0, 0, 0.3);
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+    }
+
+    textarea {
+      width: 50%;
+      padding: 9px;
+      color: whitesmoke;
+
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      background-color: #222222;
+
+    }
+
+    textarea::-webkit-scrollbar {
+      display: none;
+    }
+
+    textarea:focus {
+      outline: none;
+    }
+
+
+    #response {
+      max-width: 80%;
+      height: calc(100% - 250px);
+      margin-left: 10%;
+      overflow-y: scroll;
+    }
+
+    #response::-webkit-scrollbar {
+      width: 10px;
+      border-radius: 50%;
+    }
+
+
+    .user-message {
+      background-color: rgba(71, 71, 71, 0.3);
+      padding: 10px;
+      margin-bottom: 10px;
+      margin-left: 40%;
+      max-width: 60%;
+      border-radius: 10px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: whitesmoke;
+    }
+
+    .ai-message {
+      background-color: rgba(71, 71, 71, 0.3);
+      padding: 10px;
+      margin-bottom: 10px;
+      margin-right: 40%;
+      max-width: 60%;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      color: whitesmoke;
+    }
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+
+    .smaller {
+      font-size: 15;
+    }
+
+    .fa-github {
+      text-decoration: none;
+      color: inherit;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      padding: 15px;
+    }
+
+    .dropbtn {
+      background-color: #191b1c;
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      padding: 10px;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #191b1c;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: #fff;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: black
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+      background-color: #444;
+    }
+
+    button {
+      font-size: 18px;
+      color: #e1e1e1;
+      font-family: inherit;
+      font-weight: 800;
+      cursor: pointer;
+      position: relative;
+      border: none;
+      background: none;
+      text-transform: uppercase;
+      transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+      transition-duration: 400ms;
+      transition-property: color;
+    }
+
+    button:focus,
+    button:hover {
+      color: #fff;
+    }
+
+    button:focus:after,
+    button:hover:after {
+      width: 100%;
+      left: 0%;
+    }
+
+    button:after {
+      content: "";
+      pointer-events: none;
+      bottom: -2px;
+      left: 50%;
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background-color: #fff;
+      transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+      transition-duration: 400ms;
+      transition-property: width, left;
+    }
+
+    .github-icon {
+      position: fixed;
+      right: 50px;
+      bottom: 50px;
+    }
+#container {
+	height:90%;
+}
+    /* if screen width<1000 then max -width=100% */
+    @media screen and (max-width: 1000px) {
+      #response {
+        max-width: 100%;
+        margin-left: 0;
+        height: calc(100% - 280px);
+      }
+
+      textarea {
+        width: 80%;
+      }
+
+      .github-icon {
+        visibility: hidden;
+      }
+
+      form {
+        bottom: 0;
+      }
+
+      .ai-message {
+        max-width: 80%;
+        min-width: 80%;
+      }
+    }
+  </style>
 	
 
 	<script nonce="2a520abb-2ec7-42aa-b0e7-34996fee709c">(function(w,d){!function(dp,dq,dr,ds){dp[dr]=dp[dr]||{};dp[dr].executed=[];dp.zaraz={deferred:[],listeners:[]};dp.zaraz.q=[];dp.zaraz._f=function(dt){return async function(){var du=Array.prototype.slice.call(arguments);dp.zaraz.q.push({m:dt,a:du})}};for(const dv of["track","set","debug"])dp.zaraz[dv]=dp.zaraz._f(dv);dp.zaraz.init=()=>{var dw=dq.getElementsByTagName(ds)[0],dx=dq.createElement(ds),dy=dq.getElementsByTagName("title")[0];dy&&(dp[dr].t=dq.getElementsByTagName("title")[0].text);dp[dr].x=Math.random();dp[dr].w=dp.screen.width;dp[dr].h=dp.screen.height;dp[dr].j=dp.innerHeight;dp[dr].e=dp.innerWidth;dp[dr].l=dp.location.href;dp[dr].r=dq.referrer;dp[dr].k=dp.screen.colorDepth;dp[dr].n=dq.characterSet;dp[dr].o=(new Date).getTimezoneOffset();if(dp.dataLayer)for(const dC of Object.entries(Object.entries(dataLayer).reduce(((dD,dE)=>({...dD[1],...dE[1]})),{})))zaraz.set(dC[0],dC[1],{scope:"page"});dp[dr].q=[];for(;dp.zaraz.q.length;){const dF=dp.zaraz.q.shift();dp[dr].q.push(dF)}dx.defer=!0;for(const dG of[localStorage,sessionStorage])Object.keys(dG||{}).filter((dI=>dI.startsWith("_zaraz_"))).forEach((dH=>{try{dp[dr]["z_"+dH.slice(7)]=JSON.parse(dG.getItem(dH))}catch{dp[dr]["z_"+dH.slice(7)]=dG.getItem(dH)}}));dx.referrerPolicy="origin";dx.src="/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(dp[dr])));dw.parentNode.insertBefore(dx,dw)};["complete","interactive"].includes(dq.readyState)?zaraz.init():dp.addEventListener("DOMContentLoaded",zaraz.init)}(w,d,"zarazData","script");})(window,document);</script><script nonce="f3cbd6a5-10b4-493d-8b7a-ccc826231178">try{(function(w,d){!function(bb,bc,bd,be){bb[bd]=bb[bd]||{};bb[bd].executed=[];bb.zaraz={deferred:[],listeners:[]};bb.zaraz.q=[];bb.zaraz._f=function(bf){return async function(){var bg=Array.prototype.slice.call(arguments);bb.zaraz.q.push({m:bf,a:bg})}};for(const bh of["track","set","debug"])bb.zaraz[bh]=bb.zaraz._f(bh);bb.zaraz.init=()=>{var bi=bc.getElementsByTagName(be)[0],bj=bc.createElement(be),bk=bc.getElementsByTagName("title")[0];bk&&(bb[bd].t=bc.getElementsByTagName("title")[0].text);bb[bd].x=Math.random();bb[bd].w=bb.screen.width;bb[bd].h=bb.screen.height;bb[bd].j=bb.innerHeight;bb[bd].e=bb.innerWidth;bb[bd].l=bb.location.href;bb[bd].r=bc.referrer;bb[bd].k=bb.screen.colorDepth;bb[bd].n=bc.characterSet;bb[bd].o=(new Date).getTimezoneOffset();if(bb.dataLayer)for(const bo of Object.entries(Object.entries(dataLayer).reduce(((bp,bq)=>({...bp[1],...bq[1]})),{})))zaraz.set(bo[0],bo[1],{scope:"page"});bb[bd].q=[];for(;bb.zaraz.q.length;){const br=bb.zaraz.q.shift();bb[bd].q.push(br)}bj.defer=!0;for(const bs of[localStorage,sessionStorage])Object.keys(bs||{}).filter((bu=>bu.startsWith("_zaraz_"))).forEach((bt=>{try{bb[bd]["z_"+bt.slice(7)]=JSON.parse(bs.getItem(bt))}catch{bb[bd]["z_"+bt.slice(7)]=bs.getItem(bt)}}));bj.referrerPolicy="origin";bj.src="/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(bb[bd])));bi.parentNode.insertBefore(bj,bi)};["complete","interactive"].includes(bc.readyState)?zaraz.init():bb.addEventListener("DOMContentLoaded",zaraz.init)}(w,d,"zarazData","script");})(window,document)}catch(e){throw fetch("/cdn-cgi/zaraz/t"),e;};</script></head>	

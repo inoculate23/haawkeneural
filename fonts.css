@@ -1,0 +1,44 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100';
+#text_effect {
+  font-family: 'Roboto Mono', monospace;
+}
+  html, body {
+				text-align: center;
+                font-family: 'Josefin Sans', sans-serif;
+              
+				color:white;
+
+       
+			}
+			text, h3, h2 {
+                font-family: 'Josefin Sans', sans-serif;
+		
+			}
+            .btn { 
+               margin: 5;
+            }
+            #observablehq-svg-a1463b06 {
+                box-shadow: rgba(64, 12, 119, 0.16) 0px 1px 4px;
+            }
+          
+            h1 {
+                font-family: 'Josefin Sans', sans-serif;
+                font-size: 30px;
+                color:white;
+                z-index: 10;
+                
+
+            }
+		
+          
+            #logo {
+              margin-left:30%;
+            }
+          
+           
+
+  background: #212121;
+  height: 100%;
+  z-index:0;
+
+}

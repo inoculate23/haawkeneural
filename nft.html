@@ -168,7 +168,7 @@
 
 	<script nonce="2a520abb-2ec7-42aa-b0e7-34996fee709c">(function(w,d){!function(dp,dq,dr,ds){dp[dr]=dp[dr]||{};dp[dr].executed=[];dp.zaraz={deferred:[],listeners:[]};dp.zaraz.q=[];dp.zaraz._f=function(dt){return async function(){var du=Array.prototype.slice.call(arguments);dp.zaraz.q.push({m:dt,a:du})}};for(const dv of["track","set","debug"])dp.zaraz[dv]=dp.zaraz._f(dv);dp.zaraz.init=()=>{var dw=dq.getElementsByTagName(ds)[0],dx=dq.createElement(ds),dy=dq.getElementsByTagName("title")[0];dy&&(dp[dr].t=dq.getElementsByTagName("title")[0].text);dp[dr].x=Math.random();dp[dr].w=dp.screen.width;dp[dr].h=dp.screen.height;dp[dr].j=dp.innerHeight;dp[dr].e=dp.innerWidth;dp[dr].l=dp.location.href;dp[dr].r=dq.referrer;dp[dr].k=dp.screen.colorDepth;dp[dr].n=dq.characterSet;dp[dr].o=(new Date).getTimezoneOffset();if(dp.dataLayer)for(const dC of Object.entries(Object.entries(dataLayer).reduce(((dD,dE)=>({...dD[1],...dE[1]})),{})))zaraz.set(dC[0],dC[1],{scope:"page"});dp[dr].q=[];for(;dp.zaraz.q.length;){const dF=dp.zaraz.q.shift();dp[dr].q.push(dF)}dx.defer=!0;for(const dG of[localStorage,sessionStorage])Object.keys(dG||{}).filter((dI=>dI.startsWith("_zaraz_"))).forEach((dH=>{try{dp[dr]["z_"+dH.slice(7)]=JSON.parse(dG.getItem(dH))}catch{dp[dr]["z_"+dH.slice(7)]=dG.getItem(dH)}}));dx.referrerPolicy="origin";dx.src="/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(dp[dr])));dw.parentNode.insertBefore(dx,dw)};["complete","interactive"].includes(dq.readyState)?zaraz.init():dp.addEventListener("DOMContentLoaded",zaraz.init)}(w,d,"zarazData","script");})(window,document);</script></head>	
 	<body>
-          <main id="main">   
+       
            <div class="navbar bg-base-300" data-theme="dark">
       <button class="subpixel-antialiased btn btn-ghost  text-xl"  href="https://haawkeneuraltech.com/"> Haawke Neural Technology</button>
       <details class="dropdown">
@@ -213,24 +213,7 @@
 
 
      
-<div id="card_whisper" class="card w-86 bg-base-100 shadow-xl">
-  <figure><img class="rounded box" src="https://haawkeneuraltech.com/cf/images/signs.png"  width="200px" height="200px" alt="whisper" /></figure>
-  <div class="card-body">
- <div class="card-title justify-center">Whisper Transcription
-    <div class="badge badge-secondary justify-center">FEATURED </div>
-      
-    </div
-   <p>Real-time speech recognition</p>
-    <div class="card-actions justify-center">
-      <div class="badge badge-outline">Ai Speech</div> 
-      <div class="badge badge-outline">Ai Transcription</div>
-	      <div class="badge badge-outline">Ai Translation</div>
-	     <div class="card-actions justify-center">
-     <a href="https://haawkeneuraltech.com/cf/whisper.html"><button class="btn btn-primary">Try Now</button></a>
-    </div>
-  </div>
-</div>
-	</div>
+   <div id="main">   
 <div class="container">
 <div id="mintable-widget"></div>
 <script>
@@ -253,7 +236,7 @@
 </script>
 
        </div>
-         </main>
+         </div>
 
       
      
@@ -377,7 +360,7 @@
     
       </nav>
     </footer>
-<script src="./sketch.js"></script>
+
   <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
   <script src="js/app.js"></script>
 </body>

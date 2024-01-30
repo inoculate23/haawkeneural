@@ -1,0 +1,236 @@
+html, body {
+  font-family: 'Josefin Sans', sans-serif;
+  font: 13px sans-serif;
+  margin: 0;
+  overflow: visible;
+  background-color: #000000;
+  color:#ffffff;
+}
+
+audio {
+  display: inline-block;
+  height: 40px;
+  width: 80%;
+}
+label,
+button {
+  background: RGBA(255, 255, 255, 0.6);
+  border: 1px solid #572803;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 5px 10px 0;
+  padding: 8px 40px;
+  vertical-align: top;
+  color: #000000;
+}
+canvas {
+  display: block;
+  width: 100%;
+}
+
+#container {
+  height: calc(60vh - 40px);
+}
+#container:-webkit-full-screen {
+  height: 100vh;
+}
+
+#upload {
+  display: none;
+}
+
+.dg.main {
+  position: absolute;
+  top: 0;
+  right: 100px;
+  z-index: 9;
+}
+
+.dg.main ul {
+  max-height: calc(100vh - 20px);
+  overflow-y: auto;
+}
+
+.dg.main select {
+  font: inherit;
+}
+.message {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 0.9em;
+}
+
+.copy {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 0.75em;
+}
+
+#zoomview-container {
+  border-color: #000000;
+  border-width: 10px;
+  height: 200px;
+  border-radius: 19px;
+  width: 100%;
+  -moz-box-shadow: 3px 3px 20px #565454;
+  -webkit-box-shadow: 3px 3px 20px #484646;
+  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+
+#overview-container {
+  border-color: #000000;
+  border-width: 10px;
+  height: 85px;
+  width: 100%;
+  border-radius: 15px;
+  -moz-box-shadow: 3px 3px 20px #565454;
+  -webkit-box-shadow: 3px 3px 20px #484646;
+  box-shadow: 3px 3px 20px #454444;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+
+#segments {
+  margin-top: 0%;
+  margin-right: 3%;
+
+  margin-left: 3%;
+  width: 75%;
+  position: relative;
+}
+
+.konvajs-content {
+  z-index: 14;
+  position: absolute;
+  background-color: #fff;
+}
+#main {
+  position: absolute;
+  height: 400px;
+  width: 400px;
+
+  margin-top: 0;
+}
+#alogo {
+  margin-top: 155px;
+}
+#hidden {
+  visibility: hidden;
+}
+
+#zoomview-container,
+#overview-container {
+  margin: 0 0 24px 0;
+  line-height: 0;
+  -moz-box-shadow: 0px 3px 10px #565454;
+  -webkit-box-shadow: 0px 3px 10px #484646;
+  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+  width: 100%;
+  border-radius: 19px;
+  padding: 10px;
+}
+
+#demo-controls {
+  margin: 0;
+  width: 90%;
+  display: flex;
+  align-items: start;
+
+  margin-left: 18%;
+  background-color: rgba(255, 220, 0, 200);
+}
+
+#demo-controls button {
+  background: #f3c809;
+  margin: 5;
+  padding: 5;
+  border: 0px solid #919191;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 155px;
+  -moz-box-shadow: 3px 3px 20px #565454;
+  -webkit-box-shadow: 3px 3px 20px #484646;
+  box-shadow: 3px 3px 20px #7e7c7c;
+}
+
+#audio {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 30%;
+  width: 75%;
+  margin-left: 20%;
+}
+
+#controls {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  margin-left: 10%;
+  margin-right: 0%;
+  background-color: rgba(74, 74, 74, 0.7);
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  color: #f3c809;
+  padding: 5px;
+  margin: 5px;
+}
+
+#controls div {
+  margin-top: 3px;
+  margin-bottom: 3px;
+
+  background-color: rgba(230, 230, 0, 0);
+}
+
+#seek-time {
+  width: 4em;
+}
+
+.log {
+  margin: 0 auto 24px auto;
+  width: 75%;
+  background-color: #454444;
+  color: #f3c809;
+  border-radius: 12px;
+}
+a {
+  color:#ffffff;
+}
+table {
+  width: 80%;
+}
+
+table th {
+  text-align: left;
+}
+
+table th,
+table td {
+  padding: 0.5em;
+}
+
+.hide {
+  display: none;
+}
+
+p code {
+  margin-left: 4em;
+}
+#select {
+  height: 66px;
+}

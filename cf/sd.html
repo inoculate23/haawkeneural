@@ -147,19 +147,45 @@
 	</head>	
 	<body>
         
-          <div class="navbar bg-base-300">
-            <button class="subpixel-antialiased btn btn-ghost  text-xl"  href="https://haawkeneuraltech.com/">Haawke Neural Technology</button>
-          
-            <div class="subpixel-antialiased text-xl">
-           
-              Deep Machine Learning for
-              Audio/Visual Applications and Events
-        
-            </div>
-            <a><button class="btn btn-active btn-neutral" href="https://dev-hxoz48d37guyzgvs.us.auth0.com/u/login?state=hKFo2SBHMkNvRFBMYUZkWGxwejlTNlhFMDBlb2xheUQ0VENISKFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIDNxdnFSc3hMUHRzUGpqSGJqTnRnUEJ4V3RiQWNLb1plo2NpZNkgeVFXUlA5U1pUZHhEYmVVM3hDTk4wVFpkQ3RQUDRPYnA" >Login</button></a>
-            <button class="btn btn-active btn-primary">Register</button>
+      <div class="navbar bg-base-300" data-theme="dark">
+  <a href="https://haawkeneuraltech.com"> <button class="subpixel-antialiased btn btn-ghost  text-l"> Haawke Neural Technology</button></a>
+   <details class="dropdown">
+     <summary class="btn btn-xs sm:btn-sm md:btn-md btn-neutral">Ai / Machine Learning</summary>
+     <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+       <li><a href="https://haawkeneuraltech.com/cf/">Stable Diffusion</a></li>
+       <li><a href="https://haawkeneuraltech.com/cf/llama.html">ChatGPT</a></li>
+       <li><a href="https://haawkeneuraltech.com/cf/whisper.html">Whisper Transcription / Translation</a></li>
+       <li><a href="https://haawkeneuraltech.com/cf/audio.html">Open Voice</a></li>
+     </ul>
+   </details>
+   <details class="dropdown">
+     <summary class="btn btn-xs sm:btn-sm md:btn-md btn-neutral">Audio</summary>
+     <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+       <li><a href="https://haawkeneuraltech.com/audio/peaks-waveform.html">Peaks.js+AudioWaveform Visualizer</a></li>
      
-          </div>
+     </ul>
+   </details>
+   <details class="dropdown">
+     <summary class="btn btn-xs sm:btn-sm md:btn-md  btn-neutral">Video</summary>
+     <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+       <li><a href="https://haawkeneuraltech.com/mapping/index.html">Projection Mapping</a></li>
+      <li><a href="https://haawkeneuraltech.com/video/papers/index.html">Animated Papers</a></li>
+     </ul>
+   </details>
+   <button class="btn btn-xs sm:btn-sm md:btn-md btn-neutral">Software Dev</button>
+<a href="https://haawkeneuraltech.com/nft.html"><button class="btn btn-xs sm:btn-sm md:btn-md btn-neutral">NFT</button>   </a>
+   <button class="btn btn-xs sm:btn-sm md:btn-md btn-neutral">Pricing</button>
+   <a href="https://haawkeneuraltech.com/about"><button class="btn btn-xs sm:btn-sm md:btn-md btn-neutral">About Us</button></a>
+  <a href="https://haawkeneuraltech.com/contact.html"><button class="btn btn-xs sm:btn-sm md:btn-md btn-neutral">Contact</button></a> 
+
+  
+<button id="btn-login" class="btn btn-xs sm:btn-sm md:btn-md  btn-primary"  onclick="login()">Log in</button>
+<button id="btn-logout" disabled="true" class="btn btn-xs sm:btn-sm md:btn-md btn-active btn-neutral" onclick="logout()">Log out</button>
+
+
+
+ </div>
+  </div>
 
 
  

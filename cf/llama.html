@@ -234,7 +234,10 @@
     .dropdown:hover .dropbtn {
       background-color: #444;
     }
-
+#iframe {
+	width: 100%;
+	height:100vh;
+}
     button {
       font-size: 18px;
       color: #e1e1e1;
@@ -354,115 +357,7 @@
  </div>
   </div>
    <div id="container">
-  <h1>ChatGPT</h1>
-  <div class="dropdown">
-    <button class="dropbtn">Settings</button>
-    <div class="dropdown-content">
-      <a href="#" onclick='setApiUrl()'>Custom API URL</a>
-      <a href="#" onclick='setIDsession()'>Custom ID Session</a>
-    </div>
-  </div>
-  <div id="response">
-    <div class="ai-message">Hey there, how can i assist you?</div>
-  </div>
-  <form id="chatForm">
-    <textarea id="input" type="text" placeholder="Send a message"></textarea>
-    <button type="submit">➤</button>
-  </form>
-
-	   </div>
-    <script>
-
-      // --------------- CONFIG --------------- //
-      // modify URL to your API
-      let apiUrl = "https://gpt.haawkeneuraltech.com/"
-
-      // ----------- END OF CONFIG ------------ //
-      let uuid = '';
-
-      function setApiUrl() {
-        const customUrl = prompt("Enter custom API URL: ");
-        if (customUrl) {
-          apiUrl = customUrl;
-        }
-      }
-
-      function setIDsession() {
-        const customUUID = prompt("Enter custom session ID: ");
-        if (customUUID) {
-          uuid = customUUID;
-        }
-      }
-
-      function generateUUID() {
-        let newUUID = '';
-        const chars = 'abcdef0123456789';
-        for (let i = 0; i < 32; i++) {
-          const charIndex = Math.floor(Math.random() * chars.length);
-          newUUID += chars[charIndex];
-          if (i === 7 || i === 11 || i === 15 || i === 19) {
-            newUUID += '-';
-          }
-        }
-        return newUUID;
-      }
-      const chatForm = document.getElementById('chatForm');
-      const inputField = document.getElementById('input');
-      const responseDiv = document.getElementById('response');
-
-      function chat() {
-        var input = inputField.value;
-        input = encodeURIComponent(input)
-
-        const userMessageDiv = document.createElement('div');
-        userMessageDiv.className = 'user-message';
-        userMessageDiv.innerText = decodeURIComponent(input);
-        responseDiv.appendChild(userMessageDiv);
-
-        const loadingDiv = document.createElement('div');
-        loadingDiv.className = 'loading';
-        loadingDiv.innerHTML = `<svg width="30" height="30" viewBox="0 0 50 50"><circle cx="25" cy="25" r="20" stroke="black" stroke-width="4" fill="none" /><circle cx="25" cy="25" r="20" stroke="#3498db" stroke-width="4" fill="none" stroke-dasharray="90" stroke-dashoffset="0"><animateTransform attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="1s" repeatCount="indefinite"/></circle></svg><center class="smaller">If you recive an error than wait 1-2 minutes refresh and try again.</center>`;
-        responseDiv.appendChild(loadingDiv);
-
-        axios.get(`${apiUrl}/${uuid}?q=${encodeURIComponent(input)}`)
-          .then((response) => {
-            responseDiv.removeChild(loadingDiv);
-
-            const aiMessages = response.data[0].response.filter(message => message.role === 'system' && message.content.response);
-            if (aiMessages.length > 0) {
-              const lastAiMessage = aiMessages[aiMessages.length - 1];
-              const aiMessageDiv = document.createElement('div');
-              aiMessageDiv.className = 'ai-message';
-              aiMessageDiv.innerHTML = marked.parse(lastAiMessage.content.response);
-              responseDiv.appendChild(aiMessageDiv);
-            }
-
-            inputField.value = '';
-          })
-          .catch((error) => {
-            console.log("Error receiving response:", error);
-          });
-      }
-
-      chatForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        chat()
-      });
-
-      inputField.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter') {
-          if (!event.shiftKey) {
-            event.preventDefault();
-            chat()
-          }
-        }
-      });
-
-      if (!uuid) {
-        uuid = generateUUID();
-      }
-    </script>
-
+<iframe id="iframe" src="https://cf-ai-pi.vercel.app/"></iframe>
      
 
 

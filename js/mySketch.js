@@ -72,7 +72,7 @@ function draw() {
 		fill(255);
 		textFont(fontRegular);
 		textSize(30);
-		text("Click to emmit particles", centerX, centerY + 50);
+		text("Click to emmit particles", centerX, 550);
 		return;
 	}
 	

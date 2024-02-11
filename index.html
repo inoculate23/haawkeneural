@@ -32,7 +32,7 @@
 	  <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
 
 
-	      <script src="mySketch.js" type="text/javascript"></script>
+	      <script src="js/mySketch.js" type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/npm/p5@0.9.0/lib/p5.js" type="text/javascript"></script>
 
 
@@ -85,16 +85,25 @@ margin-left:65px;
               position:absolute;
            margin-top:50%;
               margin-bottom:0%;
-             z-index: 3;
+              z-index: 3;
             }
+
 		#card_whisper {
+      margin-top:10px;
 			margin-right: 2%;
 			margin-left: 70%;
 		z-index:2;
             width:30%;
 			position:absolute;
             }
-          
+          	#card_sd {
+              margin-top:10px;
+			margin-left: 2%;
+			margin-right: 70%;
+		z-index:2;
+            width:30%;
+			position:absolute;
+            }
     
          #main {
 		 width:100%;
@@ -104,19 +113,19 @@ margin-left:65px;
         z-index:0;
 		
 	 }
-			.navbar {
+   .navbar {
 				z-index:30;
 				position:absolute;
 				margin-top:0px;
 				
-		.grid {
-			width:40%;
-			margin-right:0%;
-			margin-left:60%;
-		
-			position:absolute;
-		}
-            .text-xl {
+      	}
+        .navbar2 {
+				z-index:28;
+				position:relative;
+				margin-top:60px;
+				
+      	}   
+        .text-xl {
               padding:12px;
               padding-right: 35px;
            
@@ -127,7 +136,7 @@ margin-left:65px;
             }
             .p5Canvas {
               position:absolute;
-		    margin-top:500px;
+		    margin-top:0px;
 		    width:100%;
 		    height:100vh;
              
@@ -145,7 +154,7 @@ margin-left:65px;
 	<script nonce="2a520abb-2ec7-42aa-b0e7-34996fee709c">(function(w,d){!function(dp,dq,dr,ds){dp[dr]=dp[dr]||{};dp[dr].executed=[];dp.zaraz={deferred:[],listeners:[]};dp.zaraz.q=[];dp.zaraz._f=function(dt){return async function(){var du=Array.prototype.slice.call(arguments);dp.zaraz.q.push({m:dt,a:du})}};for(const dv of["track","set","debug"])dp.zaraz[dv]=dp.zaraz._f(dv);dp.zaraz.init=()=>{var dw=dq.getElementsByTagName(ds)[0],dx=dq.createElement(ds),dy=dq.getElementsByTagName("title")[0];dy&&(dp[dr].t=dq.getElementsByTagName("title")[0].text);dp[dr].x=Math.random();dp[dr].w=dp.screen.width;dp[dr].h=dp.screen.height;dp[dr].j=dp.innerHeight;dp[dr].e=dp.innerWidth;dp[dr].l=dp.location.href;dp[dr].r=dq.referrer;dp[dr].k=dp.screen.colorDepth;dp[dr].n=dq.characterSet;dp[dr].o=(new Date).getTimezoneOffset();if(dp.dataLayer)for(const dC of Object.entries(Object.entries(dataLayer).reduce(((dD,dE)=>({...dD[1],...dE[1]})),{})))zaraz.set(dC[0],dC[1],{scope:"page"});dp[dr].q=[];for(;dp.zaraz.q.length;){const dF=dp.zaraz.q.shift();dp[dr].q.push(dF)}dx.defer=!0;for(const dG of[localStorage,sessionStorage])Object.keys(dG||{}).filter((dI=>dI.startsWith("_zaraz_"))).forEach((dH=>{try{dp[dr]["z_"+dH.slice(7)]=JSON.parse(dG.getItem(dH))}catch{dp[dr]["z_"+dH.slice(7)]=dG.getItem(dH)}}));dx.referrerPolicy="origin";dx.src="/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(dp[dr])));dw.parentNode.insertBefore(dx,dw)};["complete","interactive"].includes(dq.readyState)?zaraz.init():dp.addEventListener("DOMContentLoaded",zaraz.init)}(w,d,"zarazData","script");})(window,document);</script></head>	
 	<body>
          
- <div class="navbar bg-base-300" data-theme="dark">
+    <div class="navbar bg-base-300" data-theme="dark">
   <a href="https://haawkeneuraltech.com"> <button class="subpixel-antialiased btn btn-ghost  text-l"> Haawke Neural Technology</button></a>
    <details class="dropdown">
      <summary class="btn btn-xs sm:btn-sm md:btn-md btn-neutral">Ai / Machine Learning</summary>
@@ -176,15 +185,36 @@ margin-left:65px;
    <a href="https://haawkeneuraltech.com/about"><button class="btn btn-xs sm:btn-sm md:btn-md btn-neutral">About Us</button></a>
   <a href="https://haawkeneuraltech.com/contact.html"><button class="btn btn-xs sm:btn-sm md:btn-md btn-neutral">Contact</button></a> 
 
-  
-<button id="btn-login" class="btn btn-xs sm:btn-sm md:btn-md  btn-primary"  onclick="login()">Log in</button>
+
+
+<button id="btn-login" class="btn btn-login btn-xs sm:btn-sm md:btn-md  btn-primary"  onclick="login()">Log in</button>
 <button id="btn-logout" disabled="true" class="btn btn-xs sm:btn-sm md:btn-md btn-active btn-neutral" onclick="logout()">Log out</button>
-
-
-
+</div>
+</div>
+<center>
+<div class="navbar2 bg-base-300 text-m text-accent" data-theme="dark" >
+</center>
  </div>
-  </div>
-  
+  <div id="card_sd" class="card w-86 bg-base-100 shadow-xl">
+  <figure><img class="rounded box" src="https://haawkeneuraltech.com/cf/images/ufo.png"  width="200px" height="200px" alt="whisper" /></figure>
+  <div class="card-body">
+ <div class="card-title justify-center">Stable-Diffusion-XL-1.0
+    <div class="badge badge-secondary justify-center">FEATURED </div>
+      
+ </div>
+   <p>Text to Image Ai</p>
+    <div class="card-actions justify-center">
+      <div class="badge badge-outline">Image Genration</div> 
+      <div class="badge badge-outline">Diffusion</div>
+	      <div class="badge badge-outline">1024x1024</div>
+	     <div class="card-actions justify-center">
+        <button class="btn btn-login btn-xs sm:btn-sm md:btn-md  btn-primary"  onclick="login()">Log in</button>
+
+     <a href="https://haawkeneuraltech.com/cf/"><button id="stableD"  hidden="true" class="btn btn-primary">Try Now</button></a>
+    </div>
+</div>
+</div>
+</div>
       
 <div id="card_whisper" class="card w-86 bg-base-100 shadow-xl">
   <figure><img class="rounded box" src="https://haawkeneuraltech.com/cf/images/signs.png"  width="200px" height="200px" alt="whisper" /></figure>
@@ -199,7 +229,9 @@ margin-left:65px;
       <div class="badge badge-outline">Ai Transcription</div>
 	      <div class="badge badge-outline">Ai Translation</div>
 	     <div class="card-actions justify-center">
-     <a href="https://haawkeneuraltech.com/cf/whisper.html"><button class="btn btn-primary">Try Now</button></a>
+        <button class="btn btn-login btn-xs sm:btn-sm md:btn-md  btn-primary"  onclick="login()">Log in</button>
+
+     <a href="https://haawkeneuraltech.com/cf/whisper.html"><button id="whisperW"  hidden="true" class="btn btn-primary">Try Now</button></a>
     </div>
 </div>
 </div>
@@ -207,7 +239,7 @@ margin-left:65px;
 
   <div class="main"></div>
 
-    <footer class="footer p-10  bg-base-300" data-theme="dark"">
+    <footer class="footer p-10  bg-base-300" data-theme="dark">
       <aside>
 
         <svg id="logo" version="1.0" xmlns="http://www.w3.org/2000/svg"
@@ -327,6 +359,6 @@ margin-left:65px;
 
   <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
   <script src="js/app.js"></script>
-  <script src="scramble.js"></script>
+  <script src="js/scramble.js"></script>
 </body>
 </html>

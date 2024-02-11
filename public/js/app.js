@@ -51,13 +51,14 @@ const configureClient = async () => {
   
   
           document.getElementById("btn-logout").disabled = !isAuthenticated;
-    document.getElementsByClassName("btn-login").disabled = isAuthenticated;
-
+    document.getElementById("btn-login").disabled = isAuthenticated;
+document.getElementById("btn-login2").disabled = isAuthenticated;
+      document.getElementById("btn-login3").disabled = isAuthenticated;
 
      // NEW - add logic to show/hide gated content after authentication
   if (isAuthenticated) {
     document.getElementById("gated-content").classList.remove("hidden");
-
+  document.getElementById("gated-content2").classList.remove("hidden");
 
 
   } else {

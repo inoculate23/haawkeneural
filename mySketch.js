@@ -69,7 +69,7 @@ function draw() {
 		noStroke();
 		fill(255);
 		textSize(30);
-		text("Click to emmit particles", centerX, centerY + 50);
+		text("Click to emmit particles", centerX, 550);
 		return;
 	}
 	

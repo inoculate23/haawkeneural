@@ -7,7 +7,131 @@
       href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1/new.min.css"
     />
    <script type="text/javascript"></script>
-  <script defer src="demo.bundle.js"></script></head>
+  <script defer src="demo.bundle.js"></script>
+  <style>
+    header {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+header>*,
+header>:last-child {
+	padding-top: 0;
+	margin-bottom: 1rem;
+}
+
+video {
+	margin-bottom: 0;
+	width: 100%;
+}
+
+.input-section {
+	display: flex;
+	flex-direction: column;
+}
+
+.input-buttons {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.autoplay-wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.input-section .input-buttons .input-button, .input-section .input-buttons .autoplay-wrapper {
+	font-size: 1em;
+	width: 10.5em;
+	height: 2.15em;
+	margin: 0.5em 0.3em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 10.3em;
+}
+
+@media (max-width: 790px) {
+	.input-section .input-buttons .input-button, .input-section .input-buttons .autoplay-wrapper {
+		width: 47%;
+	}
+}
+@media (max-width: 615px) {
+	.input-section .input-buttons .input-button, .input-section .input-buttons .autoplay-wrapper {
+		width: 44%;
+		font-size: 0.95em;
+	}
+}
+@media (max-width: 405px) {
+	.input-section .input-buttons .input-button, .input-section .input-buttons .autoplay-wrapper {
+		width: 100%;
+		font-size: 1em;
+	}
+}
+
+.autoplay-wrapper input, .autoplay-wrapper label {
+	margin: 0;
+	padding: 0.2em 0.25em;
+}
+
+#ui-container {
+	position: relative;
+}
+
+#example-streams button {
+	margin-right: 3px;
+	margin-top: 1px;
+}
+
+#snackbar {
+	display: none;
+	box-sizing: border-box;
+	background-color: #0070F3;
+	color: #fff;
+	border-radius: 4px;
+	padding: 16px;
+	position: relative;
+	z-index: 1;
+	font-family: 'Courier New', Courier, monospace;
+	box-shadow: 0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12); 
+}
+
+#snackbar-close-button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	/* Prevents accidentally selecting the close-button when copying code snippet*/
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+	display: block;
+	/* Add animation: Take 0.5 seconds to fade in the snackbar.*/
+	-webkit-animation: fadein 0.5s;
+	animation: fadein 0.5s;
+}
+
+/* Animation to fade in the snackbar*/
+@keyframes fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+    </style>
+  </style>
 </head>
 <body>
   <script async type="text/javascript" src="https://unpkg.com/@eyevinn/web-player-component@latest/dist/web-player.component.js"></script>

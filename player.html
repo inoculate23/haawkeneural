@@ -12,6 +12,18 @@
   <script async type="text/javascript" src="https://unpkg.com/@eyevinn/web-player-component@latest/dist/web-player.component.js"></script>
     <!-- Use the 'eyevinn-video' element as such --->
     <eyevinn-video source="https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" starttime="0" muted autoplay></eyevinn-video>
+  <section class="input-section">
+        <input type="text" name="manifest-url" id="manifest-input" placeholder="Paste a Stream URI Here...">
+        <div class="input-buttons">
+          <button class="input-button" id="load-button">LOAD</button>
+          <div class="autoplay-wrapper">
+            <input type="checkbox" name="autoplay" id="autoplay">
+            <label for="autoplay">Autoplay</label>
+          </div>
+          <button class="input-button" id="share-button" disabled="">Share 📋</button>
+          <button class="input-button" id="embed-button" disabled="">Embed 📋</button>
+        </div>
+      </section>
   <!-- Initiate the player and auto-play (if allowed by browser) -->
   <script>
     document.addEventListener('DOMContentLoaded', function(event) {

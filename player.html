@@ -129,8 +129,19 @@ video {
 	}
 }
 
-    </style>
+  
   </style>
+	  <!-- Initiate the player and auto-play (if allowed by browser) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function(event) {
+  
+      const { player } = webplayer(document.querySelector("#player-wrapper"));
+      player.load(src).then(function() {
+        player.play();
+      });
+    });
+    
+  </script>
 </head>
 <body>
   <script async type="text/javascript" src="https://unpkg.com/@eyevinn/web-player-component@latest/dist/web-player.component.js"></script>
@@ -157,26 +168,10 @@ video {
           <option value="-1">AUTO</option>
         </select>
       </div>
-      <div id="snackbar">
-        <button id="snackbar-close-button" type="button">
-          &times;
-        </button>
-        <span id="embed-code"></span>
-      </div>
-    </div>
-
-
-  <!-- Initiate the player and auto-play (if allowed by browser) -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function(event) {
   
-      const { player } = webplayer(document.querySelector("#player-wrapper"));
-      player.load(src).then(function() {
-        player.play();
-      });
-    });
-    
-  </script>
+
+
+
 
     
 </body>

@@ -8,6 +8,21 @@
   </head>
   <body>
     <canvas id="app"></canvas>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.161.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.161.0/examples/jsm/"
+    }
+  }
+</script>
+
+  <script type="module">
+    //main block for doing the audio recording
+import * as THREE from 'three'
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader'
+import Stats from 'three/addons/libs/stats.module'
 
     <script type="module">
       import * as THREE from 'three'

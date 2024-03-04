@@ -85,6 +85,11 @@
   position:relative;
 }
 
+     .dropdown {
+ 
+  z-index:77;
+  position:absolute;
+}
      .navbar {
  
   z-index:77;

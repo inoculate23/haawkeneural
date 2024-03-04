@@ -12,7 +12,7 @@
   html, body {
     text-align: center;
             font-family: 'Josefin Sans', sans-serif;
-          
+          flex:flex;
     color:white;
     margin:0;
     overflow-x:hidden;
@@ -80,7 +80,7 @@
             float:right;
         }
       #card_sd {
-  margin-right:15%;
+  margin-right:3%;
   margin-left:60%;
   z-index:20;
   position:absolute;
@@ -93,7 +93,7 @@
 }
   #card_gemma {
   margin-right:15%;
-  margin-left:60%;
+  margin-left:3%;
   z-index:20;
   position:absolute;
 }

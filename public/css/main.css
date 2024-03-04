@@ -80,27 +80,23 @@
             float:right;
         }
       #card_sd {
-  margin-right:3%;
-  margin-left:65%;
+ 
   z-index:20;
   position:absolute;
 }
 #card_llama {
-  margin-right:30%;
-  margin-left:30%;
+ 
     z-index:20;
   position:absolute;
 }
   #card_gemma {
-  margin-right:65%;
-  margin-left:3%;
+ 
   z-index:20;
   position:absolute;
 }
 
 #stats  {
-  margin-right:15%;
-  margin-left:60%;
+ 
   z-index:20;
   position:absolute;
 }

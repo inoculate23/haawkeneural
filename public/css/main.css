@@ -95,6 +95,11 @@
   z-index:77;
   position:absolute;
 }
+  .navbar2 {
+ 
+  z-index:77;
+  position:absolute;
+}
      .nav {
  
   z-index:77;
@@ -114,7 +119,7 @@
 #stats  {
  
   z-index:20;
-  position:absolute;
+  position:relative;
 }
         .text-xl {
           padding:12px;

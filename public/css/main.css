@@ -80,11 +80,29 @@
             float:right;
         }
       #card_sd {
- 
+ margin-left:0px;
+          margin-right:65%;
   z-index:20;
   position:absolute;
 }
 
+#card_llama {
+ 
+    z-index:20;
+  position:absolute;
+}
+  #card_gemma {
+  margin-right:0px;
+          margin-left:65%;
+  z-index:20;
+  position:absolute;
+}
+
+#stats  {
+ 
+  z-index:20;
+  position:absolute;
+}
      .dropdown {
  
   z-index:77;
@@ -101,22 +119,6 @@
   position:absolute;
 }
 
-#card_llama {
- 
-    z-index:20;
-  position:absolute;
-}
-  #card_gemma {
- 
-  z-index:20;
-  position:absolute;
-}
-
-#stats  {
- 
-  z-index:20;
-  position:absolute;
-}
         .text-xl {
           padding:12px;
           padding-right: 35px;

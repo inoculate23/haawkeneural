@@ -85,9 +85,14 @@
   position:relative;
 }
 
-      #navbar {
+     .navbar {
  
-  z-index:27;
+  z-index:77;
+  position:absolute;
+}
+     .nav {
+ 
+  z-index:77;
   position:absolute;
 }
 #card_llama {

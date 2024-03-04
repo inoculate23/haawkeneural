@@ -82,17 +82,17 @@
       #card_sd {
  
   z-index:20;
-  position:absolute;
+  position:relative;
 }
 #card_llama {
  
     z-index:20;
-  position:absolute;
+  position:relative;
 }
   #card_gemma {
  
   z-index:20;
-  position:absolute;
+  position:relative;
 }
 
 #stats  {

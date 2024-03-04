@@ -82,13 +82,13 @@
       #card_sd {
  
   z-index:20;
-  position:relative;
+  position:absolute;
 }
 
      .dropdown {
  
   z-index:77;
- position:relative;
+  position:absolute;
 }
      .navbar {
  
@@ -100,26 +100,22 @@
   z-index:77;
   position:absolute;
 }
-     .nav {
- 
-  z-index:77;
-  position:absolute;
-}
+
 #card_llama {
  
     z-index:20;
-  position:relative;
+  position:absolute;
 }
   #card_gemma {
  
   z-index:20;
-  position:relative;
+  position:absolute;
 }
 
 #stats  {
  
   z-index:20;
-  position:relative;
+  position:absolute;
 }
         .text-xl {
           padding:12px;

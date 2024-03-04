@@ -80,7 +80,7 @@
             float:right;
         }
       #card_sd {
- 
+ margin-right:25px;
   z-index:20;
   position:absolute;
 }
@@ -107,7 +107,7 @@
   position:absolute;
 }
   #card_gemma {
- 
+ margin-left:25px;
   z-index:20;
   position:absolute;
 }

@@ -64,11 +64,12 @@ class Loader {
 			alpha: true,
 			antialias: true
 		});
-
+this.dom.container = document.getElementById('main');
 		this.dom.container.appendChild(this.renderer.domElement);
 	}
 
 	setupControls() {
+	
 		if(this.isOrbit) {
 			this.controls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
 			this.controls.enableDamping = true;

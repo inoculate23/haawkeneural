@@ -93,6 +93,12 @@
     z-index:20;
   position:absolute;
 }
+  #card_gemma {
+  margin-right:15%;
+  margin-left:60%;
+  z-index:20;
+  position:absolute;
+}
         .text-xl {
           padding:12px;
           padding-right: 35px;

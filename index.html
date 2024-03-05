@@ -22,74 +22,141 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
+  <script src="https://cdn.jsdelivr.net/npm/p5@0.9.0/lib/p5.js"></script>
   <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
-  <script src="js/mySketch.js" type="text/javascript"></script>
-  <script src="https://cdn.jsdelivr.net/npm/p5@0.9.0/lib/p5.js" type="text/javascript"></script>
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.6.0/dist/full.css" rel="stylesheet" type="text/css">
+
+
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.24/dist/full.min.css" rel="stylesheet" type="text/css">
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&amp;display=swap" rel="stylesheet">
-  <link href="./public/css/main.css" rel="stylesheet" type="text/css">
-  <script type="module" src="./src/index.js"></script>
-  <script nonce="2a520abb-2ec7-42aa-b0e7-34996fee709c">
-  (function(w,d){!function(dp,dq,dr,ds){dp[dr]=dp[dr]||{};dp[dr].executed=[];dp.zaraz={deferred:[],listeners:[]};dp.zaraz.q=[];dp.zaraz._f=function(dt){return async function(){var du=Array.prototype.slice.call(arguments);dp.zaraz.q.push({m:dt,a:du})}};for(const dv of["track","set","debug"])dp.zaraz[dv]=dp.zaraz._f(dv);dp.zaraz.init=()=>{var dw=dq.getElementsByTagName(ds)[0],dx=dq.createElement(ds),dy=dq.getElementsByTagName("title")[0];dy&&(dp[dr].t=dq.getElementsByTagName("title")[0].text);dp[dr].x=Math.random();dp[dr].w=dp.screen.width;dp[dr].h=dp.screen.height;dp[dr].j=dp.innerHeight;dp[dr].e=dp.innerWidth;dp[dr].l=dp.location.href;dp[dr].r=dq.referrer;dp[dr].k=dp.screen.colorDepth;dp[dr].n=dq.characterSet;dp[dr].o=(new Date).getTimezoneOffset();if(dp.dataLayer)for(const dC of Object.entries(Object.entries(dataLayer).reduce(((dD,dE)=>({...dD[1],...dE[1]})),{})))zaraz.set(dC[0],dC[1],{scope:"page"});dp[dr].q=[];for(;dp.zaraz.q.length;){const dF=dp.zaraz.q.shift();dp[dr].q.push(dF)}dx.defer=!0;for(const dG of[localStorage,sessionStorage])Object.keys(dG||{}).filter((dI=>dI.startsWith("_zaraz_"))).forEach((dH=>{try{dp[dr]["z_"+dH.slice(7)]=JSON.parse(dG.getItem(dH))}catch{dp[dr]["z_"+dH.slice(7)]=dG.getItem(dH)}}));dx.referrerPolicy="origin";dx.src="/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(dp[dr])));dw.parentNode.insertBefore(dx,dw)};["complete","interactive"].includes(dq.readyState)?zaraz.init():dp.addEventListener("DOMContentLoaded",zaraz.init)}(w,d,"zarazData","script");})(window,document);
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+ 
+ 
+  <script type="module" src="./src/js/index.js"></script>
+  
+ 
+  <script nonce="2a520abb-2ec7-42aa-b0e7-34996fee709c" src="./src/js/zaraz.js">
   </script>
 
-
-
-
-
-
-
   <style>
-    .stats {
-      overflow:hidden;
+   
+   .stats {
+      margin-top:45%;
+      margin-bottom: 20%;
+      position:absolute;
+      width:50%;
+      margin-left:25%;
+      z-index:80;
       
     }
-    
-    .card {
+    .steps {
+      margin-top:1%;
+      margin-bottom: 20%;
       position:absolute;
-      z-index:40;
-      width:25%;
-     margin: auto;
+      width:50%;
+      margin-left:25%;
+      z-index:90;
+      
     }
-
-.p5Canvas0 {
-
-    position:absolute;
-          z-index:0;
-          margin:0px;
-          width:100%;
-          height:100vh;
-        }
-#main {
-
-    position:absolute;
-          z-index:0;
-          margin:0px;
-          width:100%;
-          height:100vh;
-        }
-
-
-       </style>
-
-
-</head>
-<body>
    
-    <div id="main" class="main">
-  <div class="navbar bg-base-300" data-theme="dark">
-    <a href="https://haawkeneuraltech.com"><button class="subpixel-antialiased btn btn-ghost text-l">Haawke Neural Technology</button></a>
+
+   
+
+
+        .navbar {
+              z-index:100;
+              
+            }
+            .dropdown {
+              margin-top:15;
+              padding:10;
+              z-index:200;
+            }
+        
+
+  
+            
+          
+
+#scramble {
+   color:rgb(20, 120, 200);
+    padding:6px;
+    height:45px;
+
+}
+#card_gemma {
+  width:20%;  
+  height:50%;  
+  margin-top:10%;
+  margin-left:6%;
+  margin-right:79%;
+  margin-bottom:  70%;
+  z-index:80;
+        position:absolute;
+      }
+  
+
+#card_sd {
+      
+  width:20%;  
+  height:50%;    
+  margin-top:10%;
+  margin-left:29%;
+  margin-right:80%;
+  margin-bottom:70%;
+
+        z-index:80;
+        position:absolute;
+      }
+      
+
+      #card_whisper {
+        width:20%;  
+  height:50%;   
+  margin-top:10%;
+  margin-left:52%;
+  margin-right:58%;
+  margin-bottom: 70%;
+
+        z-index:80;
+        position:absolute;
+      }
+  #card_midas {
+    width: 20%;  
+  height: 50%;  
+  margin-top: 10%;
+  margin-left:75%;
+  margin-right: 2%;
+  margin-bottom: 70%;
+  position:absolute;
+
+        z-index: 80;
+     
+      }
+    
+      .footer {
+              position:absolute;
+              z-index:90;
+              margin-bottom:0px;
+              margin-top:100vh;
+            }
+    </style>
+  </head>
+  <body>
+  
+  <div class="navbar bg-base" data-theme="dark">
+    <a href="https://haawkeneuraltech.com"><button class="subpixel-antialiased btn bg-base-200 text-l text-info sm:btn-sm md:btn-md btn-neutral">Haawke Neural Technology</button></a>
     <details class="dropdown">
-      <summary class="btn btn-xs sm:btn-sm md:btn-md btn-neutral">
+      <summary class="subpixel-antialiased btn bg-base-100 text-l text-warning sm:btn-sm md:btn-md btn-neutral">
         Ai / Machine Learning
       </summary>
-      <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+      <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-200  outline subpixel-antialiased text-warning rounded-box w-52 ">
         <li>
-          <a href="https://haawkeneuraltech.com/cf/sd.html">Stable Diffusion-xl</a>
+          <a href="https://haawkeneuraltech.com/cf">Stable Diffusion-xl</a>
         </li>
         <li>
           <a href="https://haawkeneuraltech.com/cf/gemma">Gemma</a>
@@ -112,17 +179,17 @@
       </ul>
     </details>
     <details class="dropdown">
-      <summary class="btn btn-xs sm:btn-sm md:btn-md btn-neutral">
+      <summary class="btn bg-base-100  subpixel-antialiased text-light sm:btn-sm md:btn-md btn-neutral">
         Audio
       </summary>
-      <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+      <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 outline subpixel-antialiased text-secondary rounded-box w-52">
         <li>
           <a href="https://haawkeneuraltech.com/audio/peaks-waveform.html">Peaks.js+AudioWaveform Visualizer</a>
         </li>
       </ul>
     </details>
     <details class="dropdown">
-      <summary class="btn btn-xs sm:btn-sm md:btn-md btn-neutral">
+      <summary class="btn bg-base-100 subpixel-antialiased text-light sm:btn-sm md:btn-md btn-neutral">
         Video
       </summary>
       <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
@@ -156,7 +223,7 @@
       </ul>
     </details>
     <details class="dropdown">
-      <summary class="btn btn-xs sm:btn-sm md:btn-md btn-neutral">
+      <summary class="btn bg-base-100  subpixel-antialiased text-light sm:btn-sm md:btn-md btn-neutral">
         Software Dev
       </summary>
       <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
@@ -164,136 +231,164 @@
           <a href="https://haawkeneuraltech.com/webrtc/index.html">HaawkeEye WebRTC Screenshare</a>
         </li>
       </ul>
-    </details><a href="https://haawkeneuraltech.com/nft.html"><button class="btn btn-xs sm:btn-sm md:btn-md btn-neutral">NFT</button></a> <button class="btn btn-xs sm:btn-sm md:btn-md btn-neutral">Pricing</button> <a href="https://haawkeneuraltech.com/about"><button class="btn btn-xs sm:btn-sm md:btn-md btn-neutral">About Us</button></a> <a href="https://haawkeneuraltech.com/contact.html"><button class="btn btn-xs sm:btn-sm md:btn-md btn-neutral">Contact</button></a> <button id="btn-login" class="btn btn-xs sm:btn-sm md:btn-md btn-primary" onclick="login()">Log in</button> <button id="btn-logout" disabled="true" class="btn btn-xs sm:btn-sm md:btn-md btn-active btn-neutral" onclick="logout()">Log out</button>
+    </details><a href="https://haawkeneuraltech.com/nft.html"><button class="btn btn-xs sm:btn-sm md:btn-md btn-neutral bg-base-100 subpixel-antialiased">NFT</button></a> 
+    <button class="btn btn-xs sm:btn-sm md:btn-md btn-neutral bg-base-100 subpixel-antialiased">Pricing</button> <a href="https://haawkeneuraltech.com/about">
+    <button class="btn btn-xs sm:btn-sm md:btn-md btn-neutral bg-base-100 subpixel-antialiased">About Us</button></a>
+     <a href="https://haawkeneuraltech.com/contact.html"><button class="btn btn-xs sm:btn-sm md:btn-md bg-base-100 ssubpixel-antialiased btn-neutral">Contact</button></a> 
+     <button id="btn-login" class="btn btn-xs sm:btn-sm md:btn-md btn-primary subpixel-antialiased" onclick="login()">Log in</button>
+      <button id="btn-logout" disabled="true" class="btn btn-xs sm:btn-sm md:btn-md btn-active btn-neutral" onclick="logout()">Log out</button>
   </div>
-  <center>
+
+    <center>
+    <div id="scramble" class="navbar2 bg-base-300 text-m text-accent" data-theme="dark">
+    </div>
     
-    <div class="navbar2 bg-base-300 text-m text-accent" data-theme="dark"></div>
   </center>
 
+ 
+  
+  
 
-     <div class="main">
-
-
+			
+  <ul class="steps steps-horizontal step-light shadow">
+    <li class="step step-info">Register</li>
+    <li class="step step-info">Try demos for free</li>
+    <li class="step step-warning">Subscribe</li>
+    <li class="step step-success">Get newest custom apps and models</li>
+  </ul>
+ 
 
   
-  <div data-theme="dim" id="card_sd" class="card card-compact w-96 bg-base-100 shadow-xl">
+
+  <div data-theme="coffee" id="card_sd" class="card card-compact outline w-60  bg-base-300 shadow-xl ">
     <figure>
-      <img class="rounded box" src="https://haawkeneuraltech.com/cf/images/ufo.png" width="200px" height="200px" alt="sd">
+      <img class="rounded box shadow-xl" src="https://haawkeneuraltech.com/cf/images/ufo.png" width="200" height="200" alt="stable diffusion"> 
     </figure>
     <div class="card-body">
-      <h2 class="card-title text-bold text-xl text-warning">Stable-Diffusion-XL-1.0 with LoRA</h2>
+      <h2 class="card-title text-bold text-xl text-light">Stable-Diffusion-XL-1.0 with LoRA</h2>
       <div class="badge badge-outline">
         Image Generation
         </div>
+        <div class="badge badge-success">  
+            1200x1200px
+            </div>
         <div class="card-actions justify-end">
-          <button class="btn btn-sm btn-primary">Try Now</button>
+            <button class="btn btn-sm btn-error text-light  subpixel-antialiased">Try Now</button>
         </div>
             </div>
         </div>
-
-    <div data-theme="aqua" id="card_gemma" class="card card-compact w-96 bg-base-100 shadow-xl">
-    <figure>
-      <img class="rounded box" src="https://haawkeneuraltech.com/images/gemma.png" width="200px" height="200px" alt="sd">
-    </figure>
-    <div class="card-body">
-      <h2 class="card-title text-bold text-xl text-light">Google Gemma</h2>
-      <div class="badge badge-outline">  
-        Text Generation
-        </div>
-        <div class="card-actions justify-end">
-          <button class="btn btn-sm btn-primary">Try Now</button>
-        </div>
-            </div>
-        </div>
-   
- 
-    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script> 
-    <script>
-
 </div>
-          let auth0Client = null;
-    // ..
-
-    const fetchAuthConfig = () => fetch("/auth_config.json");
-
-    // ..
-
-    const configureClient = async () => {
-    const response = await fetchAuthConfig();
-    const config = await response.json();
-
-    auth0Client = await auth0.createAuth0Client({
-      domain: config.domain,
-      clientId: config.clientId
-    });
-    };
-
-    // ..
-
-    // ..
-
-    window.onload = async () => {
-    await configureClient();
-
-    // NEW - update the UI state
-    updateUI();
-    };
-
-    const isAuthenticated = await auth0Client.isAuthenticated();
-
-    if (isAuthenticated) {
-    // show the gated content
-    return;
-    }
-
-    // NEW - check for the code and state parameters
-    const query = window.location.search;
-    if (query.includes("code=") && query.includes("state=")) {
-
-    // Process the login state
-    await auth0Client.handleRedirectCallback();
-
-    updateUI();
-
-    // Use replaceState to redirect the user away and remove the querystring parameters
-    window.history.replaceState({}, document.title, "/");
-    }
 
 
-    // ..
+<div data-theme="dark" id="card_gemma" class="card card-compact outline w-60 bg-base-300 shadow-xl ">
+<figure>
+<img class="rounded box shadow-xl" src="https://haawkeneuraltech.com/images/gemma-header.png"  alt="gemma">
+</figure>
+<div class="card-body">
+<h2 class="card-title text-bold text-xl text-light">Google Gemma</h2>
+<div class="badge badge-info">  
+Text Generation
+</div>
+<div class="badge badge-success">  
+  Just Released!
+  </div>
+  <div class="badge badge-outline">  
+  Mini Gemini Model
+    </div>
+   
+<div class="card-actions justify-end">
+    <button class="btn btn-sm btn-error text-light  subpixel-antialiased">Try Now</button>
+</div>
+    </div>
+</div>
 
-    // NEW
-    const updateUI = async () => {
-    const isAuthenticated = await auth0Client.isAuthenticated();
 
-    document.getElementById("btn-logout").disabled = !isAuthenticated;
-    document.getElementsByClassName("btn-login").disabled = isAuthenticated;
-    document.getElementById("stableD").disabled = !isAuthenticated;
-    document.getElementById("whisperW").disabled = !isAuthenticated;
-    };
 
-    // ..
 
-    const login = async () => {
-    await auth0Client.loginWithRedirect({
-      authorizationParams: {
-        redirect_uri: window.location.origin
-      }
-    });
-    };
 
-    // public/js/app.js
 
-    const logout = () => {
-    auth0Client.logout({
-      logoutParams: {
-        returnTo: window.location.origin
-      }
-    });
-    };
-    </script> 
-    <script src="scramble.js"></script>
+<div data-theme="dark" id="card_whisper" class="card card-compact outline w-60 bg-base-300 shadow-xl">
+  <figure>
+    <img class="rounded box shadow-xl" src="https://haawkeneuraltech.com/images/whisper.png" width="200" height="200" alt="whisper ai">
+  </figure>
+  <div class="card-body">
+    <h2 class="card-title text-light text-xl text-light">Whisper Transcriber / Translator</h2>
+
+    <div class="badge badge-warning">  
+      Text Generation
+      </div>
+      <div class="badge badge-secondary">  
+        Speech Recognition
+        </div>
+        <div class="badge badge-secondary">  
+         Audio
+          </div>
+      <div class="card-actions justify-end btn-error text-light  subpixel-antialiased">
+          <button class="btn btn-sm btn-error text-light  subpixel-antialiased">Try Now</button>
+      </div>
+          </div>
+      </div>
+
+    
+      <div data-theme="aqua"  id="card_midas" class="card card-compact outline w-60 bg-base-300 shadow-xl">
+        <figure>
+          <img class="rounded box shadow-xl"  src="https://haawkeneuraltech.com/images/midas.png" width="200" height="200" alt="midas 3.0 ai">
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title text-light text-xl text-light">Midas-3.0 DPT-lg</h2>
+          <div class="badge badge-outline">
+            Depth Estimation
+            </div>
+         
+          <div class="badge badge-success">
+            Computer Vision
+            </div>
+        
+          
+            <div class="card-actions justify-end btn-error text-light  subpixel-antialiased">
+                <button class="btn btn-sm btn-error text-light  subpixel-antialiased">Try Now</button>
+            </div>
+          </div>
+       
+        </div>
+
+        <div data-theme="garden" class="stats outline border shadow-3xl">
+  
+          <div class="stat">
+            <div class="stat-figure text-secondary">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <div class="stat-title">Stable Diffusion Renders</div>
+            <div class="stat-value">91k</div>
+            <div class="stat-desc">Jan 1st - Mar 1st</div>
+          </div>
+          
+          <div class="stat">
+            <div class="stat-figure text-secondary">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+            </div>
+            <div class="stat-title">New Users</div>
+            <div class="stat-value">4,200</div>
+            <div class="stat-desc">↗︎ 400 (22%)</div>
+          </div>
+          
+          <div  class="stat">
+            <div class="stat-figure text-secondary">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
+            </div>
+            <div class="stat-title">Models in Training</div>
+            <div class="stat-value">32</div>
+            <div class="stat-desc">↗ 22 (78%)</div>
+          </div>
+          
+        </div>
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script> 
+
+
+  
+
+
+
     <footer class="footer p-10 bg-base-300" data-theme="dark">
       <aside>
         <svg id="logo" version="1.0" xmlns="http://www.w3.org/2000/svg" width="60pt" height="60pt" viewbox="0 0 962.000000 947.000000" preserveaspectratio="xMidYMid meet">
@@ -325,8 +420,9 @@
       </nav>
     </footer>
     <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script> 
-    <script src="./public/js/app.js"></script> 
-    <script src="scramble.js"></script>
-  </div>
+    <script src="./src/js/app.js"></script> 
+    <script src="./src/js/scramble.js"></script>
+    <script src="./src/js/mySketch.js"></script>
+
 </body>
 </html>

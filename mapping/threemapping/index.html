@@ -8,7 +8,14 @@
   </head>
   <body>
     <canvas id="app"></canvas>
-
+<script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@v0.149.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.149.0/examples/jsm/"
+    }
+  }
+</script>
     <script type="module">
       import * as THREE from 'three'
       import WebGLApp from './lib/WebGLApp.js'

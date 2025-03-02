@@ -304,15 +304,25 @@ display: none;
             <label class="text-l bg-secondary subpixel-antialiased" data-theme="forest"  for="phone">Your Phone #</label>
             <input type="text"class="bg-neutral" data-theme="dark"  name="phone" id="phone" placeholder="Optional">
           </div>
-          <input type="submit" class="submit_btn text-xl btn-secondary subpixel-antialiased" data-theme="retro" id="button" value="Send Email" >
+          <input type="submit" class="submit_btn g-recaptcha text-xl btn-secondary subpixel-antialiased" data-theme="retro" id="button" value="Send Email" 
+    data-sitekey="6LdDGecqAAAAABoSMOuuQfdNX3QWrsH5jbgWK6io"
+    data-callback='onSubmit'
+    data-action='submit'>
+  Submit
+</input>
           <form action="?" method="POST">
             <div class="g-recaptcha" data-sitekey="6LdDGecqAAAAABoSMOuuQfdNX3QWrsH5jbgWK6io"></div>
             <br/>
 
           </form>
         </div>
-        </form>
-        
+
+        <!-- Replace the variables below. -->
+<script>
+  function onSubmit(token) {
+    document.getElementById("form").submit();
+  }
+</script>
         <script type="text/javascript"
           src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
         

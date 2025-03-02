@@ -152,53 +152,31 @@
         <div class="hero bg-base-200 min-h-screen">
   <div class="hero-content flex-col lg:flex-row-reverse">
     <div class="text-center lg:text-left">
-      <h1 class="text-5xl font-bold">Login now!</h1>
+      <h1 class="text-5xl font-bold">Get in touch!</h1>
       <p class="py-6">
-        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-        quasi. In deleniti eaque aut repudiandae et a id nisi.
+       We'd love to discuss your project with you!
       </p>
     </div>
     <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+	    
+<form name="contact" method="POST" data-netlify="true">
       <div class="card-body">
         <fieldset class="fieldset">
+		 <label class="fieldset-label">Name</label>
+          <input type="text" class="input" placeholder="Name" />
           <label class="fieldset-label">Email</label>
           <input type="email" class="input" placeholder="Email" />
-          <label class="fieldset-label">Password</label>
-          <input type="password" class="input" placeholder="Password" />
-          <div><a class="link link-hover">Forgot password?</a></div>
-          <button class="btn btn-neutral mt-4">Login</button>
+         
+          <input type="text" class="input input-xl" placeholder="Message" />
+          <button class="btn btn-neutral mt-4">Submit</button>
         </fieldset>
       </div>
     </div>
   </div>
 </div>
 
-    <div id="contact">
-    <h1 class="text-2xl">
-     <label class="subpixel-antialiased" data-theme="dark">Contact us, we'd love to discuss your project with you!
-     </label>
-   
-<form name="contact" method="POST" data-netlify="true">
-  <p>
-    <label>Name: <input type="text" class="input input-primary" name="name" /></label>
-  </p>
-	       
-  <p>
-    <label>Email: <input class="input input-primary" type="email" name="email" /></label>
-  </p>
-	         <div id="spacer"></div>
-  
-  <p>
-	  <label>Message:  
-	  <input type="text" class="input input-xl input-primary" />
-   </label>
-  </p>
-  <p>
-	  	         <div id="spacer"></div>
-
-	  <button class="btn btn-primary" type="submit">Send</button>
-  </p>
 </form>
+
 
 
    

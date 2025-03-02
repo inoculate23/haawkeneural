@@ -292,50 +292,6 @@
         <a class="link link-hover" href="https:inoculate.media/privacy.html">Privacy policy</a>
     
       </nav>
-      <form id="subscription">
-<style>
-  .field label {
-  display: block;
-  width:250px;
-  font-size: 18px;
-  color: #ffffff;
-}
-</style>
-        <div class="field">
-          <label class="label-text" for="message">Subscribe to our newsletter</label>
-            <input  name="message" id="message" type="text" placeholder="Enter your email address" us class="input input-bordered join-item" /> 
-         
-        </div>
-        
-      
-        <input type="submit" id="subscribe_btn" value="Subscribe" >
-      </form>
-    </footer>
-      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-      
-      <script type="text/javascript">emailjs.init('YTs0Dxgmc1hlfjt1-')</script>
 
-<script>
-  const subscribe_btn = document.getElementById('subscribe_btn');
-
-document.getElementById('subscription')
- .addEventListener('submit', function(event) {
-   event.preventDefault();
-
-   subscribe_btn.value = 'Sending...';
-
-   const serviceID = 'default_service';
-   const templateID = 'template_h3pygoq';
-
-   emailjs.sendForm(serviceID, templateID, this)
-    .then(() => {
-      subscribe_btn.value = 'Send Email';
-      alert('Subscribed!');
-    }, (err) => {
-     subscribe_btn.value = 'Send Email';
-      alert(JSON.stringify(err));
-    });
-});
-</script>
 	</body>
 </html>

@@ -1,107 +1,205 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"><!-- Primary Meta Tags -->
+  <title>Haawke Neural Technology - Las Vegas and Vancouver BC Canada Audio/Visual Production</title>
+  <meta name="title" content="Haawke Neural Technology - Las Vegas Audio/Visual Production">
+  <meta name="description" content="Providing Las Vegas locals and visitors outstanding visual presentations for tradeshows, conventions, concerts, and events. Ai and machine learning applied to the arts. Let us make you look great."><!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://haawke.com">
+  <meta property="og:title" content="Haawke Neural Technology - Las Vegas Audio/Visual Production">
+  <meta property="og:description" content="Providing Las Vegas locals and visitors outstanding visual presentations for tradeshows, conventions, concerts, and events. Ai and machine learning applied to the arts. Let us make you look great.">
+  <meta property="og:image" content="https://haawke.com/logo_tag.png"><!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://haawke.com">
+  <meta property="twitter:title" content="Haawke Neural Technology - Las Vegas Audio/Visual Production">
+  <meta property="twitter:description" content="Providing Las Vegas locals and visitors outstanding visual presentations for tradeshows, conventions, concerts, and events. Ai and machine learning applied to the arts. Let us make you look great.">
+  <meta property="twitter:image" content="https://haawke.com/logo_tag.png"><!-- Meta Tags Generated with https://metatags.io -->
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <script src="https://cdn.jsdelivr.net/npm/p5@0.9.0/lib/p5.js"></script>
 
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=devide-width, initial-scale=1.0" />
-    <!-- Primary Meta Tags -->
-<title>Haawke Neural Technology - Peaks.js+AudioWaveform</title>
-<meta name="title" content="Haawke Neural Technology - Las Vegas Audio/Visual Production" />
-<meta name="description" content="Providing Las Vegas locals and visitors outstanding visual presentations for tradeshows, conventions, concerts, and events. Ai and machine learning applied to the arts. Let us make you look great." />
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://haawkeneuraltech.com/" />
-<meta property="og:title" content="Haawke Neural Technology - Las Vegas Audio/Visual Production" />
-<meta property="og:description" content="Providing Las Vegas locals and visitors outstanding visual presentations for tradeshows, conventions, concerts, and events. Ai and machine learning applied to the arts. Let us make you look great." />
-<meta property="og:image" content="https://haawkeneuraltech.com/logo_tag.png" />
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content="https://haawkeneuraltech.com/" />
-<meta property="twitter:title" content="Haawke Neural Technology - Las Vegas Audio/Visual Production" />
-<meta property="twitter:description" content="Providing Las Vegas locals and visitors outstanding visual presentations for tradeshows, conventions, concerts, and events. Ai and machine learning applied to the arts. Let us make you look great." />
-<meta property="twitter:image" content="https://haawkeneuraltech.com/logo_tag.png" />
-<!-- Meta Tags Generated with https://metatags.io -->
-	  
- <!-- Favicon -->
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-	  <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.24/dist/full.min.css" rel="stylesheet" type="text/css">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&amp;display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 
- <link
-      href="./fonts.css"
-      rel="stylesheet"
-      type="text/css"
-    />
+ 
+ 
+  <script type="module" src="./src/js/index.js"></script>
+  
+ 
+  <script nonce="2a520abb-2ec7-42aa-b0e7-34996fee709c" src="./src/js/zaraz.js">
+  </script>
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@2.6.0/dist/full.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.24/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+  <style>
 
-	
-	<style>
-	html, body {
-	  margin:0;
-	}
-    #iframe {
-      margin:0px;
-      width:100%;
-      height:100%;
-  </style>
+	  body {
+		  background-color: 000000;
+	  }
+    .steps {
+      margin-top:1%;
+      margin-bottom: 20%;
+      position:absolute;
+      width:50%;
+      margin-left:25%;
+      z-index:90;
+      
+    }
+   
 
-	<script nonce="2a520abb-2ec7-42aa-b0e7-34996fee709c">(function(w,d){!function(dp,dq,dr,ds){dp[dr]=dp[dr]||{};dp[dr].executed=[];dp.zaraz={deferred:[],listeners:[]};dp.zaraz.q=[];dp.zaraz._f=function(dt){return async function(){var du=Array.prototype.slice.call(arguments);dp.zaraz.q.push({m:dt,a:du})}};for(const dv of["track","set","debug"])dp.zaraz[dv]=dp.zaraz._f(dv);dp.zaraz.init=()=>{var dw=dq.getElementsByTagName(ds)[0],dx=dq.createElement(ds),dy=dq.getElementsByTagName("title")[0];dy&&(dp[dr].t=dq.getElementsByTagName("title")[0].text);dp[dr].x=Math.random();dp[dr].w=dp.screen.width;dp[dr].h=dp.screen.height;dp[dr].j=dp.innerHeight;dp[dr].e=dp.innerWidth;dp[dr].l=dp.location.href;dp[dr].r=dq.referrer;dp[dr].k=dp.screen.colorDepth;dp[dr].n=dq.characterSet;dp[dr].o=(new Date).getTimezoneOffset();if(dp.dataLayer)for(const dC of Object.entries(Object.entries(dataLayer).reduce(((dD,dE)=>({...dD[1],...dE[1]})),{})))zaraz.set(dC[0],dC[1],{scope:"page"});dp[dr].q=[];for(;dp.zaraz.q.length;){const dF=dp.zaraz.q.shift();dp[dr].q.push(dF)}dx.defer=!0;for(const dG of[localStorage,sessionStorage])Object.keys(dG||{}).filter((dI=>dI.startsWith("_zaraz_"))).forEach((dH=>{try{dp[dr]["z_"+dH.slice(7)]=JSON.parse(dG.getItem(dH))}catch{dp[dr]["z_"+dH.slice(7)]=dG.getItem(dH)}}));dx.referrerPolicy="origin";dx.src="/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(dp[dr])));dw.parentNode.insertBefore(dx,dw)};["complete","interactive"].includes(dq.readyState)?zaraz.init():dp.addEventListener("DOMContentLoaded",zaraz.init)}(w,d,"zarazData","script");})(window,document);</script><script nonce="d920b977-5cc8-432e-8be6-3d431e958035">try{(function(w,d){!function(bb,bc,bd,be){bb[bd]=bb[bd]||{};bb[bd].executed=[];bb.zaraz={deferred:[],listeners:[]};bb.zaraz.q=[];bb.zaraz._f=function(bf){return async function(){var bg=Array.prototype.slice.call(arguments);bb.zaraz.q.push({m:bf,a:bg})}};for(const bh of["track","set","debug"])bb.zaraz[bh]=bb.zaraz._f(bh);bb.zaraz.init=()=>{var bi=bc.getElementsByTagName(be)[0],bj=bc.createElement(be),bk=bc.getElementsByTagName("title")[0];bk&&(bb[bd].t=bc.getElementsByTagName("title")[0].text);bb[bd].x=Math.random();bb[bd].w=bb.screen.width;bb[bd].h=bb.screen.height;bb[bd].j=bb.innerHeight;bb[bd].e=bb.innerWidth;bb[bd].l=bb.location.href;bb[bd].r=bc.referrer;bb[bd].k=bb.screen.colorDepth;bb[bd].n=bc.characterSet;bb[bd].o=(new Date).getTimezoneOffset();if(bb.dataLayer)for(const bo of Object.entries(Object.entries(dataLayer).reduce(((bp,bq)=>({...bp[1],...bq[1]})),{})))zaraz.set(bo[0],bo[1],{scope:"page"});bb[bd].q=[];for(;bb.zaraz.q.length;){const br=bb.zaraz.q.shift();bb[bd].q.push(br)}bj.defer=!0;for(const bs of[localStorage,sessionStorage])Object.keys(bs||{}).filter((bu=>bu.startsWith("_zaraz_"))).forEach((bt=>{try{bb[bd]["z_"+bt.slice(7)]=JSON.parse(bs.getItem(bt))}catch{bb[bd]["z_"+bt.slice(7)]=bs.getItem(bt)}}));bj.referrerPolicy="origin";bj.src="/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(bb[bd])));bi.parentNode.insertBefore(bj,bi)};["complete","interactive"].includes(bc.readyState)?zaraz.init():bb.addEventListener("DOMContentLoaded",zaraz.init)}(w,d,"zarazData","script");})(window,document)}catch(e){throw fetch("/cdn-cgi/zaraz/t"),e;};</script></head>	
-	<body>
-       
-<div class="navbar bg-base-300" data-theme="dark">
-  <a href="https://haawkeneuraltech.com"> <button class="subpixel-antialiased btn btn-ghost  text-l"> Haawke Neural Technology</button></a>
-   <details class="dropdown">
-     <summary class="btn btn-xs sm:btn-sm md:btn-md btn-neutral">Ai / Machine Learning</summary>
-     <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-       <li><a href="https://haawkeneuraltech.com/cf/">Stable Diffusion</a></li>
-       <li><a href="https://haawkeneuraltech.com/cf/llama.html">ChatGPT</a></li>
-       <li><a href="https://haawkeneuraltech.com/cf/whisper.html">Whisper Transcription / Translation</a></li>
-       <li><a href="https://haawkeneuraltech.com/cf/audio.html">Open Voice</a></li>
-     </ul>
-   </details>
-   <details class="dropdown">
-     <summary class="btn btn-xs sm:btn-sm md:btn-md btn-neutral">Audio</summary>
-     <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-       <li><a href="https://haawkeneuraltech.com/audio/peaks-waveform.html">Peaks.js+AudioWaveform Visualizer</a></li>
-     
-     </ul>
-   </details>
-   <details class="dropdown">
-     <summary class="btn btn-xs sm:btn-sm md:btn-md  btn-neutral">Video</summary>
-     <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-       <li><a href="https://haawkeneuraltech.com/mapping/index.html">Projection Mapping</a></li>
-      <li><a href="https://haawkeneuraltech.com/video/papers/index.html">Animated Papers</a></li>
-     </ul>
-   </details>
-   <button class="btn btn-xs sm:btn-sm md:btn-md btn-neutral">Software Dev</button>
-<a href="https://haawkeneuraltech.com/nft.html"><button class="btn btn-xs sm:btn-sm md:btn-md btn-neutral">NFT</button>   </a>
-   <button class="btn btn-xs sm:btn-sm md:btn-md btn-neutral">Pricing</button>
-   <a href="https://haawkeneuraltech.com/about"><button class="btn btn-xs sm:btn-sm md:btn-md btn-neutral">About Us</button></a>
-  <a href="https://haawkeneuraltech.com/contact.html"><button class="btn btn-xs sm:btn-sm md:btn-md btn-neutral">Contact</button></a> 
+   
+
+
+    
+      
+            
+          
+
+#scramble {
+   color:rgb(20, 120, 200);
+    padding:33px;
+    height:45px;
+    margin-bottom:20px;
+
+}
+#header {
+  width: 100%;
+  }
+
 
   
-<button id="btn-login" class="btn btn-xs sm:btn-sm md:btn-md  btn-primary"  onclick="login()">Log in</button>
-<button id="btn-logout" disabled="true" class="btn btn-xs sm:btn-sm md:btn-md btn-active btn-neutral" onclick="logout()">Log out</button>
+#slider {
+  width: 100%;
+	height: 40vh;
+  }
 
+#kand { 
+	width:70%;
+	margin-left:13%;
+		margin-right:13%;
+    
+      .footer {
+              position:absolute;
+            
+              margin-bottom:0px;
+              margin-top:100vh;
+            }
+    </style>
+  </head>
+  <body data-theme="dark">
 
+  <div class="navbar bg-base" data-theme="dark">
+	  
+	    <div class="flex-1">
+	  <ul class="menu bg-base-200 rounded-box">
+  <li>
+    <a class="tooltip tooltip-right" href="https://haawke.com">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-5 w-5"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+      </svg>
+    </a>
+  </li>
+</ul>
 
- </div>
-  </div>
+    <details class="dropdown">
+      <summary class="subpixel-antialiased btn bg-base-100 text-l text-warning sm:btn-sm md:btn-md btn-neutral">
+        AI
+      </summary>
+      <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-200  outline subpixel-antialiased text-warning rounded-box w-52 ">
+   
+	        <li>
+          <a href="https://haawke.com/cf/upscaler.html">Image Upscaler</a>
+        </li>
+     
+        <li>
+          <a href="https://haawke.com/cf/whisper.html">Whisper Transcription / Translation</a>
+        </li>
+   
+        <li>
+          <a href="https://haawke.com/cf/isolator">Background Remover</a>
+        </li>
+      </ul>
+    </details>
+
+    
+      
  
+    <details class="dropdown">
+      <summary class="subpixel-antialiased btn bg-base-100 text-l text-warning md:btn-md btn-neutral">
+        Video
+      </summary>
+      <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+
+	         <li>
+          <a href="https://haawke.com/video/intro.html">Intro webgl</a>
+        </li>
+        <li>
+          <a href="https://haawke.com/video/demo-reel.html">Demo Reel</a>
+        </li>
+        <li>
+          <a href="https://haawke.com/video/invent_yourself.html">ThreeJS Video Texture</a>
+        </li>
+        <li>
+		
+          <a href="https://haawke.com/mapping/index.html">Projection Mapping Projects</a>
+        </li>
+	      
+      <li>
+          <a href="https://haawke.com/video/webgpu_rain.html">Webgpu Rain</a>
+        </li>
+	     
+
+	              <li>
+          <a href="https://haawke.com/video/growth.html">Organic</a>
+        </li>
+        <li>
+          <a href="https://haawke.com/video/lines.html">Three.js Lines Geometry</a>
+        </li>
+	          <li>
+          <a href="https://haawke.com/video/cube.html">Cube</a>
+        </li>
+	     
+      </ul>
+    </details>
+    <details class="dropdown">
+      <summary class="subpixel-antialiased btn bg-base-100 text-l text-warning sm:btn-sm md:btn-md btn-neutral">
+        Dev
+      </summary>
+      <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+        <li>
+          <a href="https://haawke.com/webrtc/index.html">HaawkeEye WebRTC Screenshare</a>
+        </li>
+      </ul>
+    </details>
+
+   <a href="https://haawke.com/about.html"><button class="subpixel-antialiased btn bg-base-100 text-l text-warning sm:btn-sm md:btn-md btn-neutral">About</a></button>
+     <a href="https://haawke.com/contact.html"><button class="subpixel-antialiased btn bg-base-100 text-l text-warning sm:btn-sm md:btn-md btn-neutral">Contact</a></button>
+
+    <a class="btn btn-info text-3xl">Haawke: AI for A/V</a>
+  </div>
+  </div>
+	  
 
 <iframe id="iframe" src="https://peaks-waveform.netlify.app/"></iframe>
     <footer class="footer p-10 bg-base-200 text-base-content">

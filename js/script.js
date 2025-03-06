@@ -1,207 +1,162 @@
+var camera, scene, renderer;
 
-/*
-*  Copyright (c) 2016 The WebRTC project authors. All Rights Reserved.
-*
-*  Use of this source code is governed by a BSD-style license
-*  that can be found in the LICENSE file in the root of the source
-*  tree.
-*/
+var mesh;
+var shaderValue = { rate: 0 };
 
-/* global main */
+var g_dt = 1 / 60;
+var time = 0;
 
-'use strict';
+init();
 
-// Call main() in demo.js
-//main();
+animate();
 
-const canvas = document.getElementById('canvas');
+function init() {
+  THREE.ImageUtils.crossOrigin = "Anonymous";
+  camera = new THREE.PerspectiveCamera(
+    50,
+    window.innerWidth / window.innerHeight,
+    0.1,
+    1000
+  );
+  // reset camera
+  camera.position.x = 0;
+  camera.position.y = 0;
+  camera.position.z = 20;
+  camera.lookAt(new THREE.Vector3(0, 0, -1));
 
-const video = document.getElementById('video');
-const stream = canvas.captureStream();
+  scene = new THREE.Scene();
 
-video.srcObject = stream;
-const ctx = canvas.getContext('WEBGL', { desynchronized: true });
+  //camera.lookAt(scene.position);
 
-const startRecordingButton = document.querySelector('#start-recording');
-const endRecordingButton = document.querySelector('#end-recording');
-const recordingStatus = document.querySelector('#recording-status');
+  var geometry = new THREE.BufferGeometry();
+  var material = new THREE.LineBasicMaterial({
+    vertexColors: THREE.VertexColors
+  });
 
-/** RECORDING & MUXING STUFF */
+  var positions = [];
+  var colors = [];
+  var indices_array = [];
 
-let muxer = null;
-let videoEncoder = null;
-let audioEncoder = null;
-let startTime = null;
-let recording = false;
-let audioTrack = null;
-let intervalId = null;
-let lastKeyFrame = null;
-let framesGenerated = 0;
+  var numPtsX = 190;
+  var numPtsY = 60;
+  var numVerts = numPtsX * numPtsY;
+  var deltaStep = 0.2;
 
-const startRecording = async () => {
-	
-	// Check for VideoEncoder availability
-	if (typeof VideoEncoder === 'undefined') {
-		alert("Looks like your user agent doesn't support VideoEncoder / WebCodecs API yet.");
-		return;
-	}
+  // generate verts
+  var posXOffset = -numPtsX * deltaStep * 0.5;
+  var posYOffset = -numPtsY * deltaStep * 0.4;
 
-	startRecordingButton.style.display = 'none';
+  for (var y = 0; y < numPtsY; y++) {
+    for (var x = 0; x < numPtsX; x++) {
+      var posX = posXOffset + x * deltaStep;
+      var posY = posYOffset + y * deltaStep;
+      var posZ = -0.0;
 
-	// Check for AudioEncoder availability
-	if (typeof AudioEncoder !== 'undefined') {
-		// Try to get access to the user's microphone
-		try {
-			let userMedia = await navigator.mediaDevices.getUserMedia({ video: false, audio: true });
-			audioTrack = userMedia.getAudioTracks()[0];
-		} catch (e) {}
-		if (!audioTrack) console.warn("Couldn't acquire a user media audio track.");
-	} else {
-		console.warn('AudioEncoder not available; no need to acquire a user media audio track.');
-	}
+      positions.push(posX, posY, posZ);
+      colors.push(Math.random() * 0.5 + 0.5, Math.random() * 0.5 + 0.5, 0.0101);
+      //colors.push(0.65, 0.65, 0.65);
+      //colors.push(100, 100.0, 100);
+    }
+  }
 
-	endRecordingButton.style.display = 'block';
+  // generate indices
+  for (var y = 0; y < numPtsY - 1; y++) {
+    var rowIndexOffset = y * numPtsX;
 
-	let audioSampleRate = audioTrack?.getCapabilities().sampleRate.max;
+    for (var x = 0; x < numPtsX - 2; x++) {
+      var indexCurr = rowIndexOffset + x;
+      var indexRight = indexCurr + 2;
+      var indexTop = indexCurr + numPtsX;
+      var indexTopRight = indexTop + 2;
 
-	// Create an MP4 muxer with a video track and maybe an audio track
-	muxer = new Mp4Muxer.Muxer({
-		target: new Mp4Muxer.ArrayBufferTarget(),
+      indices_array.push(indexCurr, indexRight);
+      indices_array.push(indexCurr, indexTop);
+      indices_array.push(indexCurr, indexTopRight);
+    }
+  }
 
-		video: {
-			codec: 'avc',
-			width: 1920,
-			height: 1080
-		},
+  // top row - needs to stitch together
+  for (var x = 0; x < numPtsX - 1; x++) {
+    var index0 = (numPtsY - 1) * numPtsX + x;
+    var index1 = index0 + 1;
+    indices_array.push(index0, index1);
+  }
 
-			audio: audioTrack ? {
-				codec: 'aac',
-				sampleRate: audioSampleRate,
-				numberOfChannels: 1
-			} : undefined,
-	
-			// Puts metadata to the start of the file. Since we're using ArrayBufferTarget anyway, this makes no difference
-			// to memory footprint.
-			fastStart: 'in-memory',
-	
-			// Because we're directly pumping a MediaStreamTrack's data into it, which doesn't start at timestamp = 0
-			firstTimestampBehavior: 'offset'
-		});
-	
-	videoEncoder = new VideoEncoder({
-		output: (chunk, meta) => muxer.addVideoChunk(chunk, meta),
-		error: e => console.error(e)
-	});
-	videoEncoder.configure({
-		codec: 'avc1.640028',
-		//codec: 'av01.2.15M.10.0.100.09.16.09.0',
-		width: 1920,
-			height: 1080,
-		bitrate: 1e6
-	});
+  // right col - needs to stitch together
+  for (var y = 0; y < numPtsY - 1; y++) {
+    var index0 = y * numPtsX + numPtsX - 1;
+    var index1 = index0 + numPtsX;
+    indices_array.push(index0, index1);
+  }
 
+  // vert attrib
+  geometry.addAttribute(
+    "index",
+    new THREE.BufferAttribute(new Uint16Array(indices_array), 1)
+  );
+  geometry.addAttribute(
+    "position",
+    new THREE.BufferAttribute(new Float32Array(positions), 3)
+  );
+  geometry.addAttribute(
+    "color",
+    new THREE.BufferAttribute(new Float32Array(colors), 3)
+  );
+  geometry.computeBoundingSphere();
 
-
-	startTime = document.timeline.currentTime;
-	recording = true;
-	lastKeyFrame = -Infinity;
-	framesGenerated = 0;
-
-	encodeVideoFrame();
-	intervalId = setInterval(encodeVideoFrame, 1000/60);
-};
-startRecordingButton.addEventListener('click', startRecording);
-
-
-const encodeVideoFrame = () => {
-	const canvas = document.getElementById('canvas');
-	const ctx = canvas.getContext('WEBGL', { desynchronized: true });
-const video = document.getElementById('video');
-
-	let elapsedTime = document.timeline.currentTime - startTime;
-	let frame = new VideoFrame(video, {
-		timestamp: framesGenerated * 1e6 / 60 // Ensure equally-spaced frames every 1/30th of a second
-	});
-	framesGenerated++;
-
-	// Ensure a video key frame at least every 10 seconds for good scrubbing
-	let needsKeyFrame = elapsedTime - lastKeyFrame >= 10000;
-	if (needsKeyFrame) lastKeyFrame = elapsedTime;
-
-	videoEncoder.encode(frame, { keyFrame: needsKeyFrame });
-	frame.close();
-
-	recordingStatus.textContent =
-		`${elapsedTime % 1000 < 500 ? '🔴' : '⚫'} Recording - ${(elapsedTime / 1000).toFixed(1)} s`;
-};
-
-const endRecording = async () => {
-	endRecordingButton.style.display = 'none';
-	recordingStatus.textContent = '';
-	recording = false;
-
-	clearInterval(intervalId);
-	audioTrack?.stop();
-
-	await videoEncoder?.flush();
-	await audioEncoder?.flush();
-	muxer.finalize();
-
-	let buffer = muxer.target.buffer;
-	downloadBlob(new Blob([buffer]));
-
-	videoEncoder = null;
-	audioEncoder = null;
-	muxer = null;
-	startTime = null;
-	firstAudioTimestamp = null;
-
-	//startRecordingButton.style.display = 'block';
-};
-endRecordingButton.addEventListener('click', endRecording);
-// Takes the binary data and creates a new video element
-const show = (data, width, height) => {
-	const url = URL.createObjectURL(new Blob([data], { type: "video/mp4" }));
-	const video = document.createElement("video");
-	video.setAttribute("muted", "muted");
-	video.setAttribute("autoplay", "autoplay");
-	video.setAttribute("controls", "controls");
-	const min = Math.min(width, window.innerWidth, window.innerHeight);
-	const aspect = width / height;
-	const size = min * 0.75;
-	video.style.width = `${size}px`;
-	video.style.height = `${size / aspect}px`;
-  
-	const container = document.body;
-	container.appendChild(video);
-	video.src = url;
-  
-	const text = document.createElement("div");
-	const anchor = document.createElement("a");
-	text.appendChild(anchor);
-	anchor.href = url;
-	anchor.id = "download";
-	anchor.textContent = "Click here to download MP4 file...";
-	anchor.download = "download.mp4";
-	container.appendChild(text);
+  var attributes = {
+    position: { type: "f", value: null },
+    color: { type: "f", value: null }
+    //data: { type: 'f', value: null }
   };
-  
-  // Utility to download video binary data
-  const download = (buf, filename) => {
-	const url = URL.createObjectURL(new Blob([buf], { type: "video/mp4" }));
-	const anchor = document.createElement("a");
-	anchor.href = url;
-	anchor.download = filename || "download";
-	anchor.click();
+
+  uniforms = {
+    time: { type: "f", value: 4.0 },
+    texture: {
+      type: "t",
+      value: THREE.ImageUtils.loadTexture(
+        "https://raw.githubusercontent.com/inoculate23/haawkeneural/refs/heads/main/images/peep5.png"
+      )
+    },
+    texture2: {
+      type: "t",
+      value: THREE.ImageUtils.loadTexture(
+        "https://raw.githubusercontent.com/inoculate23/haawkeneural/refs/heads/main/images/e.png"
+      )
+    },
+    rate: { type: "f", value: 4.0 }
   };
-  
-const downloadBlob = (blob) => {
-	let url = window.URL.createObjectURL(blob);
-	let a = document.createElement('a');
-	a.style.display = 'none';
-	a.href = url;
-	a.download = 'davinci.mp4';
-	document.body.appendChild(a);
-	a.click();
-	window.URL.revokeObjectURL(url);
-};
+
+  var shaderMaterial = new THREE.ShaderMaterial({
+    uniforms: uniforms,
+    attributes: attributes,
+    vertexShader: document.getElementById("vertexShaderLines").textContent,
+    fragmentShader: document.getElementById("fragmentShaderLines").textContent,
+
+    blending: THREE.AdditiveBlending,
+    depthTest: true,
+    transparent: false
+  });
+
+  mesh = new THREE.Line(geometry, shaderMaterial, THREE.LinePieces);
+  scene.add(mesh);
+
+  renderer = new THREE.WebGLRenderer();
+  renderer.setClearColor(0x000000, 0);
+  renderer.setSize(window.innerWidth, window.innerHeight);
+
+  document.body.appendChild(renderer.domElement);
+}
+
+function animate() {
+  // note: three.js includes requestAnimationFrame shim
+  requestAnimationFrame(animate);
+
+  time += g_dt;
+
+  var rate = (Math.cos(time / 3) + 1) / 2;
+  mesh.material.uniforms.time.value = time;
+  mesh.material.uniforms.rate.value = rate;
+
+  renderer.render(scene, camera);
+}

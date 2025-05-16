@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haawke AI - AI Solutions for Audio/Video Professionals</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+        <link href="./style2.css"  rel="stylesheet" type="text/css" />
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        haawke: {
+                            primary: '#6C63FF',
+                            dark: '#4A42E8',
+                            light: '#8E85FF',
+                            accent: 'oklch(53.2% 0.157 131.589)',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+  
+</head>
+<body class="bg-white dark:bg-gray-900">
+    <!-- Navigation -->
+    <nav class="bg-white dark:bg-gray-800 shadow-sm fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                      <a href="https://ai.haawke.com"><i class="fas fa-wave-square text-haawke-primary text-4xl mr-2"></i>
+                        <span class="text-2xl font-bold text-haawke-primary">Haawke AI</span>
+                        </a> 
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="nav-link text-gray-700 dark:text-gray-300 hover:text-haawke-primary px-3 py-2 text-sm font-medium">Features</a>
+                    <a href="#solutions" class="nav-link text-gray-700 dark:text-gray-300 hover:text-haawke-primary px-3 py-2 text-sm font-medium">Solutions</a>
+                    <a href="#pricing" class="nav-link text-gray-700 dark:text-gray-300 hover:text-haawke-primary px-3 py-2 text-sm font-medium">Pricing</a>
+                    <a href="#testimonials" class="nav-link text-gray-700 dark:text-gray-300 hover:text-haawke-primary px-3 py-2 text-sm font-medium">Testimonials</a>
+                    <a href="#contact" class="nav-link text-gray-700 dark:text-gray-300 hover:text-haawke-primary px-3 py-2 text-sm font-medium">Contact</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <button id="theme-toggle" class="text-gray-700 dark:text-gray-300 hover:text-haawke-primary focus:outline-none">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+                    <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-haawke-primary px-3 py-2 text-sm font-medium">Log In</a>
+                    <a href="#" class="bg-haawke-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-haawke-dark transition duration-300">Get Started</a>
+                </div>
+                <div class="md:hidden flex items-center space-x-4">
+                    <button id="theme-toggle-mobile" class="text-gray-700 dark:text-gray-300 hover:text-haawke-primary focus:outline-none">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+                    <button id="menu-toggle" class="text-gray-700 dark:text-gray-300 hover:text-haawke-primary focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="mobile-menu bg-white dark:bg-gray-800 md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#features" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-haawke-primary hover:bg-gray-50 dark:hover:bg-gray-700">Features</a>
+                <a href="#solutions" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-haawke-primary hover:bg-gray-50 dark:hover:bg-gray-700">Solutions</a>
+                <a href="#pricing" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-haawke-primary hover:bg-gray-50 dark:hover:bg-gray-700">Pricing</a>
+                <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-haawke-primary hover:bg-gray-50 dark:hover:bg-gray-700">Testimonials</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-haawke-primary hover:bg-gray-50 dark:hover:bg-gray-700">Contact</a>
+                <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
+                    <a href="#" class="block w-full px-4 py-2 text-center text-base font-medium text-gray-700 dark:text-gray-300 hover:text-haawke-primary">Log In</a>
+                    <a href="#" class="block w-full px-4 py-2 mt-2 text-center text-base font-medium text-white bg-haawke-primary rounded-md hover:bg-haawke-dark">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+           <section class="gradient-bg text-white  pt-24 pb-32 md:pt-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-1 lg:gap-8 items-center">
+                <div class="mb-12 lg:mb-0">
+                    <h1 class="text-shadow-md/10 text-4xl md:text-5xl font-bold leading-tight mb-6">Talking Points for a Sales Pitch to a Cloud Computing Provider</h1>
+
+      <h2 class="text-shadow-md/10 text-2xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">1. Introduction and Value Proposition</h2>
+    <p class="text-xl md:text-xl text-gray-800 dark:text-white mb-6"><strong>Opening Statement:</strong> "Thank you for taking the time to discuss how Haawke AI’s new AI Video Pipeline Template can enhance your offerings as a cloud computing provider."</p>
+    <p class="text-xl md:text-xl ttext-gray-900 dark:text-white mb-6"><strong>Value Proposition:</strong> "Our AI Video Pipeline Template is designed to empower developers, content creators, and businesses by providing a scalable, efficient, and customizable solution for video processing tasks. By integrating this template into your cloud platform, you can offer your customers a cutting-edge tool that accelerates innovation and drives business value."</p>
+
+      <h2 class="text-2xl md:text-4xl font-bold text-gray-800 dark:text-white mb-6">2. Market Opportunity</h2>
+    <ol class="list list-inside">
+          <li class="text-shadow-md/10 list list-inside text-xl md:text-xl text-gray-800 dark: text-white mb-8"><strong>Growing Demand for AI in Video:</strong>
+            <ol class="list list-inside">
+                   <li class="list text-xl md:text-xl ttext-gray-900 dark:text-white mb-4">"The demand for AI-driven video solutions is skyrocketing. According to market research, the global AI video analytics market is expected to grow at a CAGR of [X]% over the next few years."</li>
+                   <li class="list text-xl md:text-xl ttext-gray-900 dark:text-white mb-4">"Businesses across industries—such as media & entertainment, e-commerce, education, and healthcare—are increasingly looking for ways to automate video processing, improve content quality, and gain insights from visual data."</li>
+            </ol>
+        </li>
+          <li class="text-shadow-md/10 list list-inside text-xl md:text-xl text-gray-800 dark: text-white mb-8"><strong>Competitive Advantage:</strong>
+            <ol class="list list-inside">
+                   <li class="list text-xl md:text-xl ttext-gray-900 dark:text-white mb-4">"By offering Haawke AI’s Video Pipeline Template, you can differentiate yourself from competitors who may not yet have such advanced capabilities integrated into their cloud services."</li>
+                   <li class="list text-xl md:text-xl ttext-gray-900 dark:text-white mb-4">"This partnership positions your cloud platform as a leader in enabling AI-powered video workflows, attracting both existing and new customers seeking innovative solutions."</li>
+            </ol>
+        </li>
+    </ol>
+
+      <h2 class="text-shadow-md/10 text-2xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">3. Key Features and Benefits</h2>
+    <ol class="list list-inside">
+          <li class="text-shadow-md/10 list list-inside text-xl md:text-xl text-gray-800 dark: text-white mb-8"><strong>Scalability and Flexibility:</strong>
+            <ol class="list list-inside">
+                   <li class="list text-xl md:text-xl ttext-gray-900 dark:text-white mb-4">"Our pipeline template is built to scale seamlessly with your cloud infrastructure. It leverages containerization and orchestration tools like Kubernetes, ensuring that it can handle varying workloads without compromising performance."</li>
+                   <li class="list text-xl md:text-xl ttext-gray-900 dark:text-white mb-4">"Developers can easily customize the pipeline to meet specific use cases, whether it’s video transcoding, object detection, facial recognition, or real-time analytics."</li>
+            </ol>
+        </li>
+          <li class="text-shadow-md/10 list list-inside text-xl md:text-xl text-gray-800 dark: text-white mb-8"><strong>Efficiency and Cost Savings:</strong>
+            <ol class="list list-inside">
+                   <li class="list text-xl md:text-xl ttext-gray-900 dark:text-white mb-4">"By automating complex video processing tasks, our template reduces manual effort and speeds up workflows, leading to significant time and cost savings for your customers."</li>
+                   <li class="list text-xl md:text-xl ttext-gray-900 dark:text-white mb-4">"Integration with your cloud platform ensures optimized resource utilization, minimizing unnecessary compute costs while maintaining high performance."</li>
+            </ol>
+        </li>
+          <li class="text-shadow-md/10 list list-inside text-xl md:text-xl text-gray-800 dark: text-white mb-8"><strong>Seamless Integration:</strong>
+            <ol class="list list-inside">
+                   <li class="list text-xl md:text-xl ttext-gray-900 dark:text-white mb-4">"Our template is designed to integrate seamlessly with existing cloud services, including storage, compute, and machine learning platforms. This means minimal setup time and effort for your customers."</li>
+                   <li class="list text-xl md:text-xl ttext-gray-900 dark:text-white mb-4">"It supports popular frameworks and libraries (e.g., TensorFlow, PyTorch, OpenCV), making it accessible to a wide range of developers and users."</li>
+            </ol>
+        </li>
+    </ol>
+
+      <h2 class="text-shadow-md/10 text-2xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">4. Use Cases and Customer Impact</h2>
+    <ol class="list list-inside">
+          <li class="text-shadow-md/10 list list-inside text-xl md:text-xl text-gray-800 dark: text-white mb-8"><strong>Media & Entertainment:</strong>
+            <ol class="list list-inside">
+                   <li class="list text-xl md:text-xl ttext-gray-900 dark:text-white mb-4">"Content creators and streaming platforms can use the pipeline for automated video editing, scene detection, and metadata extraction, enabling faster production cycles and personalized content recommendations."</li>
+            </ol>
+        </li>
+          <li class="text-shadow-md/10 list list-inside text-xl md:text-xl text-gray-800 dark: text-white mb-8"><strong>E-Commerce:</strong>
+            <ol class="list list-inside">
+                   <li class="list text-xl md:text-xl ttext-gray-900 dark:text-white mb-4">"Retailers can leverage the pipeline for product visualization, virtual try-ons, and augmented reality experiences, enhancing customer engagement and conversion rates."</li>
+            </ol>
+        </li>
+          <li class="text-shadow-md/10 list list-inside text-xl md:text-xl text-gray-800 dark: text-white mb-8"><strong>Education:</strong>
+            <ol class="list list-inside">
+                   <li class="list text-xl md:text-xl ttext-gray-900 dark:text-white mb-4">"Educational institutions can use the pipeline for automated captioning, transcription, and accessibility features, making educational content more inclusive and accessible."</li>
+            </ol>
+        </li>
+          <li class="text-shadow-md/10 list list-inside text-xl md:text-xl text-gray-800 dark: text-white mb-8"><strong>Healthcare:</strong>
+            <ol class="list list-inside">
+                   <li class="list text-xl md:text-xl ttext-gray-900 dark:text-white mb-4">"Medical professionals can benefit from video analysis for remote diagnostics, patient monitoring, and training simulations, improving healthcare delivery and outcomes."</li>
+            </ol>
+        </li>
+          <li class="text-shadow-md/10 list list-inside text-xl md:text-xl text-gray-800 dark: text-white mb-8"><strong>Security and Surveillance:</strong>
+            <ol class="list list-inside">
+                   <li class="list text-xl md:text-xl ttext-gray-900 dark:text-white mb-4">"Security teams can use the pipeline for real-time object tracking, anomaly detection, and event classification, enhancing safety and operational efficiency."</li>
+            </ol>
+        </li>
+    </ol>
+
+      <h2 class="text-shadow-md/10 text-2xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">5. Technical Alignment with Your Cloud Platform</h2>
+    <ol class="list list-inside">
+          <li class="text-shadow-md/10 list list-inside text-xl md:text-xl text-gray-800 dark: text-white mb-8"><strong>Compatibility:</strong>
+            <ol class="list list-inside">
+                   <li class="list text-xl md:text-xl ttext-gray-900 dark:text-white mb-4">"Our pipeline template is designed to work seamlessly with your cloud platform’s ecosystem, including storage services (e.g., S3, Blob Storage), compute resources (e.g., EC2, VMs), and ML/AI services (e.g., SageMaker, Azure Machine Learning)."</li>
+            </ol>
+        </li>
+          <li class="text-shadow-md/10 list list-inside text-xl md:text-xl text-gray-800 dark: text-white mb-8"><strong>Security and Compliance:</strong>
+            <ol class="list list-inside">
+                   <li class="list text-xl md:text-xl ttext-gray-900 dark:text-white mb-4">"We prioritize security and compliance, ensuring that our pipeline adheres to industry standards such as GDPR, HIPAA, and others. This aligns perfectly with your cloud platform’s commitment to data protection."</li>
+            </ol>
+        </li>
+          <li class="text-shadow-md/10 list list-inside text-xl md:text-xl text-gray-800 dark: text-white mb-8"><strong>Performance Optimization:</strong>
+            <ol class="list list-inside">
+                   <li class="list text-xl md:text-xl ttext-gray-900 dark:text-white mb-4">"Our template leverages best practices in distributed computing and parallel processing, ensuring optimal performance on your cloud infrastructure. We also support serverless architectures for cost-effective scaling."</li>
+            </ol>
+        </li>
+    </ol>
+
+      <h2 class="text-shadow-md/10 text-2xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">6. Customer Success Stories</h2>
+    <ol class="list list-inside">
+          <li class="text-shadow-md/10 list list-inside text-xl md:text-xl text-gray-800 dark: text-white mb-8"><strong>Real-World Examples:</strong>
+            <ol class="list list-inside">
+                   <li class="list text-xl md:text-xl ttext-gray-900 dark:text-white mb-4">"One of our early adopters, a leading media company, used our pipeline to automate video transcoding and metadata extraction, reducing their processing time by 70% and saving over $[X]K annually."</li>
+                   <li class="list text-xl md:text-xl ttext-gray-900 dark:text-white mb-4">"Another customer, an e-commerce giant, implemented our pipeline for product visualization, resulting in a 40% increase in customer engagement and a 25% boost in sales conversions."</li>
+            </ol>
+        </li>
+          <li class="text-shadow-md/10 list list-inside text-xl md:text-xl text-gray-800 dark: text-white mb-8"><strong>Testimonials:</strong>
+            <ol class="list list-inside">
+                   <li class="list text-xl md:text-xl ttext-gray-900 dark:text-white mb-4">"Quote from a satisfied customer: ‘Haawke AI’s Video Pipeline Template has been a game-changer for us. It allows us to focus on creativity rather than technical complexities.’"</li>
+            </ol>
+        </li>
+    </ol>
+
+      <h2 class="text-shadow-md/10 text-2xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">7. Partnership Model and Next Steps</h2>
+    <ol class="list list-inside">
+          <li class="text-shadow-md/10 list list-inside text-xl md:text-xl text-gray-800 dark: text-white mb-8"><strong>Collaboration Opportunities:</strong>
+            <ol class="list list-inside">
+                   <li class="list text-xl md:text-xl ttext-gray-900 dark:text-white mb-4">"We propose a partnership model where we collaborate to integrate our pipeline template into your cloud platform. This could include co-marketing efforts, joint webinars, and shared customer success stories."</li>
+            </ol>
+        </li>
+          <li class="text-shadow-md/10 list list-inside text-xl md:text-xl text-gray-800 dark: text-white mb-8"><strong>Pricing and Licensing:</strong>
+            <ol class="list list-inside">
+                   <li class="list text-xl md:text-xl ttext-gray-900 dark:text-white mb-4">"Our licensing model is flexible and can be tailored to fit your pricing strategy. We offer tiered plans based on usage, allowing your customers to scale as their needs grow."</li>
+            </ol>
+        </li>
+          <li class="text-shadow-md/10 list list-inside text-xl md:text-xl text-gray-800 dark: text-white mb-8"><strong>Next Steps:</strong>
+            <ol class="list list-inside">
+                   <li class="list text-xl md:text-xl ttext-gray-900 dark:text-white mb-4">"To move forward, we propose a pilot program where we can demonstrate the pipeline’s capabilities on your cloud platform. This will help us gather feedback and ensure seamless integration."</li>
+                   <li class="list text-xl md:text-xl ttext-gray-900 dark:text-white mb-4">"Following the pilot, we can develop a phased rollout plan to introduce the template to your broader customer base."</li>
+            </ol>
+        </li>
+    </ol>
+
+      <h2 class="text-shadow-md/10 text-2xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">8. Conclusion</h2>
+    <ol class="list list-inside">
+          <li class="text-shadow-md/10 list list-inside text-xl md:text-xl text-gray-800 dark: text-white mb-8"><strong>Summary of Benefits:</strong>
+            <ol class="list list-inside">
+                   <li class="list text-xl md:text-xl ttext-gray-900 dark:text-white mb-4">"By offering Haawke AI’s Video Pipeline Template, you can provide your customers with a powerful tool that accelerates innovation, reduces costs, and enhances productivity in video processing."</li>
+            </ol>
+        </li>
+          <li class="text-shadow-md/10 list list-inside text-xl md:text-xl text-gray-800 dark: text-white mb-8"><strong>Call to Action:</strong>
+            <ol class="list list-inside">
+                   <li class="list text-xl md:text-xl ttext-gray-900 dark:text-white mb-4">"We are excited about the potential of this partnership and believe it can significantly enhance your cloud offering. Let’s schedule a follow-up meeting to discuss the details and explore how we can work together to bring this solution to market."</li>
+            </ol>
+        </li>
+    </ol>
+
+      <h2 class="text-shadow-md/10 text-2xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">Closing Remarks</h2>
+    <ol class="list list-inside">
+          <li class="text-shadow-md/10 list list-inside text-xl md:text-xl text-gray-800 dark: text-white mb-8"><strong>Reiterate Value:</strong> "Integrating our AI Video Pipeline Template into your cloud platform not only strengthens your portfolio but also positions you as a pioneer in enabling AI-driven video solutions."</li>
+          <li class="text-shadow-md/10 list list-inside text-xl md:text-xl text-gray-800 dark: text-white mb-8"><strong>Express Gratitude:</strong> "Thank you again for considering this opportunity. We look forward to the possibility of working together to deliver transformative technology to your customers."</li>
+    </ol>
+
+      <h2 class="text-shadow-md/10 text-2xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">Bonus Tips for Delivery</h2>
+    <ol class="list list-inside">
+          <li class="text-shadow-md/10 list list-inside text-xl md:text-xl text-gray-800 dark: text-white mb-8"><strong>Be Prepared with Data:</strong> Have statistics, case studies, and customer testimonials ready to reinforce your points.</li>
+          <li class="text-shadow-md/10 list list-inside text-xl md:text-xl text-gray-800 dark: text-white mb-8"><strong>Tailor to Audience:</strong> Understand the priorities of the cloud provider (e.g., revenue growth, customer retention, innovation) and tailor your pitch accordingly.</li>
+          <li class="text-shadow-md/10 list list-inside text-xl md:text-xl text-gray-800 dark: text-white mb-8"><strong>Engage with Questions:</strong> Encourage questions and be prepared to address any concerns or challenges they might have.</li>
+    </ol>
+    </div>
+    </div>
+    </div>
+    </section>
+
+  <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+                <div class="col-span-2">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-wave-square text-haawke-primary text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-haawke-primary">Haawke AI</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Empowering audio and video professionals with cutting-edge AI technology.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://twitter.com/haawke_ai" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://linkedin/in/craig-ellenwood" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://huggingface.co/HaawkeNeural" class="text-gray-400 hover:text-white">
+                            <img src="huggingface.png " width="20px" class="fab fa-instagram" />
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">Product</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Features</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Pricing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Solutions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Demo</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">Resources</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Documentation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Tutorials</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Support</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="https://www.haawke.com/about.html" class="text-gray-400 hover:text-white">About</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Press</a></li>
+                        <li>   <a href="#contact" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 Haawke AI. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('open');
+        });
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                // Toggle content
+                content.classList.toggle('hidden');
+                
+                // Rotate icon
+                if (content.classList.contains('hidden')) {
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.remove('open');
+                    
+                    // Scroll to target
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Dark mode toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+        
+        // Check for saved user preference, if any, on load
+        const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        if (currentTheme) {
+            document.documentElement.classList.add(currentTheme);
+        }
+        
+        // Toggle between light and dark mode
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+        
+        // Add event listeners
+        if (themeToggle) {
+            themeToggle.addEventListener('click', toggleTheme);
+        }
+        
+        if (themeToggleMobile) {
+            themeToggleMobile.addEventListener('click', toggleTheme);
+        }
+    </script>
+</body>
+</html>

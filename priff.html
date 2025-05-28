@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRIFF - Point Roeberts International Film Festival</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #0a192f;
+            color: white;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMTYzMjU1IiBzdHJva2Utd2lkdGg9IjEiIGQ9Ik0yMCAyMGw2MCA2ME0yMCA4MGw2MC02MCIvPjwvc3ZnPg==');
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .nav-link:hover {
+            color: #f97316;
+            transform: translateY(-2px);
+        }
+        
+        .workshop-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .film-card:hover .film-overlay {
+            opacity: 1;
+        }
+        
+        .btn-primary {
+            background-color: #f97316;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #ea580c;
+            transform: translateY(-2px);
+        }
+        
+        .section-divider {
+            height: 100px;
+            background: linear-gradient(to bottom, #0a192f, #163255, #0a192f);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-text {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-blue-900/90 backdrop-blur-md sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-film text-orange-500 text-2xl"></i>
+                    <a href="#" class="text-white text-2xl font-bold">PRIFF</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-white font-medium transition duration-300">Home</a>
+                    <a href="#about" class="nav-link text-white font-medium transition duration-300">About</a>
+                    <a href="#workshops" class="nav-link text-white font-medium transition duration-300">Workshops</a>
+                    <a href="#showcase" class="nav-link text-white font-medium transition duration-300">Showcase</a>
+                    <a href="#contact" class="nav-link text-white font-medium transition duration-300">Contact</a>
+                </div>
+                <button class="md:hidden text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="md:hidden bg-blue-900 hidden" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="#home" class="block px-3 py-2 text-white font-medium">Home</a>
+            <a href="#about" class="block px-3 py-2 text-white font-medium">About</a>
+            <a href="#workshops" class="block px-3 py-2 text-white font-medium">Workshops</a>
+            <a href="#showcase" class="block px-3 py-2 text-white font-medium">Showcase</a>
+            <a href="#contact" class="block px-3 py-2 text-white font-medium">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative overflow-hidden">
+        <div class="container mx-auto px-6 py-24 md:py-32 text-center">
+            <h1 class="hero-text text-5xl md:text-7xl font-bold mb-6 text-white">
+                Point Roberts <span class="text-orange-500">International</span> Film Festival
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto">
+                Celebrating cinematic excellence from emerging and established filmmakers worldwide.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#about" class="btn-primary px-8 py-3 rounded-full text-white font-bold text-lg">
+                    Learn More
+                </a>
+                <a href="#showcase" class="border-2 border-orange-500 px-8 py-3 rounded-full text-orange-500 font-bold text-lg hover:bg-orange-500 hover:text-white transition duration-300">
+                    View Films
+                </a>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-blue-900 to-transparent"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-blue-900/30">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">About PRIFF</h2>
+                <div class="w-24 h-1 bg-orange-500 mx-auto"></div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                         alt="Film Festival" 
+                         class="rounded-lg shadow-2xl w-full h-auto object-cover">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-3xl font-bold text-white mb-6">Celebrating Global Cinema</h3>
+                    <p class="text-gray-300 mb-6 text-lg">
+                        The Point Roberts International Film Festival (PRIFF) is an annual celebration of cinematic artistry, bringing together filmmakers, industry professionals, and film enthusiasts from around the world.
+                    </p>
+                    <p class="text-gray-300 mb-6 text-lg">
+                        Our mission is to showcase diverse voices, foster creative collaboration, and provide a platform for emerging talent to shine alongside established filmmakers.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mt-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-trophy text-orange-500 text-2xl mr-3"></i>
+                            <span class="text-white">Award-Winning Films</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-globe text-orange-500 text-2xl mr-3"></i>
+                            <span class="text-white">International Submissions</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-users text-orange-500 text-2xl mr-3"></i>
+                            <span class="text-white">Industry Networking</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Workshops Section -->
+    <section id="workshops" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">Filmmaking Workshops</h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                    Enhance your skills and get your film featured in our festival showcase
+                </p>
+                <div class="w-24 h-1 bg-orange-500 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Workshop 1 -->
+                <div class="workshop-card bg-blue-900/50 rounded-lg overflow-hidden shadow-lg transition duration-500">
+                    <div class="h-48 bg-gradient-to-r from-blue-800 to-blue-700 flex items-center justify-center">
+                        <i class="fas fa-camera-retro text-6xl text-orange-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-3">Cinematography Masterclass</h3>
+                        <p class="text-gray-300 mb-4">
+                            Learn advanced lighting techniques, camera movement, and visual storytelling from award-winning cinematographers.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-orange-500 font-bold">June 15-17</span>
+                            <a href="#" class="text-white bg-orange-500 px-4 py-2 rounded-full text-sm font-bold hover:bg-orange-600 transition duration-300">
+                                Register Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Workshop 2 -->
+                <div class="workshop-card bg-blue-900/50 rounded-lg overflow-hidden shadow-lg transition duration-500">
+                    <div class="h-48 bg-gradient-to-r from-blue-800 to-blue-700 flex items-center justify-center">
+                        <i class="fas fa-film text-6xl text-orange-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-3">Editing & Post-Production</h3>
+                        <p class="text-gray-300 mb-4">
+                            Master the art of editing with hands-on training in industry-standard software and workflow optimization.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-orange-500 font-bold">July 5-7</span>
+                            <a href="#" class="text-white bg-orange-500 px-4 py-2 rounded-full text-sm font-bold hover:bg-orange-600 transition duration-300">
+                                Register Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Workshop 3 -->
+                <div class="workshop-card bg-blue-900/50 rounded-lg overflow-hidden shadow-lg transition duration-500">
+                    <div class="h-48 bg-gradient-to-r from-blue-800 to-blue-700 flex items-center justify-center">
+                        <i class="fas fa-microphone-alt text-6xl text-orange-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-3">Sound Design Intensive</h3>
+                        <p class="text-gray-300 mb-4">
+                            Explore the world of audio storytelling with professional sound designers and learn techniques for immersive soundscapes.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-orange-500 font-bold">August 12-14</span>
+                            <a href="#" class="text-white bg-orange-500 px-4 py-2 rounded-full text-sm font-bold hover:bg-orange-600 transition duration-300">
+                                Register Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <p class="text-gray-300 mb-6 text-lg">
+                    Participants who complete any workshop will have their films automatically considered for inclusion in our festival showcase.
+                </p>
+                <a href="#" class="inline-block border-2 border-orange-500 text-orange-500 px-8 py-3 rounded-full font-bold text-lg hover:bg-orange-500 hover:text-white transition duration-300">
+                    View All Workshops
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Showcase Section -->
+    <section id="showcase" class="py-20 bg-blue-900/30">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">Festival Showcase</h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                    Featured films from our talented participants and international submissions
+                </p>
+                <div class="w-24 h-1 bg-orange-500 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Film 1 -->
+                <div class="film-card relative rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                         alt="Film Poster" 
+                         class="w-full h-80 object-cover">
+                    <div class="film-overlay absolute inset-0 bg-blue-900/90 flex flex-col justify-center items-center opacity-0 transition duration-500 p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">The Last Sunset</h3>
+                        <p class="text-gray-300 text-center mb-4">
+                            A poignant drama about love and loss in a small coastal town.
+                        </p>
+                        <div class="flex space-x-2 mb-4">
+                            <span class="bg-orange-500 text-white px-2 py-1 rounded text-xs">Drama</span>
+                            <span class="bg-blue-700 text-white px-2 py-1 rounded text-xs">2023</span>
+                        </div>
+                        <a href="#" class="text-white border border-white px-4 py-2 rounded-full text-sm font-bold hover:bg-orange-500 hover:border-orange-500 transition duration-300">
+                            View Details
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Film 2 -->
+                <div class="film-card relative rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1542204165-65bfec72f809?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                         alt="Film Poster" 
+                         class="w-full h-80 object-cover">
+                    <div class="film-overlay absolute inset-0 bg-blue-900/90 flex flex-col justify-center items-center opacity-0 transition duration-500 p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Neon Dreams</h3>
+                        <p class="text-gray-300 text-center mb-4">
+                            A cyberpunk thriller exploring the boundaries of human consciousness.
+                        </p>
+                        <div class="flex space-x-2 mb-4">
+                            <span class="bg-orange-500 text-white px-2 py-1 rounded text-xs">Sci-Fi</span>
+                            <span class="bg-blue-700 text-white px-2 py-1 rounded text-xs">2023</span>
+                        </div>
+                        <a href="#" class="text-white border border-white px-4 py-2 rounded-full text-sm font-bold hover:bg-orange-500 hover:border-orange-500 transition duration-300">
+                            View Details
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Film 3 -->
+                <div class="film-card relative rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1518173835740-f5d14111d76a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                         alt="Film Poster" 
+                         class="w-full h-80 object-cover">
+                    <div class="film-overlay absolute inset-0 bg-blue-900/90 flex flex-col justify-center items-center opacity-0 transition duration-500 p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Silent Echoes</h3>
+                        <p class="text-gray-300 text-center mb-4">
+                            A documentary following the lives of deaf artists creating visual poetry.
+                        </p>
+                        <div class="flex space-x-2 mb-4">
+                            <span class="bg-orange-500 text-white px-2 py-1 rounded text-xs">Documentary</span>
+                            <span class="bg-blue-700 text-white px-2 py-1 rounded text-xs">2023</span>
+                        </div>
+                        <a href="#" class="text-white border border-white px-4 py-2 rounded-full text-sm font-bold hover:bg-orange-500 hover:border-orange-500 transition duration-300">
+                            View Details
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <a href="#" class="inline-block bg-orange-500 text-white px-8 py-3 rounded-full font-bold text-lg hover:bg-orange-600 transition duration-300">
+                    View All Films
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">Get In Touch</h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                    Have questions about the festival, workshops, or submissions?
+                </p>
+                <div class="w-24 h-1 bg-orange-500 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2">
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-white mb-2">Your Name</label>
+                            <input type="text" id="name" 
+                                   class="w-full px-4 py-3 bg-blue-900/50 border border-blue-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-white mb-2">Email Address</label>
+                            <input type="email" id="email" 
+                                   class="w-full px-4 py-3 bg-blue-900/50 border border-blue-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-500">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-white mb-2">Subject</label>
+                            <select id="subject" 
+                                    class="w-full px-4 py-3 bg-blue-900/50 border border-blue-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-500">
+                                <option value="">Select a topic</option>
+                                <option value="festival">Festival Information</option>
+                                <option value="workshops">Workshop Registration</option>
+                                <option value="submissions">Film Submissions</option>
+                                <option value="sponsorship">Sponsorship Opportunities</option>
+                                <option value="other">Other Inquiry</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-white mb-2">Your Message</label>
+                            <textarea id="message" rows="5" 
+                                      class="w-full px-4 py-3 bg-blue-900/50 border border-blue-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-orange-500 text-white px-6 py-3 rounded-lg font-bold hover:bg-orange-600 transition duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="bg-blue-900/50 rounded-lg p-8 h-full">
+                        <h3 class="text-2xl font-bold text-white mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-orange-500 text-xl mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="text-white font-bold mb-1">Location</h4>
+                                    <p class="text-gray-300">Point Roberts, Washington, USA</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-envelope text-orange-500 text-xl mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="text-white font-bold mb-1">Email</h4>
+                                    <p class="text-gray-300">info@pointrobertsfilmfest.org</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-phone-alt text-orange-500 text-xl mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="text-white font-bold mb-1">Phone</h4>
+                                    <p class="text-gray-300">+1 (360) 555-1234</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-calendar-alt text-orange-500 text-xl mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="text-white font-bold mb-1">Festival Dates</h4>
+                                    <p class="text-gray-300">October 15-22, 2023</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-10">
+                            <h4 class="text-white font-bold mb-4">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 rounded-full bg-blue-800 flex items-center justify-center text-white hover:bg-orange-500 transition duration-300">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-blue-800 flex items-center justify-center text-white hover:bg-orange-500 transition duration-300">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-blue-800 flex items-center justify-center text-white hover:bg-orange-500 transition duration-300">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-blue-800 flex items-center justify-center text-white hover:bg-orange-500 transition duration-300">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <div class="bg-blue-900 py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-2xl font-bold text-white mb-4">Stay Updated</h3>
+            <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
+                Subscribe to our newsletter for festival updates, workshop announcements, and exclusive content.
+            </p>
+            <div class="max-w-md mx-auto flex">
+                <input type="email" placeholder="Your email address" 
+                       class="flex-grow px-4 py-3 rounded-l-lg bg-blue-800 text-white focus:outline-none focus:ring-2 focus:ring-orange-500">
+                <button class="bg-orange-500 text-white px-6 py-3 rounded-r-lg font-bold hover:bg-orange-600 transition duration-300">
+                    Subscribe
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900/90 py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-6 md:mb-0">
+                    <i class="fas fa-film text-orange-500 text-2xl"></i>
+                    <span class="text-white text-xl font-bold">PRIFF</span>
+                </div>
+                
+                <div class="text-gray-300 text-center md:text-right">
+                    <p>&copy; 2023 Point Roberts International Film Festival. All rights reserved.</p>
+                    <div class="flex justify-center md:justify-end space-x-4 mt-2">
+                        <a href="#" class="hover:text-orange-500 transition duration-300">Privacy Policy</a>
+                        <a href="#" class="hover:text-orange-500 transition duration-300">Terms of Service</a>
+                        <a href="#" class="hover:text-orange-500 transition duration-300">FAQ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('button.md\\:hidden').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

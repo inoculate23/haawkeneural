@@ -30,8 +30,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&amp;display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
- 
-  <script type="module" src="./src/js/index.js"></script>
+     <script src="//cdn.jsdelivr.net/npm/hls.js@latest"></script> 
+	<script type="module" src="./src/js/index.js"></script>
 
  <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -226,15 +226,12 @@
                     <div class="relative rounded-xl overflow-hidden shadow-2xl">
                         <div class="video-container">
 <div style="position: relative; padding-top: 6.25%;">
-  <iframe
-    src="https://customer-2ml6p4cr5a93a3wc.cloudflarestream.com/adeac43b5efb8fe8cd45bd08036a4e4f/iframe?preload=true&autoplay=true&poster=https%3A%2F%2Fcustomer-2ml6p4cr5a93a3wc.cloudflarestream.com%2Fadeac43b5efb8fe8cd45bd08036a4e4f%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&primaryColor=%235db7e5"
-    loading="lazy"
-    style="border: none; position: absolute; top: 0; left: 0; height: 100vh; width: 100%;"
-    allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-    allowfullscreen="true"
-  ></iframe>      </div>
+ <center>
+    
+      <video height="100vh" width="100%" id="video" controls></video>
+    </center> </div>
                     </div>
-                    <div class="absolute -top-6 -left-6 w-32 h-32 rounded-full bg-haawke-accent opacity-20"></div>
+                  
                     <div class="absolute -bottom-6 -right-6 w-32 h-32 rounded-full bg-haawke-accent opacity-20"></div>
                 </div>
             </div>
@@ -464,5 +461,29 @@
             themeToggleMobile.addEventListener('click', toggleTheme);
         }
     </script>
+	
+	  <script>
+      var video = document.getElementById('video');
+      if (Hls.isSupported()) {
+        var hls = new Hls({
+          debug: true,
+        });
+        hls.loadSource('https://customer-2ml6p4cr5a93a3wc.cloudflarestream.com/adeac43b5efb8fe8cd45bd08036a4e4f/manifest/video.m3u8');
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MEDIA_ATTACHED, function () {
+          video.muted = true;
+          video.play();
+        });
+      }
+      // hls.js is not supported on platforms that do not have Media Source Extensions (MSE) enabled.
+      // When the browser has built-in HLS support (check using `canPlayType`), we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video element through the `src` property.
+      // This is using the built-in support of the plain video element, without using hls.js.
+      else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = 'https://customer-2ml6p4cr5a93a3wc.cloudflarestream.com/adeac43b5efb8fe8cd45bd08036a4e4f/manifest/video.m3u8';
+        video.addEventListener('canplay', function () {
+          video.play();
+        });
+      }
+    </script>	
 </body>
 </html>

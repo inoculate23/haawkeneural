@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Haawke Research Overview — AI for the Arts and Cross‑Cultural Communication</title>
+  <meta name="description" content="Grant-oriented overview of Haawke.com’s AI/ML research in audio, video, and music, and our work facilitating communication across cultures." />
+  <style>
+    :root {
+      --bg: #0f1220; --card: #171a2a; --text: #e7e9f7; --muted: #b8bdd6;
+      --accent: #7aa2ff; --accent2: #b18cff; --ok: #67e8f9; --warn: #fbbf24;
+      --maxw: 960px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, sans-serif; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header { padding: 32px 16px 12px; border-bottom: 1px solid #232741; background: none; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; }
+    header .wrap { padding: 0 7%; }
+    .title { font-size: clamp(24px, 4vw, 40px); line-height: 1.2; margin: 0; }
+    .subtitle { color: var(--muted); margin-top: 8px; }
+    nav { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 12px; }
+    nav a { padding: 6px 10px; border: 1px solid #2a2f4f; border-radius: 6px; background: #14172a; }
+    main { padding: 24px 16px 64px; }
+    section { margin: 28px 0; padding: 20px; background: var(--card); border: 1px solid #242a47; border-radius: 12px; }
+    h2 { margin: 0 0 10px; font-size: clamp(20px, 3vw, 28px); }
+    h3 { margin: 18px 0 8px; font-size: clamp(18px, 2.5vw, 22px); }
+    p { margin: 10px 0; color: var(--text); }
+    ul { margin: 8px 0 10px 20px; }
+    li { margin: 6px 0; color: var(--text); }
+    .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .badge { display: inline-block; padding: 4px 8px; border-radius: 999px; background: #1e233c; border: 1px solid #2a2f4f; color: var(--muted); font-size: 12px; }
+    .note { color: var(--muted); font-size: 14px; }
+    .refs { font-size: 14px; }
+    .cta { display: inline-block; margin-top: 8px; padding: 8px 12px; background: #1a1f36; border: 1px solid #2a2f4f; border-radius: 8px; }
+    .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; background: #101425; border: 1px solid #2a2f4f; border-radius: 6px; padding: 2px 6px; font-size: 12px; }
+    .video { position: relative; padding-top: 56.25%; background: #0f1220; border: 1px solid #242a47; border-radius: 12px; overflow: hidden; }
+    .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+    /* Hero background image + overlay */
+    .hero { position: relative; padding: 48px 16px 24px; isolation: isolate; }
+    .hero::before { content: ""; position: absolute; inset: 0; background: none; pointer-events: none; }
+    /* Full-bleed background image with reduced opacity */
+    .hero::after { content: ""; position: absolute; inset: 0; background: url('assets/engines2.jpg') center / cover no-repeat; opacity: 0.28; z-index: -1; pointer-events: none; }
+    .hero .title, .hero .subtitle { text-shadow: 0 2px 18px rgba(122,162,255,0.35); }
+
+    /* Blended bird illustration */
+    .blend-figure { text-align: center; }
+    .blend-img { display: block; width: min(520px, 100%); margin: 10px auto; mix-blend-mode: multiply; opacity: 0.98; filter: contrast(1.05) saturate(1.06); }
+
+    @media (max-width: 640px) { .hero { padding: 36px 12px 18px; } }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <h1 class="title">Haawke Research Overview</h1>
+      <p class="subtitle">AI/ML for Audio, Video, and Music — Advancing Cross‑Cultural Communication</p>
+      <nav aria-label="Page sections">
+        <a href="#mission">Mission</a>
+        <a href="#about">About & Team</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#research">Research Focus</a>
+        <a href="#assets">Open Models & Code</a>
+        <a href="#demos">Selected Demos</a>
+        <a href="#plan">Proposed Work</a>
+        <a href="#impact">Impact & Evaluation</a>
+        <a href="#ethics">Ethics</a>
+        <a href="#funding">Funding Request</a>
+        <a href="#references">References</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="mission" aria-labelledby="mission-title">
+      <h2 id="mission-title">Mission</h2>
+      <p>
+        Haawke Neural Technology builds applied AI tools for creators in audio and video, while conducting research at the intersection of machine learning, expressive media, and cross‑cultural communication. We focus on practical systems that reduce editing friction, elevate creative quality, and enable artists to share work across languages and cultural contexts.
+      </p>
+      <p class="note">Organization home: <a href="https://www.haawke.com" target="_blank" rel="noopener">haawke.com</a> [0]</p>
+    </section>
+
+    <section id="capabilities" aria-labelledby="capabilities-title">
+      <h2 id="capabilities-title">Core Capabilities</h2>
+      <div class="grid" role="list">
+        <div role="listitem">
+          <h3>AI Audio Enhancement <span class="badge">production</span></h3>
+          <p>Noise removal, voice clarity enhancement, and automatic level balancing to streamline post‑production workflows. [0]</p>
+        </div>
+        <div role="listitem">
+          <h3>Smart Video Editing <span class="badge">workflow</span></h3>
+          <p>Automatic detection of filler words and awkward pauses, with suggested cuts driven by content analysis. [0]</p>
+        </div>
+        <div role="listitem">
+          <h3>Transcription & Captions <span class="badge">accessibility</span></h3>
+          <p>Accurate multilingual transcription with speaker identification and automatic caption placement. [0]</p>
+        </div>
+        <div role="listitem">
+          <h3>AI Color Correction <span class="badge">quality</span></h3>
+          <p>Automated color balance, exposure, and tonal adjustments for professional results in seconds. [0]</p>
+        </div>
+        <div role="listitem">
+          <h3>Music Generation <span class="badge">creative</span></h3>
+          <p>Tailored, royalty‑free background music aligned to mood, length, and style requirements. [0]</p>
+        </div>
+        <div role="listitem">
+          <h3>Performance Analytics <span class="badge">insight</span></h3>
+          <p>Viewer engagement analysis (drop‑off points, content performance) to inform edits and distribution. [0]</p>
+        </div>
+      </div>
+      <p class="note">Adoption & reliability: 10,000+ professional users, ~85% editing time saved, 24/7 support, ~99.9% uptime. [0]</p>
+    </section>
+
+    <section id="research" aria-labelledby="research-title">
+      <h2 id="research-title">Research Focus Areas</h2>
+      <ul>
+        <li><strong>Cross‑language media accessibility</strong>: high‑quality transcription/translation; prosody‑aware voice conversion that preserves artistic intent across languages. [0]</li>
+        <li><strong>Generative music & adaptive scoring</strong>: controllable models that respond to narrative structure, tempo maps, and emotional arcs. [0][1]</li>
+        <li><strong>Assistive video editing</strong>: content‑aware editing suggestions; semantic trim tools; color normalization for mixed‑camera productions. [0]</li>
+        <li><strong>Multimodal creativity</strong>: image‑to‑image and texture/style transformation for visual storytelling pipelines. [1]</li>
+        <li><strong>Cultural bridge tooling</strong>: creator‑centric pipelines that bundle translation, captioning, and guided localization to reduce friction in cross‑cultural publishing. [0]</li>
+      </ul>
+    </section>
+
+    <section id="assets" aria-labelledby="assets-title">
+      <h2 id="assets-title">Open Models & Code</h2>
+      <h3>Hugging Face — inoculatemedia</h3>
+      <ul>
+        <li><code>seesharp</code> — image‑to‑image; updated recently. [1]</li>
+        <li><code>techno-music-melodik</code> — music‑focused work. [1]</li>
+        <li><code>comic_olsskool</code> — stylization experiments. [1]</li>
+        <li><code>renegade_tardigrade</code> — creative model. [1]</li>
+        <li><code>diffuse_tardigrade</code> — diffusion experiments. [1]</li>
+      </ul>
+      <p class="note">Profile: <a href="https://huggingface.co/inoculatemedia" target="_blank" rel="noopener">huggingface.co/inoculatemedia</a> [1]</p>
+      <h3>GitHub — inoculate23</h3>
+      <ul>
+        <li>Frontend with MCP server for Praxis‑Live. [2]</li>
+        <li>Custom boilerplate with embedded animation player workflows. [2]</li>
+      </ul>
+      <p class="note">Profile: <a href="https://github.com/inoculate23" target="_blank" rel="noopener">github.com/inoculate23</a> [2]</p>
+      <h3>GitHub — Haawke org</h3>
+      <p>Organization presence for collaboration and distribution. [3] — <a href="https://github.com/Haawke/" target="_blank" rel="noopener">github.com/Haawke</a></p>
+    </section>
+
+
+
+    <section id="demos" aria-labelledby="demos-title">
+      <h2 id="demos-title">Selected Demos</h2>
+      <div class="grid" role="list">
+        <div role="listitem">
+          <h3>Motion Transfer: Two‑Stage ML Workflow <span class="badge">video</span></h3>
+          <p>Combines text‑to‑video generation and real‑time pose estimation (PoseNet/TensorFlow); runs in real time; works with webcam and rigged models. [5]</p>
+          <div class="video">
+            <iframe src="https://www.youtube.com/embed/zNoUxpHZoTc" title="Motion capture workflow using two-stage ML" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p class="note"><a href="https://youtu.be/zNoUxpHZoTc?si=6QKt5FyLlT3jIKNw" target="_blank" rel="noopener">Watch on YouTube</a> [5]</p>
+        </div>
+        <div role="listitem">
+          <h3>WebGPU Texture Mapping with ThreeJS TSL <span class="badge">webgpu</span></h3>
+          <p>Demonstrates WebGPU‑based texture mapping with ThreeJS TSL textures; music by Haawke. [6]</p>
+          <div class="video">
+            <iframe src="https://www.youtube.com/embed/pSq5tcyOZv4" title="WebGPU Texture Mapping demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <p class="note"><a href="https://youtu.be/pSq5tcyOZv4?si=t4FEadm0wZWza4i-" target="_blank" rel="noopener">Watch on YouTube</a> [6]</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="plan" aria-labelledby="plan-title">
+      <h2 id="plan-title">Proposed Work (12–18 months)</h2>
+      <ul>
+        <li><strong>WP1 — Cross‑language audio pipeline</strong>: train/evaluate prosody‑aware voice conversion and multilingual captioning; open‑source tooling for artists and educators.</li>
+        <li><strong>WP2 — Assistive video editor</strong>: prototype semantic‑trim and filler‑word removal integrated with caption alignment; evaluate editing time saved vs. baseline NLE workflows.</li>
+        <li><strong>WP3 — Generative scoring</strong>: controllable music generation conditioned on scene descriptors; user studies with filmmakers and musicians on fit and creative control.</li>
+        <li><strong>WP4 — Culture‑bridge toolkit</strong>: end‑to‑end localization (transcription, translation, captions, audio style transfer) with creator‑friendly UX and documentation.</li>
+      </ul>
+      <p class="note">Deliverables: open models/tooling, evaluation reports, datasets (where ethically permissible), exemplar media projects, and practical guides.</p>
+    </section>
+
+    <section id="impact" aria-labelledby="impact-title">
+      <h2 id="impact-title">Impact & Evaluation</h2>
+      <ul>
+        <li><strong>Efficiency</strong>: percent editing‑time reduction, automation acceptance, and re‑edit rates compared to control groups.</li>
+        <li><strong>Quality</strong>: audio clarity (objective metrics), color consistency, caption accuracy, and user satisfaction surveys.</li>
+        <li><strong>Accessibility</strong>: multilingual reach, caption uptake, and localization turnaround times.</li>
+        <li><strong>Cultural exchange</strong>: creator adoption across languages; qualitative feedback from cross‑cultural collaborators.</li>
+        <li><strong>Reproducibility</strong>: open protocols, datasets, and code to support independent replication.</li>
+      </ul>
+    </section>
+
+    <section id="ethics" aria-labelledby="ethics-title">
+      <h2 id="ethics-title">Ethics, Inclusion, and Safety</h2>
+      <ul>
+        <li>Consent‑forward pipelines; clear attribution and opt‑out mechanisms for model training and localization.</li>
+        <li>Bias assessment for language coverage; attention to dialects, indigenous languages, and accessibility needs.</li>
+        <li>Artist agency preserved via controls, previews, and non‑destructive edits.</li>
+      </ul>
+    </section>
+
+    <section id="funding" aria-labelledby="funding-title">
+      <h2 id="funding-title">Funding Request & Utilization</h2>
+      <ul>
+        <li><strong>Personnel</strong>: ML research, audio engineering, video post, and localization specialists.</li>
+        <li><strong>Compute & tooling</strong>: training/inference infrastructure, dataset curation, evaluation platforms, and donations or grants of time on cloud GPUs.</li>
+        <li><strong>Community pilots</strong>: collaborations with creators across languages; user studies and impact reporting.</li>
+        <li><strong>Open resources</strong>: documentation, tutorials, and exemplar projects to accelerate adoption.</li>
+      </ul>
+      <p>Goal: accelerate practical AI that reduces creative friction and expands cultural reach, with measurable benefits for artists, educators, and audiences.</p>
+    </section>
+
+    <section id="about" aria-labelledby="about-title">
+      <h2 id="about-title">About & Team</h2>
+      <p>Haawke operates across Las Vegas and Vancouver, BC, integrating AI research with hands-on audio/visual production. [0]</p>
+      <ul>
+        <li><strong>Leadership</strong>: Craig Ellenwood — founder and principal engineer; open-source contributor and AI/creative technologist. Profile: <a href="https://github.com/inoculate23" target="_blank" rel="noopener">github.com/inoculate23</a> [2]</li>
+        <li><strong>Track record</strong>: Trusted by 10,000+ professionals; production experience spanning podcasting, broadcast, and film. [0]</li>
+        <li><strong>Resume</strong>: See organizational background and Craig’s resume via the About page. [4]</li>
+        <li><strong>Org</strong>: Haawke GitHub organization for collaboration. <a href="https://github.com/Haawke/" target="_blank" rel="noopener">github.com/Haawke</a> [3]</li>
+      </ul>
+      <p class="note">More details: <a href="https://www.haawke.com/about" target="_blank" rel="noopener">haawke.com/about</a> [4]</p>
+
+    
+
+       <h3>CV Highlights</h3>
+       <ul>
+         <li><strong>Founder & principal engineer</strong>, Haawke Neural Technology — applied AI for audio/visual production and cross‑cultural media. [0][4]</li>
+         <li><strong>Open‑source contributions</strong>: Praxis‑Live MCP frontend; animation player boilerplate for embedded models. [2]</li>
+         <li><strong>Model author</strong>: <code>seesharp</code> (image‑to‑image; updated recently), <code>techno-music-melodik</code> (Oct 28, 2023), <code>comic_olsskool</code> (Sep 16, 2023), <code>renegade_tardigrade</code> (Mar 6, 2023), <code>diffuse_tardigrade</code> (Mar 3, 2023). [1]</li>
+         <li><strong>Production practice</strong>: podcasting, broadcast engineering, and film/video editing; locations in Las Vegas and Vancouver, BC. [0]</li>
+         <li><strong>Community impact</strong>: 10,000+ professional users; ~85% editing time saved; ~99.9% uptime reliability. [0]</li>
+       </ul>
+     </section>
+
+    <section id="references" aria-labelledby="references-title">
+      <h2 id="references-title">References</h2>
+      <ol class="refs">
+        <li>[0] Haawke Neural Technology — <a href="https://www.haawke.com/" target="_blank" rel="noopener">https://www.haawke.com/</a></li>
+        <li>[1] Hugging Face — inoculatemedia (Haawke) — <a href="https://huggingface.co/inoculatemedia" target="_blank" rel="noopener">https://huggingface.co/inoculatemedia</a></li>
+        <li>[2] GitHub — inoculate23 (Craig Ellenwood) — <a href="https://github.com/inoculate23" target="_blank" rel="noopener">https://github.com/inoculate23</a></li>
+        <li>[3] GitHub — Haawke org — <a href="https://github.com/Haawke/" target="_blank" rel="noopener">https://github.com/Haawke/</a></li>
+        <li>[4] Haawke — About — <a href="https://www.haawke.com/about" target="_blank" rel="noopener">https://www.haawke.com/about</a></li>
+        <li>[5] Motion Transfer — YouTube — <a href="https://youtu.be/zNoUxpHZoTc?si=6QKt5FyLlT3jIKNw" target="_blank" rel="noopener">https://youtu.be/zNoUxpHZoTc</a></li>
+        <li>[6] WebGPU Texture Mapping — YouTube — <a href="https://youtu.be/pSq5tcyOZv4?si=t4FEadm0wZWza4i-" target="_blank" rel="noopener">https://youtu.be/pSq5tcyOZv4</a></li>
+      </ol>
+    </section>
+
+    <section aria-label="Contact">
+      <p class="note">Contact: Craig Ellenwood — Haawke Neural Technology</p>
+    </section>
+  </main>
+</body>
+</html>
